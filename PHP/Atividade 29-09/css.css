@@ -1,0 +1,16 @@
+#formulario{
+background-color: rgb(180, 129, 251);
+font-size: 20px;
+text-align: center;
+display: block;
+margin-left: 400px;
+margin-right: 400px;
+border-radius: 4px;
+}
+#naoSedentario, #caminhando, #sedentario{
+    display: none;
+}
+p {
+    font-size: 40px;
+    text-align: center;
+}

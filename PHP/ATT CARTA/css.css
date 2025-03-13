@@ -1,0 +1,92 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    margin: 0;
+    background-color:  rgb(229, 219, 187);
+}
+nav{
+    background-color: rgb(54, 22, 22);
+    color: white;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+#direcionadores_nav ul{
+    display: flex;
+    list-style-type: none;
+    justify-content: flex-end;
+}
+#direcionadores_nav li{
+    margin-left: 5px;
+    font-size: 20px;
+}
+nav a{
+    text-decoration: none;
+    color: white;
+    padding: 31px 10px;
+}
+nav h1{
+    font-size: 30px;
+    margin-left: 5px;
+}
+#direcionadores_nav a:hover{
+    background-color: white;
+    color: rgb(54, 22, 22);
+}
+#caixa_principal{
+    background-color: white;
+    width: 40%;
+    margin-left: 30%;
+    margin-top: 3%;
+    padding: 10px;
+    border-radius: 5px;
+}
+input{
+    width: 90%;
+    font-size: 20px;
+    padding: 5px;
+    margin-left: 4%;
+    margin-bottom: 15px;
+}
+label{
+    margin-left: 4%;
+    font-size: 20px;
+}
+textarea{
+    width: 90%;
+    font-size: 20px;
+    padding: 5px;
+    margin-left: 4%;
+    resize:vertical;
+    margin-bottom: 15px;
+}
+#caixa_principal h2{
+    text-align: center;
+    font-size: 30px;
+    color: rgb(54, 22, 22);
+}
+#submit{
+    width: 92%;
+    background-color: rgb(54, 22, 22);
+    color: antiquewhite;
+    border: none;
+    border-radius: 5px;
+    padding: 12px;
+}
+.botao{
+    margin-left: 30%;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgb(54, 22, 22);
+}
+#caixa_principal a{
+    margin-left: 20%;
+    color: black;
+}
+p{
+    color: black;
+}
+
+

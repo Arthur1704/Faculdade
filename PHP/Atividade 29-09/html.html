@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="StyleSheet" type="text/css" href="css.css">
+</head>
+<body>
+    <form id="formulario">
+        <h1>Teste Sedentarismo</h1>
+        <div id="conteudoForm">
+            <label>Você tem energia para fazer suas atividades habituais ?</label><br>
+            <input type="radio" name="pergunta1" id="sim1" value="1">Sim
+            <input type="radio" name="pergunta1" id="nao1" value="0">Não
+            <input type="radio" name="pergunta1" id="nemSempre1" value="nemSempre">Nem sempre
+            <br><br>
+            <label>Você pratica algum exercicio durante a semana ?</label><br>
+            <input type="radio" name="pergunta2" id="sim2" value="1">Sim
+            <input type="radio" name="pergunta2" id="nao2" value="0">Não
+            <br>
+            <label>Quanto tempo duara o seu exercicio fisico(em horas) ?</label><br>
+            <input type="text" name="pergunta3" id="pergunta3" size="20px">
+            <br><br>
+            <label>Quatas horas do dia você passa sentado ?</label><br>
+            <select name="pergunta4" id="pergunta4">
+                <option value="3">Em média 3 horas</option>
+                <option value="2">Em média 5 horas</option>
+                <option value="1">Em média 8 horas</option>
+                <option value="0">Mais que 10 horas em média</option>
+            </select>    
+            <br><br>
+            <label>Quais desses espertes você pratica ?</label>
+            <input type="checkbox" name="pergunta5" id="checMusculação" value="1">Musculação
+            <input type="checkbox" name="pergunta5" id="checCaminada" value="1">Caminhada
+            <input type="checkbox" name="pergunta5" id="checCorrida" value="1">Corrida
+            <input type="checkbox" name="pergunta5" id="checOutro" value="1">Outro
+            <br><br>
+            <button id="enviar" onclick="teste()">Enviar</button>
+        </div>
+    </form>
+    <p id="naoSedentario">Você não está Sedentario!!</p>
+    <p id="caminhando">Você está caminhando para o Sedentarismo!!</p>
+    <p id="sedentario">Você está Sedentario!!</p>
+    <script src="js.js"></script>
+    
+</body>
+</html>
