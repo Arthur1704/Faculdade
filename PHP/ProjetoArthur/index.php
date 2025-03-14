@@ -1,5 +1,5 @@
 <?php
 
-    echo "Testando conexão do VS code com o meu github";
+    echo "Testando conexão do VS code com o meu github"
 
 ?>
