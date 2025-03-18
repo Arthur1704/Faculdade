@@ -1,19 +1,29 @@
 package com.calculadora;
 
 import java.util.Scanner;
-import com.calculadora.Calculadora;
+
 
 public class Main {
     public static Scanner guardar = new Scanner(System.in);
 
-    public static double set_num(){
-        System.out.print("Entre com um numero: ");
-        double num = guardar.nextDouble();
+    public static double set_num(int op){
+        double num = 0;
+        if (op != 5){
+            System.out.print("Entre com um numero: ");
+            num = guardar.nextDouble();
+        }
+        else{
+            System.out.print("Entre com o valor da sua compra: ");
+            num = guardar.nextDouble();        
+        }
+
         return num;
     }
     public static void main(String[] args) {
 
-        double num1, num2, resultado = 0;
+        Calculadora calculadora = new Calculadora();
+        Tributacao tributacao = new Tributacao();
+        double num1 = 0, num2, resultado = 0;
         int operacao;
         char S_N = 'N';
 
@@ -27,35 +37,38 @@ public class Main {
 
         System.out.print("\n Entre com a opção desejada: ");
         operacao = guardar.nextInt();
-        
-        if (S_N == 'N'){
-            num1 = set_num();
+
+        if (operacao != 5){
+            if (S_N == 'N'){
+                num1 = set_num(operacao);
+            }
+            else{
+                num1 = resultado;
+            }
         }
-        else{
-            num1 = resultado;
-        }
-        num2 = set_num();
+        num2 = set_num(operacao);
 
         
             switch (operacao) {
                 case 1:
-                    resultado = Calculadora.Soma(num1, num2);
-                    System.out.println("O resultado da sua soma foi " + Calculadora.Soma(num1, num2));
+                    resultado = calculadora.Soma(num1, num2);
+                    System.out.println("O resultado da sua soma foi " + calculadora.Soma(num1, num2));
                     break;
                 case 2:
-                    resultado = Calculadora.Subtracao(num1, num2);
-                    System.out.println("O resultado da sua subtração foi " + Calculadora.Subtracao(num1, num2));   
+                    resultado = calculadora.Subtracao(num1, num2);
+                    System.out.println("O resultado da sua subtração foi " + calculadora.Subtracao(num1, num2));   
                     break;
                 case 3:
-                    resultado = Calculadora.Multiplicacao(num1, num2);
-                    System.out.println("O resultado da sua multiplicação foi " + Calculadora.Multiplicacao(num1, num2)); 
+                    resultado = calculadora.Multiplicacao(num1, num2);
+                    System.out.println("O resultado da sua multiplicação foi " + calculadora.Multiplicacao(num1, num2)); 
                     break;
                 case 4:
-                    resultado = Calculadora.Divisao(num1, num2);
-                    System.out.println("O resultado da sua divisão foi " + Calculadora.Divisao(num1, num2));
+                    resultado = calculadora.Divisao(num1, num2);
+                    System.out.println("O resultado da sua divisão foi " + calculadora.Divisao(num1, num2));
                     break;
                 case 5:
-                    //System.out.println("O resultado da sua soma foi " + Calculadora.Calcular(num1, num2));    
+                    double imposto = tributacao.Imposto(num2);
+                    System.out.printf("O valor do seu imposto é R$%.2f e o valor final da sua compra é R$%.2f\n", imposto, imposto + num2);    
                     break;
                 default:
                     System.out.println("Entre com uma opção correta!!");
@@ -67,10 +80,6 @@ public class Main {
         }while(S_N == 'S');
 
         guardar.close();
-
-
-
-
-        
-    } 
+    }
 }
+
