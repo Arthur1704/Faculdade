@@ -230,8 +230,12 @@
     
 //23. Exiba o dia da semana de uma data específica.
 
+    echo "<br>";
+    $dataH = '20/12/2004';
 
-
+    $dataH = strtotime($dataH);
+    $dataformatada = date('d/m/Y', $dataH);
+    echo $dataformatada;
 //24. Calcule a diferença de dias entre duas datas.
 //25. Adicione 30 dias a uma data e exiba o novo valor.
 
