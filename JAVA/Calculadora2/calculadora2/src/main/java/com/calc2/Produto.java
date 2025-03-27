@@ -2,9 +2,10 @@ package com.calc2;
 
 public class Produto {
 
-    String[] nomeP = new String[100];
-    int[] quantP = new int[100];
-    double[] valorP = new double[100];
+    String nomeP;
+    int quantP;
+    double valorP;
+    
 
     public Produto(){
 
@@ -12,38 +13,32 @@ public class Produto {
 
     public Produto(String nome, int quantidade, double valor){
 
-        for (int cont = 0; cont < nomeP.length; cont++){
-            if(nomeP[cont].equals("")){
-                this.nomeP[cont] = nome;
-                this.quantP[cont] = quantidade;
-                this.valorP[cont] = valor;
-            }
-        }
+        this.nomeP = nome;
+        this.quantP = quantidade;
+        this.valorP = valor;
 
     }
     
     public int Buscar_quantP(String nome){
         
-        for(int cont = 0; cont < nomeP.length; cont++){
+        for(int cont = 0; cont < contador; cont++){
 
-            if (nomeP[cont].equals(nome)){
-                return quantP[cont];
+            if (this.nomeP[cont] != null && this.nomeP[cont].equals(nome)){
+                return this.quantP[cont];
             }
-
         }
-        return 0;
+        return -1;
     }
 
     public double Buscar_valorP(String nome){
         
-        for(int cont = 0; cont < nomeP.length; cont++){
+        for(int cont = 0; cont < contador; cont++){
 
-            if (nomeP[cont].equals(nome)){
+            if (this.nomeP[cont] != null && nomeP[cont].equals(nome) ){
                 return valorP[cont];
             }
-
         }
-        return 0;
+        return -1.0;
     }
 
 }

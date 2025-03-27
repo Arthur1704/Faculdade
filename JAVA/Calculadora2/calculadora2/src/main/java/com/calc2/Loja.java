@@ -4,7 +4,9 @@ public class Loja {
 
     String[] clientes = new String[100];
     String[][] vendas = new String[3][100];
-    Tributacao calc = new Tributacao();    
+    Tributacao calc = new Tributacao();
+    private Produto[] produtos = new Produto[100];   
+    int contador = 0;
 
     public Loja(){
 
@@ -16,6 +18,18 @@ public class Loja {
                 this.clientes[cont] = nomeC;
             }
         }
+    }
+
+    public adiciona_Produto(String nome, int quantidade, double valor){
+
+        if(contador < nomeP.length){
+            produtos[contador] = new Produto(nome, quantidade, valor);
+            contador++;
+        }
+        else{
+            System.out.println("Limite de Produtos atingido");
+        }
+
     }
 
     private int retornar_Posi(String Matriz[][]){
