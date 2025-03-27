@@ -18,27 +18,16 @@ public class Produto {
         this.valorP = valor;
 
     }
-    
-    public int Buscar_quantP(String nome){
-        
-        for(int cont = 0; cont < contador; cont++){
 
-            if (this.nomeP[cont] != null && this.nomeP[cont].equals(nome)){
-                return this.quantP[cont];
-            }
-        }
-        return -1;
+    public String getNome() {
+        return nomeP;
     }
 
-    public double Buscar_valorP(String nome){
-        
-        for(int cont = 0; cont < contador; cont++){
-
-            if (this.nomeP[cont] != null && nomeP[cont].equals(nome) ){
-                return valorP[cont];
-            }
-        }
-        return -1.0;
+    public int getQuantidade() {
+        return quantP;
     }
 
+    public double getValor() {
+        return valorP;
+    }
 }

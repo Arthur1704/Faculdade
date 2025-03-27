@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Main {
     public static Scanner guardar = new Scanner(System.in);
-    
+    public static Loja loja = new Loja();
 
     public static void lerProduto(){
 
@@ -17,26 +17,48 @@ public class Main {
         System.out.print("Valor do Produto: ");
         double valor = guardar.nextDouble();
 
-        Produto produto = new Produto(nomeP, quant, valor);
+        
+        loja.adiciona_Produto(nomeP, quant, valor);
 
     }
 
     public static void verProduto(){
 
         System.out.print("Nome do produto que deseja ver as informações: ");
-        String nome = guardar.nextLine();
+        String nomeP = guardar.nextLine();
         guardar.nextLine();
-        
-        Produto produto = new Produto();
-        int quant = produto.Buscar_quantP(nome);
-        double valor = produto.Buscar_valorP(nome);
 
-        System.out.println("O produto " + nome + " tem " + quant + " unidades e custa " + valor + "R$ a unidade");
+        int quant = loja.Buscar_quantP(nomeP);
+        double valor = loja.Buscar_valorP(nomeP);
+
+        System.out.println("\nO produto " + nomeP + " tem " + quant + " unidades e custa " + valor + "R$ a unidade\n\n");
+    }
+
+    public static void setar_Venda(){
+
+        System.out.print("Nome do Cliente: ");
+        String nomeC = guardar.nextLine();
+        guardar.nextLine();
+        System.out.print("Nome Produto: ");
+        String nomeP = guardar.nextLine();
+        System.out.print("Quantidade Vendida: ");
+        String quant = guardar.nextLine();
+        System.out.print("Valor da venda: ");
+        String valor = guardar.nextLine();
+        
+        loja.set_venda(nomeC, nomeP, valor, quant);
+        
+    }
+
+    public static void ver_Venda(){
+        System.out.print("Nome do Cliente que deseja ver a venda: ");
+        String nomeC = guardar.nextLine();
+        guardar.nextLine();
+
+        loja.ver_Venda(nomeC);
     }
 
     public static void main(String[] args) {
-
-        Loja loja = new Loja();
         
         int operacao;
 
@@ -59,10 +81,10 @@ public class Main {
                     verProduto();
                     break;
                 case 3:
-                    
+                    setar_Venda();
                     break;
                 case 4:
-                    
+                    ver_Venda();
                     break;
                 case 0:
                     System.exit(0);
