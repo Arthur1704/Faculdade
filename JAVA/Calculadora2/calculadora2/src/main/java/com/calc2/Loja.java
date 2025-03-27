@@ -48,7 +48,11 @@ public class Loja {
 
     public void ver_Venda(String Cliente){
         for (int cont = 0; cont < 100; cont++){
-            if (this.vendas)
+            if (this.vendas[cont][0].equals(Cliente)){
+                System.out.println(vendas[cont][0]);
+                System.out.println(vendas[cont][1]);
+                System.out.println(vendas[cont][2]);
+            }
         }
     }
 
