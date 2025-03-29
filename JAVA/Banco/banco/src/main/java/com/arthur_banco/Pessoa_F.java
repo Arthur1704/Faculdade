@@ -5,13 +5,13 @@ public class Pessoa_F extends Pessoa{
     String cpf;
     String rg;
     String email;
-    String emprego;
+    String num_conta;
 
-    private Pessoa_F(){
+    protected Pessoa_F(){
 
     }
 
-    private Pessoa_F(String nome, String endereco, int numero, String cpf, String rg, String email, String emprego){
+    protected Pessoa_F(String nome, String endereco, String numero, String cpf, String rg, String email){
 
         this.nome = nome;
         this.endereco = endereco;
@@ -19,7 +19,6 @@ public class Pessoa_F extends Pessoa{
         this.rg = rg;
         this.cpf = cpf;
         this.email = email;
-        this.emprego = emprego; 
 
     }
 

@@ -1,13 +1,23 @@
 package com.arthur_banco;
+import java.util.Scanner;
+
 
 public class Agencia extends Banco{
+    public static Scanner guardar = new Scanner(System.in);
 
-    String agencia;
-    Pessoa_F[] pessoa = new Pessoa_F[100];
+    String num_Agencia;
 
-    public void set_conta_pessoa_f(){
-        
 
+    protected Agencia(){
+
+    }
+
+    protected Agencia(String nome, String sede, String telefone, String numA){
+
+        this.nome_banco = nome;
+        this.telefone = telefone;
+        this.sede = sede;
+        this.num_Agencia = numA;
 
     }
 
