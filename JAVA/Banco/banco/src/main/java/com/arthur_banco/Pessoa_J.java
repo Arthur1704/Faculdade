@@ -3,9 +3,6 @@ package com.arthur_banco;
 public class Pessoa_J extends Pessoa{
 
     String cnpj;
-    String nome_fantasia;
-    String ramo_atividade;
-
 
     protected Pessoa_J(){
 
@@ -17,8 +14,6 @@ public class Pessoa_J extends Pessoa{
         this.endereco = endereco;
         this.num_contato = numero;
         this.cnpj = cnpj;
-        this.nome_fantasia = nomeF;
-        this.ramo_atividade = ramo;
 
     }
 }

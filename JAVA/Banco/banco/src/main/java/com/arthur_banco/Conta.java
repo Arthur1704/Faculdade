@@ -1,109 +1,49 @@
 package com.arthur_banco;
 
-public class Conta extends Agencia{
+public class Conta {
 
-    Pessoa_F[] pessoaF = new Pessoa_F[100];
-    Pessoa_J[] pessoaJ = new Pessoa_J[100];
-    int contadorCJ = 0;
-    int contadorPF = 0;
-    int contadorCF = 0;
-    int contadorPJ = 0;
+    Pessoa_F[] pessoa_F = new Pessoa_F[100];
+    Pessoa_J[] pessoa_J = new Pessoa_J[100];
+    String num_agencia;
     String num_conta;
-    double saldo = 0;
-    String num_agencia_C;
+    double saldo;
 
-    
-    protected Conta(){
-
-    }
-    
-    protected Conta(String conta, Agencia agencias[], String num_Agencia, char F_J){
-
-        boolean agenciaEncontrada = false;
-
-        for (int cont = 0; cont < agencias.length; cont++) {
-            if (agencias[cont] != null && agencias[cont].num_Agencia.equals(num_Agencia)) {
-                agenciaEncontrada = true;
-                if (F_J == 'F') {
-                    this.pessoaF[contadorCF].num_conta = conta;
-                    this.num_agencia_C = num_Agencia;
-                    this.num_conta = conta;
-                    contadorCF++;
-                } else {
-                    this.num_conta = conta;
-                    this.num_agencia_C = num_Agencia;
-                    this.num_conta = conta;
-                    contadorCJ++;
-                }
-                break;
-            }
-        }
-
-        if (!agenciaEncontrada) {
-            System.out.println("Agência não encontrada: " + num_Agencia);
-        }
-
-    }
-
-    public void set_pessoa_f(){
-
-        System.out.print("Nome da Pessoa: ");
-        String nome = guardar.nextLine();
-        System.out.print("Endereco: ");
-        String endereco = guardar.nextLine();
-        System.out.print("Telefone: ");
-        String telefone = guardar.nextLine();
-        System.out.print("CPF: ");
-        String cpf = guardar.nextLine();
-        System.out.print("RG: ");
-        String rg = guardar.nextLine();
-        System.out.print("E-mail: ");
-        String email = guardar.nextLine();
-
-        if(contadorPF < 100){
-            pessoaF[contadorPF] = new Pessoa_F(nome, endereco, telefone, cpf, rg, email);
-            contadorPF++;
-        }
-    }
-
-    public void set_pessoa_j(){
-
-        System.out.print("Nome da Pessoa: ");
-        String nome = guardar.nextLine();
-        System.out.print("Endereco: ");
-        String endereco = guardar.nextLine();
-        System.out.print("Telefone: ");
-        String telefone = guardar.nextLine();
-        System.out.print("CNPJ: ");
-        String cnpj = guardar.nextLine();
-        System.out.print("Nome Fantasia: ");
-        String nomeF = guardar.nextLine();
-        System.out.print("Ramo de atividade: ");
-        String ramo = guardar.nextLine();
-
-        if(contadorPF < 100){
-            pessoaJ[contadorPJ] = new Pessoa_J(nome, endereco, telefone, cnpj, nomeF, ramo);
-            contadorPF++;
-        }
-        guardar.close(); 
-    }
-
-
-    public void depositar(double valor){
-
-        this.saldo += valor;
+    public Conta() {
         
+        for (int i = 0; i < 100; i++) {
+            pessoa_F[i] = new Pessoa_F(); 
+            pessoa_J[i] = new Pessoa_J(); 
+        }
     }
-    
-    protected boolean sacar(double retirar){
 
-        if(retirar < this.saldo){
+    protected void set_conta_F(String nome, String endereco, String telefone, String num_agencia, String num_conta, String cpf, int contadorCF){
+        pessoa_F[contadorCF].nome = nome;
+        pessoa_F[contadorCF].endereco = endereco;
+        pessoa_F[contadorCF].cpf = cpf;
+        pessoa_F[contadorCF].num_contato = telefone;
+        this.num_conta = num_conta;
+        this.num_agencia = num_agencia;
+    }
+
+    protected void set_conta_J(String nome, String endereco, String telefone, String num_agencia, String num_conta, String cnpj, int contadorCJ){
+        pessoa_J[contadorCJ].nome = nome;
+        pessoa_J[contadorCJ].endereco = endereco;
+        pessoa_J[contadorCJ].cnpj = cnpj;
+        pessoa_J[contadorCJ].num_contato = telefone;
+        this.num_conta = num_conta;
+        this.num_agencia = num_agencia;
+    }
+
+    public void depositar(double valor) {
+        this.saldo += valor;
+    }
+
+    protected boolean sacar(double retirar) {
+        if (retirar <= this.saldo) {
             this.saldo -= retirar;
             return true;
-        }
-        else{
+        } else {
             return false;
-        }  
+        }
     }
-
 }
