@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário de Linguagens</title>
+    <title>Formulário de Código</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -32,13 +32,18 @@
             font-weight: bold;
         }
 
-        select {
+        select, textarea {
             width: 100%;
             padding: 10px;
             margin-bottom: 20px;
             border: 1px solid #ccc;
             border-radius: 4px;
             font-size: 16px;
+        }
+
+        textarea{
+            resize: vertical;
+            width: 96%;
         }
 
         button {
@@ -59,17 +64,29 @@
     </style>
 </head>
 <body>
-    <h1>Escolha uma Área para Conhecer:</h1>
-    <form action="" method="POST">
-        <label for="area">Selecione a área:</label>
-        <select id="area" name="area">
+    <h1>Insira seu Código:</h1>
+    <form action="class.adicionar_conteudo.php" method="POST">
+        <label for="linguagem">Selecione a linguagem:</label>
+        <select id="linguagem" name="linguagem">
             <option value="">-- Selecione --</option>
-            <option value="front">Front End</option>
-            <option value="back">Back End</option>
+            <option value="html">HTML</option>
+            <option value="css">CSS</option>
+            <option value="javascript">JavaScript</option>
+            <option value="python">Python</option>
+            <option value="java">Java</option>
+            <option value="php">PHP</option>
         </select>
 
-        <button type="submit">Enviar</button><br><br>
-        <button type="button" onclick="window.location.href='form_add_conteudo.php'">Adicionar Conteúdo</button>
+        <label for="gp_estudos">Grupo de Estudos:</label>
+        <input type="text" id="gp_estudos" name="gp_estudos">
+
+        <label for="codigo">Insira seu trecho de teoria:</label>
+        <textarea id="codigo" name="codigo" rows="10" placeholder="Cole seu código aqui..."></textarea>
+        
+        <label for="codigo">Insira seu trecho de código:</label>
+        <textarea id="codigo" name="codigo" rows="10" placeholder="Cole seu código aqui..."></textarea>
+
+        <button type="submit">Enviar</button>
     </form>
 </body>
 </html>
