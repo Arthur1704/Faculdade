@@ -32,8 +32,17 @@
             font-weight: bold;
         }
 
-        select, textarea {
+        select, textarea{
             width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        input{
+            width: 96%;
             padding: 10px;
             margin-bottom: 20px;
             border: 1px solid #ccc;
@@ -46,7 +55,7 @@
             width: 96%;
         }
 
-        button {
+        #button {
             background-color: #28a745;
             color: white;
             border: none;
@@ -58,17 +67,17 @@
             transition: background-color 0.3s;
         }
 
-        button:hover {
+        #button:hover {
             background-color: #218838;
         }
     </style>
 </head>
 <body>
     <h1>Insira seu Código:</h1>
-    <form action="class.adicionar_conteudo.php" method="POST">
+    <form action="setar_teorias.php" method="POST">
         <label for="linguagem">Selecione a linguagem:</label>
         <select id="linguagem" name="linguagem">
-            <option value="">-- Selecione --</option>
+            <option value=""></option>
             <option value="html">HTML</option>
             <option value="css">CSS</option>
             <option value="javascript">JavaScript</option>
@@ -80,13 +89,13 @@
         <label for="gp_estudos">Grupo de Estudos:</label>
         <input type="text" id="gp_estudos" name="gp_estudos">
 
-        <label for="codigo">Insira seu trecho de teoria:</label>
-        <textarea id="codigo" name="codigo" rows="10" placeholder="Cole seu código aqui..."></textarea>
+        <label for="teoria">Insira seu trecho de teoria:</label>
+        <textarea id="teoria" name="teoria" rows="10" placeholder="Cole seu código aqui..."></textarea>
         
         <label for="codigo">Insira seu trecho de código:</label>
         <textarea id="codigo" name="codigo" rows="10" placeholder="Cole seu código aqui..."></textarea>
 
-        <button type="submit">Enviar</button>
+        <input type="submit" name="submit" id="button">
     </form>
 </body>
 </html>

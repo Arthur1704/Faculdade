@@ -71,5 +71,12 @@
         <button type="submit">Enviar</button><br><br>
         <button type="button" onclick="window.location.href='form_add_conteudo.php'">Adicionar Conteúdo</button>
     </form>
+
+        <?php
+        
+            $arquivos = scandir()
+        
+        ?>
+    
 </body>
 </html>
