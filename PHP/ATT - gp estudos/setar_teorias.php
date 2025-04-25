@@ -12,7 +12,7 @@
             $conteudo .= "\n\n\n";
             $conteudo .= $_POST['codigo'];
 
-            $teorias->set_Teoria($conteudo, $gp_estudos);
+            $teorias->set_Teoria($conteudo, $gp_estudos, $linguagem);
             echo "<script>window.location.href='form_add_conteudo.php';</script>";
         }
     } 
