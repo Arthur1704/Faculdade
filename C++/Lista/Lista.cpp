@@ -39,9 +39,11 @@ void incluirInicio(Lista *lista, int valor){
 		}
 		lista->dados[0] = valor;
 		lista->fim++;
-		cout << "Inserido com sucesso!!";
+		cout << "Inserido com sucesso!!\n";
 	}
+	else{
 	cout << "A Lista esta cheia!!";
+	}
 }
 
 void incluirFinal(Lista *lista, int valor){
@@ -55,9 +57,57 @@ void incluirFinal(Lista *lista, int valor){
 	}
 }
 
+void incluirPosiX (Lista *lista, int valor, int posi){
+	if (verificaLista(*lista) != 0){
+		for (int cont = lista->fim; cont > posi; cont--){
+			lista->dados[cont] = lista->dados[cont-1];
+		}
+		lista->dados[posi] = valor;
+		lista->fim++;
+	}
+	else{
+		cout << "Lista esta cheia!!";
+	}
+}
+
+void excluiPosiX (Lista *lista, int posi){
+	if (verificaLista(*lista) != 1){
+		for (int cont = posi; cont < lista->fim; cont++){
+			lista->dados[cont-1] = lista->dados[cont];
+		}
+		lista->fim--;
+	}
+	else{
+		cout << "Alista esta vazia!!";
+	}
+}
+
+void imprimeLista(Lista lista){
+	if(verificaLista(lista) != 1){
+		for (int cont = 0; cont < lista.fim; cont++){
+			cout << cont+1 << ": " << lista.dados[cont] << endl;
+		}
+	}
+	else{
+		cout << "Lista esta vazia!!";
+	}
+}
+
 
 
 
 int main(int argc, char** argv) {
+	Lista lista;
+	
+	inic(&lista);
+	incluirInicio(&lista, 10);
+	incluirInicio(&lista, 15);
+	incluirInicio(&lista, 20);
+	imprimeLista(lista);
+	cout << "\n--------------------------\n\n";
+	
+	excluiPosiX(&lista, 3);
+	imprimeLista(lista);
+	
 	return 0;
 }
