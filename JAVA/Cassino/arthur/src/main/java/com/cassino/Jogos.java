@@ -10,7 +10,7 @@ public class Jogos {
     private Modalidades[] modalidades;
     private int cont_jogadores = 0;
 
-    public void setJogo(String nome, String tipo){
+    public void set_Jogo(String nome, String tipo){
         this.nome = nome;
         this.tipo = tipo;
     }
