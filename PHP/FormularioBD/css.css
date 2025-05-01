@@ -1,0 +1,29 @@
+body{
+    background-color: rgb(100, 90, 246);
+    margin:0;
+}
+form{
+    background-color: rgb(246,215,90);
+    width: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+    padding: 2%;
+    padding-top: 0.5%;
+    font-size: 20px;
+    border-radius: 5px;
+}
+input{
+    padding: 1%;
+    font-size: 18px;
+}
+
+#submit{
+    border:0;
+    width: 95%;
+    background-color: rgb(100, 90, 246);
+    color: white;
+}
+h2{
+    text-align: center;
+}
