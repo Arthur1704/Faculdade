@@ -1,56 +1,27 @@
 package com.arthur;
 
 public class Calendario {
-    private String S_mes;
+    private String[] meses = {
+        "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
+        "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
+    };
+
+
     public String converterMes_string(int mes){
-        
-        if(mes < 10){
-            switch(mes){
-                case 1:
-                    S_mes = "Janeiro";
-                    break;
-                case 2:
-                    S_mes = "Fevereiro";
-                    break;
-                case 3:
-                    S_mes = "Março";
-                    break;
-                case 4:
-                    S_mes = "Abril";
-                    break;
-                case 5:
-                    S_mes = "Maio";    
-                    break;
-                case 6:
-                    S_mes = "Junho";
-                    break;
-                case 7:
-                    S_mes = "Julho";
-                    break;
-                case 8:
-                    S_mes = "Agosto";
-                    break;
-                case 9:
-                    S_mes = "Setembro";
-                    break;
+        if (mes > 0 && mes < 12){
+            return meses[mes-1];
+        }
+        return "Mês Invalido";
+    }
+
+    public int ConverterMes_num(String Smes){
+        for (int cont = 0; cont < 12; cont++){
+            String mesM = meses[cont].toUpperCase();
+            Smes = Smes.toUpperCase();
+            if (mesM.equals(Smes)){
+                return cont+1;
             }
         }
-        else if(mes >= 10){
-            switch (mes) {
-                case 10:
-                    S_mes = "Outubro";
-                    break;
-                case 11:
-                    S_mes = "Novembro";
-                    break;
-                case 12:
-                    S_mes = "Dezembro";
-                    break;
-            }
-        }
-        else{
-            S_mes = "Mês Invalido";
-        }
-        return S_mes;
+        return -1;
     }
 }
