@@ -5,6 +5,14 @@ public class Calendario {
         "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
         "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
     };
+    private String[] unidades = {
+        "um", "dois", "tres", "quatro", "cinco", "seis", "sete", 
+        "oito", "nove"
+    };
+    private String[] apos10 = {
+        "dez", "onze", "doze", "treze", "quatorze", "quinze", "dezesseis",
+        "dezessete", "dezoito", "dezenove"
+    };
 
 
     public String converterMes_string(int mes){
@@ -14,7 +22,7 @@ public class Calendario {
         return "Mês Invalido";
     }
 
-    public int ConverterMes_num(String Smes){
+    public int converterMes_num(String Smes){
         for (int cont = 0; cont < 12; cont++){
             String mesM = meses[cont].toUpperCase();
             Smes = Smes.toUpperCase();
@@ -24,4 +32,128 @@ public class Calendario {
         }
         return -1;
     }
+
+    private String converterDia_String(int dia){
+        int dezena = dia / 10;
+        int unidade = dia % 10;
+        String retorno;
+        switch (dezena) {
+            case 0:
+                retorno = unidades[dia-1];
+                break;
+            case 1:
+               retorno = apos10[unidade];
+               break;
+            case 2:
+                if(unidade != 0){
+                    retorno = "Vinte e " + unidades[unidade-1];
+                }
+                else{
+                    retorno = "Vinte";
+                }
+                break;
+            case 3:
+                switch (unidade) {
+                    case 0:
+                        retorno = "Trinta";
+                        break;
+                    case 1:
+                        retorno = "Trinta e " + unidades[unidade-1];
+                        break;
+                }       
+            default:
+                retorno = "Dia invalido!!";
+                break;
+        }
+        return retorno;
+    }
+
+
+    public int converterDia_num(String dia){
+        String dezena, unidade;
+        int retorno = 0;
+        
+        if (dia.contains(" ")){
+            String[] partes = dia.split(" ");
+            if (partes.length > 1) { 
+                dezena = partes[0].toLowerCase();
+                unidade = partes[1].toLowerCase();
+
+                switch (dezena) {
+                    case "vinte":
+                            for (int cont = 0; cont < 9; cont++){
+                                if (unidade.equals(unidades[cont])){
+                                    retorno = cont + 21;
+                                    break;
+                                }
+                            }
+                        break;
+                    default:
+                        retorno = 31;
+                        break;
+                }
+            }
+            else{
+                for(int cont = 0; cont < 9; cont++){
+                    if(dia.equals(unidades[cont])){
+                        retorno = cont+1;
+                        break;
+                    }
+                }
+                for(int cont = 0; cont < 10; cont++){
+                    if(dia.equals(apos10[cont])){
+                        retorno = cont + 10;
+                    }
+                }
+            }
+        }
+        return retorno;
+    }
+
+    private String converterAno(int ano){
+        String milhar, centena, dezena, unidade;
+        int primeiroDigito = ano / 1000;
+        int segundoDigito = (ano / 100) % 10; 
+        int terceiroDigito = (ano / 10) % 10; 
+        int quartoDigito = ano % 10;
+
+        String[] mils = {
+            "", "Mil ", "Dois mil "
+        };
+
+        String[] centenas = {
+            "", "cento ", "duzentos ", "trezentos ", "quatrocentos ", "quinhentos ",
+            "seicentos ", "setecentos ", "oitocentos ", "novecentos " 
+        };
+
+        String[] dezenas = {
+            "", "dez ", "vinte ", "trinta ", "quarenta ", "cinquenta ", "secenta ",
+            "setenta ", "oitenta ", "noventa "
+        };
+
+        String[] unidades = {
+            "", "um", "dois", "tres", "quatro", "cinco", "seis", "sete", 
+            "oito", "nove"
+        };
+
+            milhar = mils[primeiroDigito];
+
+            centena = centenas[segundoDigito];
+
+            dezena = dezenas[terceiroDigito];
+
+            unidade = unidades[quartoDigito];
+
+            return milhar + centena + dezena + "e " + unidade; 
+    }
+
+    public String converteDataParaTexto(int dia, int mes, int ano){
+        String diaS, mesS, anoS;
+
+        diaS = converterDia_String(dia);
+        mesS = converterMes_string(mes);
+        anoS = converterAno(ano);
+
+        return diaS + " de " + mesS + " de " + anoS;
+    }    
 }
