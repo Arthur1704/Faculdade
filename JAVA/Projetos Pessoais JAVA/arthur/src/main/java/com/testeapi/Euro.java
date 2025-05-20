@@ -6,35 +6,39 @@ import java.net.URL;
 import java.net.URI;
 import org.json.JSONObject;
 
-public class APIdolar {
-    public double valorDolarAgora(){
-        try {
-            String api = "https://economia.awesomeapi.com.br/json/last/USD-BRL";
-            URI uri = new URI(api); 
+public class Euro{
+
+    public double valorEuroAgora(){
+        try{    
+
+            String api = "https://economia.awesomeapi.com.br/json/last/EUR-BRL";
+            URI uri = new URI(api);
             URL url = uri.toURL(); 
+
             HttpURLConnection conexao = (HttpURLConnection) url.openConnection();
             conexao.setRequestMethod("GET");
 
             BufferedReader reader = new BufferedReader(new InputStreamReader(conexao.getInputStream()));
             StringBuilder resposta = new StringBuilder();
             String linha;
-            while ((linha = reader.readLine()) != null) {
+
+            while((linha = reader.readLine()) != null){
                 resposta.append(linha);
             }
             reader.close();
 
-            JSONObject jsonresposta = new JSONObject(resposta.toString());
-            JSONObject usdbrl = jsonresposta.getJSONObject("USDBRL");
-            String valorDolarS = usdbrl.getString("bid");
-            double valorDolar = Double.parseDouble(valorDolarS);
+            JSONObject respostajson = new JSONObject(resposta.toString());
+            JSONObject eurbrl = respostajson.getJSONObject("EURBRL");
+            String valorEuroS = eurbrl.getString("bid");
+            double valorEuro = Double.parseDouble(valorEuroS);
 
-            return valorDolar;
-            
+            return valorEuro;
 
-        } catch (Exception e) {
+        }
+        catch(Exception e){
             return -1;
         }
     }
+
+
 }
-
-
