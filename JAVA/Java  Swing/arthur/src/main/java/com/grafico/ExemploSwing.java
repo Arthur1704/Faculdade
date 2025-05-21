@@ -13,8 +13,9 @@ public class ExemploSwing implements ActionListener {
         JOptionPane.showMessageDialog(null, "Você clicou no botão");
     }
     
-    public void runTela(){    
-        JFrame janela = new JFrame("Minha Janela");
+    public void runTela(){
+
+        JFrame janela = new JFrame("Exemplo de JcheckBox");
         JPanel painel = new JPanel();
 
         
