@@ -1,4 +1,5 @@
 package com.testeapi;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -8,7 +9,7 @@ import org.json.JSONObject;
 
 public class Euro{
 
-    public double valorEuroAgora(){
+    public double valorEuroAgora(){        
         try{    
 
             String api = "https://economia.awesomeapi.com.br/json/last/EUR-BRL";
@@ -32,7 +33,7 @@ public class Euro{
             String valorEuroS = eurbrl.getString("bid");
             double valorEuro = Double.parseDouble(valorEuroS);
 
-            return valorEuro;
+             return valorEuro;
 
         }
         catch(Exception e){

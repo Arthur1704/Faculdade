@@ -9,6 +9,7 @@ import org.json.JSONObject;
 public class APIdolar {
     public double valorDolarAgora(){
         try {
+            
             String api = "https://economia.awesomeapi.com.br/json/last/USD-BRL";
             URI uri = new URI(api); 
             URL url = uri.toURL(); 
