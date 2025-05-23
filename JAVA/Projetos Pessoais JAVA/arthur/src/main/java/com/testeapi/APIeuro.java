@@ -7,7 +7,7 @@ import java.net.URL;
 import java.net.URI;
 import org.json.JSONObject;
 
-public class Euro{
+public class APIeuro{
 
     public double valorEuroAgora(){        
         try{    
