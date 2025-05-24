@@ -1,4 +1,6 @@
  <?php
+
+ 
  class Database {
    private $host = 'localhost';
    private $dbname = 'nome_do_banco';
