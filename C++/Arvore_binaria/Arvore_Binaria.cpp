@@ -123,6 +123,6 @@ int main(int argc, char** argv) {
 	int soma_valores = soma(raiz);
 	cout << "\n A soma dos valores é: " << soma_valores;
 	
-	cout << "\n O maior valor é: " << maior_valor(raiz);
+	cout << "\n O maior valor é: " << maior_valor( raiz);
 	return 0;
 	}
