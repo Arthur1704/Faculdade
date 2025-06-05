@@ -30,10 +30,13 @@ $entregas = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto"> <!-- Alinhado à direita -->
                 <li class="nav-item">
+                    <a class="nav-link" href="cadastrar_entrega.php">Cadastrar Entrega</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="cadastrar_atividade.php">Cadastrar Atividade</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="alunos.php">Cadastrar Aluno</a>
+                    <a class="nav-link" href="cadastrar_aluno.php">Cadastrar Aluno</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="formulario.php">Cadastrar Entrega</a>
@@ -48,6 +51,7 @@ $entregas = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </div>
     </div>
 </nav>
+
 
 
 <div class="container mt-5">
