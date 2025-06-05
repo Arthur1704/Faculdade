@@ -8,7 +8,6 @@
     $nota_att = $_POST['nota_att'];
     $obs = $_POST['obs'];
     $data_cadastro = date("Y-m-d");
-    var_dump($_POST);
 
     $db = new DataBase();
 
@@ -16,7 +15,7 @@
     $db->executa_comando($sql, [$data_att, $nome_aluno, $att, $nota_att, $obs, $data_cadastro]);
 
     $db->desconecta_BD();
-//  header ("Location: cadastrar_entrega.php");
+    header ("Location: cadastrar_entrega.php");
 
 
 
