@@ -4,17 +4,21 @@
  */
 package com.mycompany.criptrogafador;
 
+import javax.swing.JTabbedPane;
+
 /**
  *
  * @author unifai
  */
 public class Cripto_Descripto extends javax.swing.JFrame {
-
-    /**
-     * Creates new form Cripto_Descripto
-     */
+    public Metodos_Criptografia metodos = new Metodos_Criptografia();
+    public Login login = new Login();
+      
     public Cripto_Descripto() {
         initComponents();
+        
+        //jTabbedPane1.removeTabAt(2);
+        //jTabbedPane1.removeTabAt(1);
     }
 
     /**
@@ -27,6 +31,16 @@ public class Cripto_Descripto extends javax.swing.JFrame {
     private void initComponents() {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jEditorPane_login = new javax.swing.JEditorPane();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jEditorPane_senha = new javax.swing.JEditorPane();
+        jLabel10 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
+        jLabelErro = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -51,6 +65,73 @@ public class Cripto_Descripto extends javax.swing.JFrame {
         jTextArea_texto_descriptografado = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel8.setText("Login:");
+
+        jLabel9.setText("Senha:");
+
+        jScrollPane5.setViewportView(jEditorPane_login);
+
+        jScrollPane6.setViewportView(jEditorPane_senha);
+
+        jLabel10.setText("SISTEMA DE CRIPTOGRAFIA");
+
+        jButton3.setText("Entrar");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(90, 90, 90)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(jLabel8)
+                                .addGap(70, 70, 70)
+                                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel9)
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jScrollPane6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                .addComponent(jScrollPane5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE))))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(203, 203, 203)
+                        .addComponent(jButton3))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(79, 79, 79)
+                        .addComponent(jLabelErro)))
+                .addContainerGap(148, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(67, 67, 67)
+                        .addComponent(jLabel8))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(46, 46, 46)
+                .addComponent(jLabel9)
+                .addGap(34, 34, 34)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(88, 88, 88)
+                .addComponent(jButton3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 132, Short.MAX_VALUE)
+                .addComponent(jLabelErro)
+                .addGap(78, 78, 78))
+        );
+
+        jTabbedPane1.addTab("Login", jPanel3);
 
         jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         jPanel1.setName("labelResultadoCriptografado"); // NOI18N
@@ -227,7 +308,7 @@ public class Cripto_Descripto extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 591, Short.MAX_VALUE)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 591, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -235,26 +316,29 @@ public class Cripto_Descripto extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+
+        //jTabbedPane1.removeTabAt(2);
+        //jTabbedPane1.removeTabAt(1);
         
-        Metodos_Criptografia metodos = new Metodos_Criptografia();
         String textoCriptografado = areaTextoDecriptografar.getText();
-        if (metodos.metodo_utilizado.equals("CESAR")){                      
+        if (this.metodo.equals("CESAR")){                      
             jTextArea_texto_descriptografado.setText(metodos.descriptografarTextoCesar(textoCriptografado));
         }
-        else if (metodos.metodo_utilizado.equals("ARTHUR")){
-            int numerosCriptografados = Integer.parseInt(textoCriptografado);
-            jTextArea_texto_descriptografado.setText(metodos.Metodo_arthur_descriptografa(numerosCriptografados));
+        else if (this.metodo.equals("ARTHUR")){            
+            jTextArea_texto_descriptografado.setText(metodos.Metodo_arthur_descriptografa(textoCriptografado));
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        String metodo_criptografia = jComboBox_Metodos.getSelectedItem().toString();
-        Metodos_Criptografia metodos = new Metodos_Criptografia();
-        if (metodo_criptografia.equals("CESAR")){
+
+        //jTabbedPane1.removeTabAt(2);
+        //jTabbedPane1.removeTabAt(1);
+        this.metodo = jComboBox_Metodos.getSelectedItem().toString();
+        if (this.metodo.equals("CESAR")){
             String textoOriginal = areaTextoCriptografar.getText();
             jTextArea_texto_criptografado.setText( metodos.criptografarTextoCesar(textoOriginal));
         }
-        else if (metodo_criptografia.equals("ARTHUR")){
+        else if (this.metodo.equals("ARTHUR")){
             String textoOriginal = areaTextoCriptografar.getText();
             String num_string = metodos.Metodo_arthur_criptografa(textoOriginal);
             
@@ -263,8 +347,25 @@ public class Cripto_Descripto extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jComboBox_MetodosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox_MetodosActionPerformed
-        // TODO add your handling code here:
+        
+        //jTabbedPane1.removeTabAt(2);
+        //jTabbedPane1.removeTabAt(1);
     }//GEN-LAST:event_jComboBox_MetodosActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        String text_login = jEditorPane_login.getText();
+        String text_senha = jEditorPane_senha.getText();
+        String login_cripto = metodos.Metodo_arthur_criptografa(text_login);
+        String senha_cripto = metodos.Metodo_arthur_criptografa(text_senha);
+        
+        if (login.verifica(login_cripto, senha_cripto) == 1){
+            jTabbedPane1.addTab("Criptografa", jPanel1);
+            jTabbedPane1.addTab("Descriptografa", jPanel2);
+        }
+        else{
+           jLabelErro.setText("Não foi possivel fazer o login tente outra vez !!");         
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
     
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -289,11 +390,10 @@ public class Cripto_Descripto extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Cripto_Descripto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Cripto_Descripto().setVisible(true);
+                new Cripto_Descripto().setVisible(true);                
             }
         });
     }
@@ -303,24 +403,35 @@ public class Cripto_Descripto extends javax.swing.JFrame {
     private javax.swing.JTextArea areaTextoDecriptografar;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JComboBox<String> jComboBox_Metodos;
+    private javax.swing.JEditorPane jEditorPane_login;
+    private javax.swing.JEditorPane jEditorPane_senha;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabelErro;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextArea jTextArea_texto_criptografado;
     private javax.swing.JTextArea jTextArea_texto_descriptografado;
     private javax.swing.JLabel labelResultadoCriptografado;
     private javax.swing.JLabel labelResultadoDecriptografado;
     // End of variables declaration//GEN-END:variables
+    private String metodo = "";
 }

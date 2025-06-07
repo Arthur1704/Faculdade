@@ -12,31 +12,31 @@ import java.util.ArrayList;
 public class Metodos_Criptografia {
     
     ArrayList<Integer> numeros_array = new ArrayList<>();
-    ArrayList<String> frase_array = new ArrayList<>();
-    public String metodo_utilizado;
     
+    ArrayList<String> frase_array = new ArrayList<>();
+    public String metodo_utilizado;    
     private int letra_numero(char letra){
         return (int) letra;
     }
     
-    private String numero_letra (int numero){
-        return Integer.toString(numero);
+    private String numero_letra (String numeros[]){
+       int[]   numeros_int = new int[numeros.length];
+       char [] letras = new char[numeros.length];
+       String frase = "";
+       for(int cont = 0; cont < numeros.length; cont++){
+          numeros_int[cont] = Integer.parseInt(numeros[cont]);
+          letras[cont] = (char) numeros_int[cont];
+          frase += letras[cont];
+       }
+       return frase;
     }
     
-    private ArrayList<Integer> numero_ArrayList(int numero){
-        ArrayList<Integer> array = new ArrayList<>();
-        String numeroString = String.valueOf(numero);
+    private String[] separa_numero(String numero){                 
         
-        for (char caracter : numeroString.toCharArray()){
-            array.add(Character.getNumericValue(caracter));
-        }
+        String[] partes = numero.split("-");
+
         
-        return array;
-    }
-    
-    private String string_combinada(ArrayList<String> array){
-        String frase = String.join(" ", array);
-        return frase;
+        return partes;
     }
     
     private String num_combinados(ArrayList<Integer> num){
@@ -44,6 +44,7 @@ public class Metodos_Criptografia {
         String numS = "";
         for (Integer nume : num){
             numS += nume.toString();
+            numS += "-";
         }
         
         return numS;
@@ -53,29 +54,25 @@ public class Metodos_Criptografia {
     
     
     public String Metodo_arthur_criptografa(String texto){
+        numeros_array.clear();
         for (int cont = 0; cont < texto.length(); cont++){
             char letra = texto.charAt(cont);
-            try{
-               //System.out.println(letra_numero(letra));
+            try{               
                 numeros_array.add(letra_numero(letra));
             }
             catch(Exception e){
                 
             }    
         }
-        metodo_utilizado = "ARTHUR";
+        this.metodo_utilizado = "ARTHUR";
         String numero = num_combinados(numeros_array);
         return numero;
     }
     
-    public String Metodo_arthur_descriptografa(int num){
-        ArrayList<Integer> numeros =  numero_ArrayList(num);
-        for (Integer numero : numeros){
-            frase_array.add(numero_letra(numero));
-        }
-        String frase = string_combinada(frase_array);
-        return frase;
-    
+    public String Metodo_arthur_descriptografa(String num){
+        String[] numeros = separa_numero(num);
+        String frase = numero_letra(numeros);
+        return frase;    
     }
     
     public String criptografarTextoCesar(String textoOriginal) {
