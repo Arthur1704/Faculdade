@@ -8,7 +8,7 @@ public class Conta {
     public Conta(int numero, String nome_titular, double deposito){
         this.numero = numero;
         this.nome_titular = nome_titular;
-        this.saldo += deposito;
+        deposito(deposito);
     }
 
     public Conta(int numero, String nome_titular){
@@ -51,7 +51,7 @@ public class Conta {
                 + ", Nome: "
                 + nome_titular
                 + ", Saldo: $ "
-                + String.format("%.2f", saldo);
+                + String.format("%. 2f", saldo);
     }
 
 
