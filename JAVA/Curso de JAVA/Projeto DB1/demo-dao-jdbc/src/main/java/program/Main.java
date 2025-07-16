@@ -1,9 +1,15 @@
 package program;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import dao.DaoFactory;
+import dao.SellerDao;
+import entities.Seller;
+
 public class Main {
     public static void main(String[] args) {
+        SellerDao sellerDao = DaoFactory.createSellerDao();
 
+        Seller seller = sellerDao.findById(3);
+
+        System.out.println(seller);
     }
 }
