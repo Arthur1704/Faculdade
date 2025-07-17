@@ -6,10 +6,7 @@ import entities.Seller;
 import utilities.conectionDB.DB;
 import utilities.conectionDB.DBExeption;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -24,8 +21,40 @@ public class SellerDaoJDBC implements SellerDao {
     }
 
     @Override
-    public void insert(Seller obj) {
+    public void insert(Seller seller) {
+        PreparedStatement ps = null;
+        try{
+            ps = conn.prepareStatement(
+                    "INSERT INTO seller "
+                    + "(Name, Email, BirthDate, BaseSalary, DepartmentId) "
+                    + "(?,?,?,?,?)",
+                    Statement.RETURN_GENERATED_KEYS);
 
+            ps.setString(1, seller.getName());
+            ps.setString(2, seller.getEmail());
+            ps.setDate(3, new java.sql.Date(seller.getBhithDate().getTime()));
+            ps.setDouble(4, seller.getBaseSalary());
+            ps.setInt(5, seller.getDepartment().getId());
+
+            int rows = ps.executeUpdate();
+
+            if (rows > 0){
+                ResultSet rs = ps.getGeneratedKeys();
+                if(rs.next()){
+                    seller.setId(rs.getInt(1));
+                }
+                DB.closeResultSet(rs);
+            }
+            else{
+                throw new DBExeption("Erro ao inserir !!");
+            }
+        }
+        catch (SQLException e){
+            throw new DBExeption(e.getMessage());
+        }
+        finally {
+            DB.closeStatment(ps);
+        }
     }
 
     @Override
