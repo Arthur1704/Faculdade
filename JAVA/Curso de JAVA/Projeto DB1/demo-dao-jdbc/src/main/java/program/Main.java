@@ -32,7 +32,7 @@ public class Main {
         }
 
         System.out.println("\n=== TEST 4: Insert ===");
-        Seller newSeller = new Seller(0, "Arthur Viana",new Date(), "arthur@gmail.com", 1000.00, dep);
+        Seller newSeller = new Seller(0, "Arthur Viana", "arthur@gmail.com", new Date(), 1000.00, dep);
         sellerDao.insert(newSeller);
         System.out.println("Inserido, ID do vendedor: " + newSeller.getId());
 

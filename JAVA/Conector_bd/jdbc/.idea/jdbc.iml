@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <output url="file://$MODULE_DIR$/out/production/jdbc" />
+    <output-test url="file://$MODULE_DIR$/out/test/jdbc" />
+    <exclude-output />
+    <javadoc-paths>
+      <root url="jar://C:/java-libs/jdbc1/mysql-connector-j-8.0.33.jar!/" />
+    </javadoc-paths>
+    <content url="file://$MODULE_DIR$" />
+    <orderEntry type="jdk" jdkName="23" jdkType="JavaSDK" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" exported="" name="mysql-connector-j-8.0.33" level="project" />
+  </component>
+</module>

@@ -27,7 +27,7 @@ public class SellerDaoJDBC implements SellerDao {
             ps = conn.prepareStatement(
                     "INSERT INTO seller "
                     + "(Name, Email, BirthDate, BaseSalary, DepartmentId) "
-                    + "(?,?,?,?,?)",
+                    + "VALUES (?,?,?,?,?)",
                     Statement.RETURN_GENERATED_KEYS);
 
             ps.setString(1, seller.getName());
@@ -100,7 +100,7 @@ public class SellerDaoJDBC implements SellerDao {
     }
 
     private Seller instantiateSeller(ResultSet rs, Department dep) throws SQLException{
-        return new Seller(rs.getInt("Id"), rs.getString("Name"), rs.getDate("BirthDate"), rs.getString("Email"), rs.getDouble("BaseSalary"), dep);
+        return new Seller(rs.getInt("Id"), rs.getString("Name"), rs.getString("Email"), rs.getDate("BirthDate"), rs.getDouble("BaseSalary"), dep);
     }
 
     private Department instantiateDepartiment(ResultSet rs) throws SQLException{
