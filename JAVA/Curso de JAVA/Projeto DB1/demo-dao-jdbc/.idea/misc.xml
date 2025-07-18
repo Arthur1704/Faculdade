@@ -1,48 +1,12 @@
-@echo off
-echo Desinstalando o MySQL...
-echo.
-
-:: Parando o serviço do MySQL
-echo Parando o serviço MySQL...
-net stop mysql
-
-:: Remover o serviço MySQL
-sc delete mysql
-
-:: Desinstalar MySQL Server via Windows Installer
-echo Desinstalando MySQL Server...
-msiexec /x {SUA_CHAVE_DO_MSI_DO_MYSQL_SERVER} /quiet
-
-:: Desinstalar MySQL Workbench
-echo Desinstalando MySQL Workbench...
-msiexec /x {SUA_CHAVE_DO_MSI_DO_MYSQL_WORKBENCH} /quiet
-
-:: Desinstalar MySQL Shell
-echo Desinstalando MySQL Shell...
-msiexec /x {SUA_CHAVE_DO_MSI_DO_MYSQL_SHELL} /quiet
-
-:: Desinstalar MySQL Router
-echo Desinstalando MySQL Router...
-msiexec /x {SUA_CHAVE_DO_MSI_DO_MYSQL_ROUTER} /quiet
-
-:: Remover pastas do MySQL
-echo Removendo pastas do MySQL...
-rmdir /s /q "C:\Program Files\MySQL"
-rmdir /s /q "C:\Program Files (x86)\MySQL"
-rmdir /s /q "C:\ProgramData\MySQL"
-rmdir /s /q "C:\Users\%USERNAME%\AppData\Roaming\MySQL"
-
-:: Excluindo arquivos de configuração do MySQL
-echo Excluindo arquivos de configuração...
-del /q "C:\Windows\my.ini"
-del /q "C:\Windows\my.cnf"
-
-:: Limpar registros do MySQL (isso pode ser arriscado e depende de como o MySQL foi instalado)
-echo Limpando registros do MySQL...
-reg delete "HKCU\Software\MySQL" /f
-reg delete "HKLM\Software\MySQL" /f
-reg delete "HKLM\Software\Wow6432Node\MySQL" /f
-
-echo.
-echo MySQL foi completamente removido do seu sistema.
-pause
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_24" default="true" project-jdk-name="24" project-jdk-type="JavaSDK" />
+</project>
