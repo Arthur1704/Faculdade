@@ -72,7 +72,7 @@ public class DepartmentDaoJDBC implements DepartmentDao {
 
     @Override
     public void deleteById(Integer id) {
-        
+
     }
 
     @Override
