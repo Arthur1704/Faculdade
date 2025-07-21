@@ -7,12 +7,16 @@
 <<<<<<< HEAD
     <list default="true" id="9e92b536-2263-40ed-bc27-458c8f36fa7f" name="Changes" comment="" />
 =======
+<<<<<<< HEAD
+    <list default="true" id="9e92b536-2263-40ed-bc27-458c8f36fa7f" name="Changes" comment="" />
+=======
     <list default="true" id="9e92b536-2263-40ed-bc27-458c8f36fa7f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/impl/DepartmentDaoJDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/impl/DepartmentDaoJDBC.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/program/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/program/Main.java" afterDir="false" />
     </list>
 >>>>>>> 450877f351f22483b69d9418954cb602c3ba01cd
+>>>>>>> fd274ffac5ef08e625817e145898734deaa85638
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

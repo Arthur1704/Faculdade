@@ -73,6 +73,9 @@ public class DepartmentDaoJDBC implements DepartmentDao {
 
     @Override
     public void deleteById(Integer id) {
+<<<<<<< HEAD
+
+=======
         PreparedStatement ps = null;
         try{
             ps = conn.prepareStatement("DELETE FROM department WHERE id = ?");
@@ -86,6 +89,7 @@ public class DepartmentDaoJDBC implements DepartmentDao {
         finally {
             DB.closeStatment(ps);
         }
+>>>>>>> fd274ffac5ef08e625817e145898734deaa85638
     }
 
     @Override
