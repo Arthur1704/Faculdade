@@ -12,7 +12,7 @@ import com.viana.couseJAVA.entities.User;
 @RequestMapping(value = "/users")
 public class UserResource {
 
-    @GetMapping    
+    @GetMapping
     public ResponseEntity<User> findAll(){
         User u = new User(1L, "Arthur Viana", "arthur@gmail.com", "9999999", "123456");
         return ResponseEntity.ok().body(u);
