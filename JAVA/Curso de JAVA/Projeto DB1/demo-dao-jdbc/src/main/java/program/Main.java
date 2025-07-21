@@ -1,10 +1,12 @@
 package program;
 
 import dao.DaoFactory;
+import dao.DepartmentDao;
 import dao.SellerDao;
 import entities.Department;
 import entities.Seller;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -46,6 +48,13 @@ public class Main {
         sellerDao.deleteById(10);
         System.out.println("Seller removed!!");
 
+        DepartmentDao departmentDao = DaoFactory.createDepartmentDao();
+        System.out.println("\n=== TEST 7: findAll ===");
+        List<Department> listD = departmentDao.findAll();
+
+        for (Department dp : listD){
+            System.out.println(dp);
+        }
 
 
     }
