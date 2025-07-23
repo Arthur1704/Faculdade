@@ -35,14 +35,6 @@ public class OrderItem {
         return id.getOrder();
     }
 
-    public void setProduct(Product product){
-        this.id.setProduct(product);
-    }
-
-    public Product getProduct(){
-        return id.getProduct();
-    }
-
     public Integer getQuantity() {
         return quantity;
     }
@@ -58,6 +50,19 @@ public class OrderItem {
     public void setPrice(Double price) {
         this.price = price;
     }
+
+    public void setProduct(Product product){
+        this.id.setProduct(product);
+    }
+
+    public Double getSubTotal(){
+        return price * quantity;
+    }
+
+    public Product getProduct(){
+        return id.getProduct();
+    }
+
 
     @Override
     public int hashCode() {
