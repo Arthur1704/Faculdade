@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.viana.couseJAVA.entities.User;
 import com.viana.couseJAVA.repositories.UserRepository;
+import com.viana.couseJAVA.services.exception.ResourceNotFoundException;
 
 @Service
 public class UserService {
@@ -21,7 +22,7 @@ public class UserService {
 
     public User findById(Long id){
         Optional<User> optional = userRepository.findById(id);
-        return optional.get();
+        return optional.orElseThrow(() -> new ResourceNotFoundException(id));
     }
 
     public User insert(User user){
