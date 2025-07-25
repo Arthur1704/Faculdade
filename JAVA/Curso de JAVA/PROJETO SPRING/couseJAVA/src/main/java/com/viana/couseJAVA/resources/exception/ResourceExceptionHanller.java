@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
+import com.viana.couseJAVA.services.exception.DataBaseException;
 import com.viana.couseJAVA.services.exception.ResourceNotFoundException;
 
 import jakarta.servlet.http.HttpServletRequest;
@@ -18,6 +19,14 @@ public class ResourceExceptionHanller {
     public ResponseEntity<StandardError> resoruceNotFound (ResourceNotFoundException e, HttpServletRequest request){
         String error = "Not Found";
         HttpStatus http = HttpStatus.NOT_FOUND;
+        StandardError err = new StandardError(Instant.now(), http.value(), error, e.getMessage(), request.getRequestURI());
+        return ResponseEntity.status(http).body(err);
+    }
+
+    @ExceptionHandler(DataBaseException.class)
+    public ResponseEntity<StandardError> dataBase(DataBaseException e, HttpServletRequest request){
+        String error = "DataBase error";
+        HttpStatus http = HttpStatus.BAD_REQUEST;
         StandardError err = new StandardError(Instant.now(), http.value(), error, e.getMessage(), request.getRequestURI());
         return ResponseEntity.status(http).body(err);
     }
