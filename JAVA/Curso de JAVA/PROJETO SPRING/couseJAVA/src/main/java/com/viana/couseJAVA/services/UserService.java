@@ -13,6 +13,8 @@ import com.viana.couseJAVA.repositories.UserRepository;
 import com.viana.couseJAVA.services.exception.DataBaseException;
 import com.viana.couseJAVA.services.exception.ResourceNotFoundException;
 
+import jakarta.persistence.EntityNotFoundException;
+
 @Service
 public class UserService {
 
@@ -49,9 +51,14 @@ public class UserService {
     }
 
     public User update(Long id, User user){
-        User obj = userRepository.getReferenceById(id);
-        updateData(obj, user);
-        return userRepository.save(obj);
+        try{
+            User obj = userRepository.getReferenceById(id);
+            updateData(obj, user);
+            return userRepository.save(obj);
+        }
+        catch(EntityNotFoundException e){
+            throw new ResourceNotFoundException(id);
+        }
     }
 
     public void updateData(User user1, User user2){
