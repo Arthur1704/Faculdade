@@ -15,7 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import projetoSpring.front_com_API.entities.User;
+import projetoSpring.front_com_API.dto.UserRequestDTO;
+import projetoSpring.front_com_API.dto.UserResponseDTO;
 import projetoSpring.front_com_API.services.UserService;
 
 @RestController
@@ -26,22 +27,22 @@ public class UserResource {
     private UserService userService;
 
     @GetMapping("/{id}")
-    public ResponseEntity<User> findById(@PathVariable Long id){
-        User user = userService.findById(id);
+    public ResponseEntity<UserResponseDTO> findById(@PathVariable Long id){
+        UserResponseDTO user = userService.findById(id);
         return ResponseEntity.ok().body(user);
     }
 
     @GetMapping
-    public ResponseEntity<List<User>> findAll(){
-        List<User> list = userService.findAll();
+    public ResponseEntity<List<UserResponseDTO>> findAll(){
+        List<UserResponseDTO> list = userService.findAll();
         return ResponseEntity.ok().body(list);
     }
 
     @PostMapping
-    public ResponseEntity<User> insert(@RequestBody User user){
-        user = userService.insert(user);
-        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(user.getId()).toUri();
-        return ResponseEntity.created(uri).body(user);
+    public ResponseEntity<UserResponseDTO> insert(@RequestBody UserRequestDTO user){
+        UserResponseDTO userDTO = userService.insert(user);
+        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(userDTO.getId()).toUri();
+        return ResponseEntity.created(uri).body(userDTO);
     }
 
     @DeleteMapping("/{id}")
@@ -51,10 +52,8 @@ public class UserResource {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<User> update(@PathVariable Long id, @RequestBody User user){
-        user = userService.update(id, user);
-        return ResponseEntity.ok().body(user);
+    public ResponseEntity<UserResponseDTO> update(@PathVariable Long id, @RequestBody UserRequestDTO user){
+        UserResponseDTO userResponse = userService.update(id, user);
+        return ResponseEntity.ok().body(userResponse);
     }
-
-    
 }
