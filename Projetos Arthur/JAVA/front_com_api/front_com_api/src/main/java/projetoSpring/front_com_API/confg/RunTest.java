@@ -1,4 +1,4 @@
-package projetoSpring.front_com_API.confg;
+/* package projetoSpring.front_com_API.confg;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -21,5 +21,5 @@ public class RunTest implements CommandLineRunner{
 
         userRepository.save(user);
     }   
-
 }
+ */
