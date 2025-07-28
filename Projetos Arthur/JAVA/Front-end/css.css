@@ -74,6 +74,30 @@ form button:hover{
 }
 
 #caixa_mostrar{
-    width: 90%;
-    
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(113, 120, 42);
+    color: aliceblue;
+    border-radius: 3px;
+    text-align: center;
+    padding-bottom: 2%;
 }
+
+#caixa_mostrar table{
+    border: 2px solid aliceblue;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 2px;
+    font-size: 100%;
+}
+
+#caixa_mostrar table, 
+#caixa_mostrar th, 
+#caixa_mostrar td {
+    border: 1px solid aliceblue;
+    border-collapse: collapse; 
+}
+
+
