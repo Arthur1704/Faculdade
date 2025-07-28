@@ -4,26 +4,32 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Formulario</title>
+        <link rel="stylesheet" href="css.css">
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="js.js"></script>
     </head>
     <body>
+        <div class="buttons">
+            <button><a href="listar_usuarios.html">Usuarios</a></button>
+            <button><a href="index.html">Inserir Usuario</a></button>
+        </div>
+
         <div id="caixa_principal">
             <form id="form" method="POST">
                 <h2>Novo Usuario</h2>
                 <label for="name">Nome</label><br>
-                <input type="text" id="name" name="name" required>
+                <input type="text" id="name" name="name" size="22px" required>
                 <br><br>
                 <label for="email">Email</label><br>
-                <input type="text" id="email" name="email" required>
+                <input type="text" id="email" name="email" size="22px" required>
                 <br><br>
                 <label for="phone">Telefone</label><br>
-                <input type="text" id="phone" name="phone">
+                <input type="text" id="phone" name="phone" size="22px">
                 <br><br>
                 <label for="age">Idade</label><br>
-                <input type="text" id="age" name="age">
+                <input type="text" id="age" name="age" size="22px">
                 <br><br>
-                <input type="submit" name="submit">
+                <button type="submit">Enviar</button>
             </form>
         </div>    
     </body>

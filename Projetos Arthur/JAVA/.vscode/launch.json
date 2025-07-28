@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-FrontComApiApplication<front_com_API>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "projetoSpring.front_com_API.FrontComApiApplication",
+            "projectName": "front_com_API",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
