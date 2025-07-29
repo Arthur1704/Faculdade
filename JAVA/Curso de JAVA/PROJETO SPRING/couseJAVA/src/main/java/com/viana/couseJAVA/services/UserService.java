@@ -12,7 +12,6 @@ import com.viana.couseJAVA.entities.User;
 import com.viana.couseJAVA.repositories.UserRepository;
 import com.viana.couseJAVA.services.exception.DataBaseException;
 import com.viana.couseJAVA.services.exception.ResourceNotFoundException;
-
 import jakarta.persistence.EntityNotFoundException;
 
 @Service

@@ -2,15 +2,19 @@ package projetoSpring.front_com_API.services;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 
+import jakarta.persistence.EntityNotFoundException;
 import projetoSpring.front_com_API.dto.UserRequestDTO;
 import projetoSpring.front_com_API.dto.UserResponseDTO;
 import projetoSpring.front_com_API.entities.User;
 import projetoSpring.front_com_API.repositories.UserRepository;
+import projetoSpring.front_com_API.services.exception.DataBaseException;
+import projetoSpring.front_com_API.services.exception.ResourceNotFoundException;
 
 @Service
 public class UserService {
@@ -19,9 +23,9 @@ public class UserService {
     private UserRepository userRepository;
 
     public UserResponseDTO findById(Long id){
-        Optional<User> user = userRepository.findById(id);
+        User user = userRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException(id));
 
-        return usertoDTO(user.get());
+        return usertoDTO(user);
     }
 
     public List<UserResponseDTO> findAll(){
@@ -47,14 +51,29 @@ public class UserService {
     }
 
     public void delete(Long id){
-        userRepository.deleteById(id);
+        try{
+            userRepository.findById(id).orElseThrow(() -> new EmptyResultDataAccessException(1));
+            userRepository.deleteById(id);
+        }
+        catch (EmptyResultDataAccessException e){
+            throw new ResourceNotFoundException(id);
+        }
+        catch(DataIntegrityViolationException e){
+            throw new DataBaseException(e.getMessage());
+        }
+
     }
 
     public UserResponseDTO update(Long id, UserRequestDTO userDTO){
-        User user = userRepository.getReferenceById(id);
-        updateUser(user, userDTO);
-        User update = userRepository.save(user);
-        return usertoDTO(update);
+        try{
+            User user = userRepository.getReferenceById(id);
+            updateUser(user, userDTO);
+            User update = userRepository.save(user);
+            return usertoDTO(update);
+        }
+        catch (EntityNotFoundException e){
+            throw new ResourceNotFoundException(id);
+        }    
     }
 
     private void updateUser(User prin,  UserRequestDTO user2){
