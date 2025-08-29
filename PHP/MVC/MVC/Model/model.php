@@ -5,7 +5,7 @@
     class Model{
 
         public function __construct(){
-            $this->texto = "meu primeiro MVC"; 
+            $this->texto = "Login"; 
             $this->nomeusuario = ""; 
         }
      

@@ -2,7 +2,7 @@
 
     class Conection{
 
-        private $url = 'localhost:3307';
+        private $url = 'localhost';
         private $db_name = 'faidb';
         private $user = 'root';
         private $password = '';
@@ -14,7 +14,6 @@
                     $this->conn = new PDO('mysql:host=' . $this->url . '; dbname=' . $this->db_name, $this->user, $this->password);
                     $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);                        
                 }
-                echo 'conectado com sucesso';
             }
             catch(PDOException $e){
                 echo 'Error connect: ' . $e->getMessage();

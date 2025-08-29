@@ -1,0 +1,45 @@
+body{
+    background-color: rgb(108, 110, 110);
+}
+
+#login{
+    background-color: #ffa600;
+    width: 20%;
+    height: 35%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15%;
+    padding: 2%;
+    border-radius: 7px;
+    
+
+}
+#login h1{
+    font-size: 250%;
+}
+
+label{
+    font-size: 150%;
+    margin-top: 100%;
+}
+
+input{
+    font-size: 110%;
+    padding: 1%;
+    width: 80%;
+}
+
+#login form button{
+    font-size: 120%;
+    padding: 2%;
+    width: 35%;
+    margin-top: 5%;
+    border: none;
+    background-color:whitesmoke;
+    border-radius: 5px;
+}
+
+#login form button:hover{
+    box-shadow: 2px 2px 2px ghostwhite;
+}
