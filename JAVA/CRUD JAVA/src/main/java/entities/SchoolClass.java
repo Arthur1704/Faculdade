@@ -42,5 +42,10 @@ public class SchoolClass implements Serializable {
         this.discipline.add(d);
     }
 
+    @Override
+    public String toString() {
+        return "SchoolClass " + "id = " + id + ", description = " + description + ", discipline = " + discipline;
+    }
 
+    
 }

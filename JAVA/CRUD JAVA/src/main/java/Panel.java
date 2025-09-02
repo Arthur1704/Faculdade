@@ -6,6 +6,10 @@ import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.util.List;
+import java.util.stream.Collectors;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.JTableHeader;
 import operacoes.CrudDiscipline;
 import operacoes.CrudSchoolClass;
 import operacoes.CrudStudent;
@@ -46,11 +50,10 @@ public class Panel extends javax.swing.JPanel {
         name_student2 = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel3 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        inserir_alunos = new java.awt.Button();
+        update_alunos = new java.awt.Button();
         inserir_alunos1 = new java.awt.Button();
-        inserir_alunos2 = new java.awt.Button();
+        select_alunos = new java.awt.Button();
         surname = new javax.swing.JLabel();
         ra_student = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -60,7 +63,10 @@ public class Panel extends javax.swing.JPanel {
         dateBirth_student = new javax.swing.JTextField();
         surname3 = new javax.swing.JLabel();
         surname4 = new javax.swing.JLabel();
-        city_student1 = new javax.swing.JTextField();
+        city_student = new javax.swing.JTextField();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        area_alunos = new javax.swing.JTextArea();
+        delete_alunos = new java.awt.Button();
         jPanel4 = new javax.swing.JPanel();
         insert_turma = new java.awt.Button();
         update_turma = new java.awt.Button();
@@ -70,6 +76,20 @@ public class Panel extends javax.swing.JPanel {
         nameDis = new javax.swing.JLabel();
         description_class = new javax.swing.JTextField();
         inserir_disciplina_class = new java.awt.Button();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        area_turma = new javax.swing.JTextArea();
+        select_class = new java.awt.Button();
+        jPanel3 = new javax.swing.JPanel();
+        insert_dis = new javax.swing.JButton();
+        update_dis = new javax.swing.JButton();
+        delete_dis = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        name_dis = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        teacher_dis = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        area_dis = new javax.swing.JTextArea();
+        selectAll_dis = new javax.swing.JButton();
 
         inserir_alunos3.setActionCommand("update_alunos");
         inserir_alunos3.setLabel("Atualizar");
@@ -154,24 +174,11 @@ public class Panel extends javax.swing.JPanel {
                     .addContainerGap(270, Short.MAX_VALUE)))
         );
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 638, Short.MAX_VALUE)
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 511, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("Diciplina", jPanel3);
-
-        inserir_alunos.setActionCommand("update_alunos");
-        inserir_alunos.setLabel("Atualizar");
-        inserir_alunos.addActionListener(new java.awt.event.ActionListener() {
+        update_alunos.setActionCommand("update_alunos");
+        update_alunos.setLabel("Atualizar");
+        update_alunos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inserir_alunosActionPerformed(evt);
+                update_alunosActionPerformed(evt);
             }
         });
 
@@ -183,11 +190,11 @@ public class Panel extends javax.swing.JPanel {
             }
         });
 
-        inserir_alunos2.setActionCommand("delete_alunos");
-        inserir_alunos2.setLabel("Deletar");
-        inserir_alunos2.addActionListener(new java.awt.event.ActionListener() {
+        select_alunos.setActionCommand("delete_alunos");
+        select_alunos.setLabel("Select");
+        select_alunos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inserir_alunos2ActionPerformed(evt);
+                select_alunosActionPerformed(evt);
             }
         });
 
@@ -225,9 +232,23 @@ public class Panel extends javax.swing.JPanel {
 
         surname4.setText("Ra:");
 
-        city_student1.addActionListener(new java.awt.event.ActionListener() {
+        city_student.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                city_student1ActionPerformed(evt);
+                city_studentActionPerformed(evt);
+            }
+        });
+
+        area_alunos.setEditable(false);
+        area_alunos.setColumns(20);
+        area_alunos.setRows(5);
+        area_alunos.setEnabled(false);
+        jScrollPane3.setViewportView(area_alunos);
+
+        delete_alunos.setActionCommand("delete_alunos");
+        delete_alunos.setLabel("Deletar");
+        delete_alunos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                delete_alunosActionPerformed(evt);
             }
         });
 
@@ -241,30 +262,36 @@ public class Panel extends javax.swing.JPanel {
                     .addComponent(surname2, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(surname_student, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(inserir_alunos1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(inserir_alunos1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(29, 29, 29)
-                        .addComponent(inserir_alunos, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(37, 37, 37)
-                        .addComponent(inserir_alunos2, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(select_alunos, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(update_alunos, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                                .addComponent(delete_alunos, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(20, 20, 20)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(ra_student, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(surname, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(dateBirth_student, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(city_student1, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(city_student, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(surname4, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(surname3, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(68, 68, 68))
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel2Layout.createSequentialGroup()
-                    .addGap(30, 30, 30)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(541, Short.MAX_VALUE)))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 516, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31))
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel2Layout.createSequentialGroup()
                     .addGap(30, 30, 30)
                     .addComponent(name_student, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(429, Short.MAX_VALUE)))
+                    .addContainerGap(390, Short.MAX_VALUE)))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -273,43 +300,46 @@ public class Panel extends javax.swing.JPanel {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(32, 32, 32)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(inserir_alunos2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(inserir_alunos1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(inserir_alunos, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(update_alunos, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(surname4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(surname4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(delete_alunos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(5, 5, 5)
                         .addComponent(ra_student, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(7, 7, 7)
-                        .addComponent(surname, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(surname, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(city_student1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(city_student, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(17, 17, 17)
                         .addComponent(surname3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(122, 122, 122)
+                        .addGap(22, 22, 22)
+                        .addComponent(select_alunos, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(63, 63, 63)
                         .addComponent(surname2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(surname_student, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(dateBirth_student, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(253, Short.MAX_VALUE))
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel2Layout.createSequentialGroup()
-                    .addGap(108, 108, 108)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(373, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40))
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel2Layout.createSequentialGroup()
                     .addGap(144, 144, 144)
                     .addComponent(name_student, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(336, Short.MAX_VALUE)))
+                    .addContainerGap(345, Short.MAX_VALUE)))
         );
 
-        inserir_alunos.getAccessibleContext().setAccessibleName("Inserir");
+        update_alunos.getAccessibleContext().setAccessibleName("Inserir");
+        select_alunos.getAccessibleContext().setAccessibleName("Select");
 
         jTabbedPane1.addTab("Alunos", jPanel2);
 
@@ -361,56 +391,166 @@ public class Panel extends javax.swing.JPanel {
             }
         });
 
+        area_turma.setEditable(false);
+        area_turma.setColumns(20);
+        area_turma.setRows(5);
+        area_turma.setEnabled(false);
+        jScrollPane2.setViewportView(area_turma);
+
+        select_class.setActionCommand("inserir_alunos");
+        select_class.setLabel("Select");
+        select_class.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                select_classActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(insert_turma, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(34, 34, 34)
-                        .addComponent(update_turma, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(description, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(description_class, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(description, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(116, 116, 116)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(insert_turma, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(update_turma, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(description_class, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(26, 26, 26)
+                        .addComponent(delete_turma, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(23, 23, 23)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(nameDis, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(nameDiscipline_class, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addComponent(delete_turma, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(26, 26, 26)
-                        .addComponent(inserir_disciplina_class, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(128, Short.MAX_VALUE))
+                            .addComponent(nameDiscipline_class, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(inserir_disciplina_class, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                                .addComponent(select_class, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(25, 25, 25))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 516, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(51, 51, 51)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(update_turma, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(delete_turma, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(insert_turma, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(inserir_disciplina_class, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(update_turma, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
+                    .addComponent(delete_turma, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
+                    .addComponent(insert_turma, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
+                    .addComponent(inserir_disciplina_class, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
+                    .addComponent(select_class, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE))
+                .addGap(46, 46, 46)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(nameDis, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(description, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(description, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nameDis, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(nameDiscipline_class, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(description_class, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(292, 292, 292))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(117, Short.MAX_VALUE))
         );
 
         inserir_disciplina_class.getAccessibleContext().setAccessibleName("Inserir Diciplina");
 
         jTabbedPane1.addTab("Turma", jPanel4);
+
+        insert_dis.setText("Inserir");
+        insert_dis.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                insert_disActionPerformed(evt);
+            }
+        });
+
+        update_dis.setText("Update");
+        update_dis.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                update_disActionPerformed(evt);
+            }
+        });
+
+        delete_dis.setText("Deletar");
+        delete_dis.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                delete_disActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("Name:");
+
+        jLabel4.setText("Teacher:");
+
+        area_dis.setEditable(false);
+        area_dis.setColumns(20);
+        area_dis.setRows(5);
+        area_dis.setEnabled(false);
+        jScrollPane1.setViewportView(area_dis);
+
+        selectAll_dis.setText("Select all");
+        selectAll_dis.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                selectAll_disActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(name_dis, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(89, 89, 89)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(teacher_dis, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4)))
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(jPanel3Layout.createSequentialGroup()
+                            .addComponent(insert_dis, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(32, 32, 32)
+                            .addComponent(update_dis, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(34, 34, 34)
+                            .addComponent(delete_dis, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(selectAll_dis, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 516, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(47, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(insert_dis, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(update_dis, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(delete_dis, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(selectAll_dis, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(45, 45, 45)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel4))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(name_dis, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(teacher_dis, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(134, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Diciplina", jPanel3);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -420,7 +560,7 @@ public class Panel extends javax.swing.JPanel {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -440,7 +580,7 @@ public class Panel extends javax.swing.JPanel {
     private CrudStudent crud_S = new CrudStudent();
     private SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
     
-    private void inserir_alunosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inserir_alunosActionPerformed
+    private void update_alunosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_update_alunosActionPerformed
          try{   
         Student student = new Student(name_student.getText(), surname_student.getText(), new java.sql.Date(sdf.parse(dateBirth_student.getText()).getTime()), ra_student.getText());
         crud_S.update(student);
@@ -448,11 +588,11 @@ public class Panel extends javax.swing.JPanel {
         catch(ParseException e){
             System.out.println("Error date student: " + e.getMessage());
         }
-    }//GEN-LAST:event_inserir_alunosActionPerformed
+    }//GEN-LAST:event_update_alunosActionPerformed
 
     private void inserir_alunos1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inserir_alunos1ActionPerformed
         try{   
-        Student student = new Student(name_student.getText(), surname_student.getText(), new java.sql.Date(sdf.parse(dateBirth_student.getText()).getTime()), ra_student.getText());
+        Student student = new Student(name_student.getText(), surname_student.getText(), new java.sql.Date(sdf.parse(dateBirth_student.getText()).getTime()), city_student.getText());
         crud_S.insert(student);
         }
         catch(ParseException e){
@@ -461,11 +601,12 @@ public class Panel extends javax.swing.JPanel {
           
     }//GEN-LAST:event_inserir_alunos1ActionPerformed
 
-    private void inserir_alunos2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inserir_alunos2ActionPerformed
-        String num = ra_student.getText();
-        Student deleta = crud_S.findByRa(Integer.parseInt(num));
-        crud_S.delete(deleta);
-    }//GEN-LAST:event_inserir_alunos2ActionPerformed
+    private void select_alunosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_select_alunosActionPerformed
+        List<Student> list = crud_S.findAll();
+        for(Student stu : list){
+            area_alunos.setText(stu.toString());
+        }
+    }//GEN-LAST:event_select_alunosActionPerformed
 
     private void ra_studentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ra_studentActionPerformed
         // TODO add your handling code here:
@@ -499,9 +640,9 @@ public class Panel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_dateBirth_studentActionPerformed
 
-    private void city_student1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_city_student1ActionPerformed
+    private void city_studentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_city_studentActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_city_student1ActionPerformed
+    }//GEN-LAST:event_city_studentActionPerformed
 
     private void insert_turmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insert_turmaActionPerformed
         SchoolClass sc = new SchoolClass(description_class.getText());
@@ -536,40 +677,95 @@ public class Panel extends javax.swing.JPanel {
         addDis.add_discipline(d);
     }//GEN-LAST:event_inserir_disciplina_classActionPerformed
 
+    private void insert_disActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insert_disActionPerformed
+       Discipline dis = new Discipline(name_dis.getText(), teacher_dis.getText());
+       crud_D.insert(dis);
+    }//GEN-LAST:event_insert_disActionPerformed
+
+    private void update_disActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_update_disActionPerformed
+        String name = name_dis.getText();
+        Discipline up = crud_D.findByName(name);
+        up.setName(name);
+        up.setTeacher(teacher_dis.getText());
+        crud_D.update(up);
+    }//GEN-LAST:event_update_disActionPerformed
+
+    private void delete_disActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delete_disActionPerformed
+        String name = name_dis.getText();
+        Discipline del = crud_D.findByName(name);
+        crud_D.delete(del);
+    }//GEN-LAST:event_delete_disActionPerformed
+
+    private void selectAll_disActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selectAll_disActionPerformed
+        List<Discipline> list = crud_D.findAll();
+        for(Discipline dis : list){
+            area_dis.setText(dis.toString());
+        }
+    }//GEN-LAST:event_selectAll_disActionPerformed
+
+    private void delete_alunosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delete_alunosActionPerformed
+        String num = ra_student.getText();
+        Student deleta = crud_S.findByRa(Integer.parseInt(num));
+        crud_S.delete(deleta);
+    }//GEN-LAST:event_delete_alunosActionPerformed
+
+    private void select_classActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_select_classActionPerformed
+        List<SchoolClass> list = crud_C.findAll();
+        for (SchoolClass sc : list){
+            area_turma.setText(sc.toString());
+        }
+    }//GEN-LAST:event_select_classActionPerformed
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField city_student1;
+    private javax.swing.JTextArea area_alunos;
+    private javax.swing.JTextArea area_dis;
+    private javax.swing.JTextArea area_turma;
+    private javax.swing.JTextField city_student;
     private javax.swing.JTextField dateBirth_student;
+    private java.awt.Button delete_alunos;
+    private javax.swing.JButton delete_dis;
     private java.awt.Button delete_turma;
     private javax.swing.JLabel description;
     private javax.swing.JTextField description_class;
-    private java.awt.Button inserir_alunos;
     private java.awt.Button inserir_alunos1;
-    private java.awt.Button inserir_alunos2;
     private java.awt.Button inserir_alunos3;
     private java.awt.Button inserir_alunos4;
     private java.awt.Button inserir_alunos5;
     private java.awt.Button inserir_disciplina_class;
+    private javax.swing.JButton insert_dis;
     private java.awt.Button insert_turma;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel nameDis;
     private javax.swing.JTextField nameDiscipline_class;
+    private javax.swing.JTextField name_dis;
     private javax.swing.JTextField name_student;
     private javax.swing.JTextField name_student2;
     private javax.swing.JTextField ra_student;
+    private javax.swing.JButton selectAll_dis;
+    private java.awt.Button select_alunos;
+    private java.awt.Button select_class;
     private javax.swing.JLabel surname;
     private javax.swing.JLabel surname1;
     private javax.swing.JLabel surname2;
     private javax.swing.JLabel surname3;
     private javax.swing.JLabel surname4;
     private javax.swing.JTextField surname_student;
+    private javax.swing.JTextField teacher_dis;
+    private java.awt.Button update_alunos;
+    private javax.swing.JButton update_dis;
     private java.awt.Button update_turma;
     // End of variables declaration//GEN-END:variables
 }

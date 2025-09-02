@@ -10,7 +10,7 @@ import java.util.List;
 public class CrudStudent {
 
     private Connection conn = ConnectionDB.getConn();
-
+    
     public void insert(Student student){
         PreparedStatement ps = null;
         ResultSet rs = null;

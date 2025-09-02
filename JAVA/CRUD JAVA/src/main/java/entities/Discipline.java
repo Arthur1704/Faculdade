@@ -40,4 +40,11 @@ public class Discipline implements Serializable {
         this.teacher = teacher;
     }
 
+    @Override
+    public String toString() {
+        return "Discipline " + "id = " + id + ", name = " + name + ", teacher = " + teacher;
+    }
+    
+    
+
 }

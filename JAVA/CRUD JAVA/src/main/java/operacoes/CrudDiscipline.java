@@ -16,7 +16,7 @@ public class CrudDiscipline {
         ResultSet rs = null;
         try {
             ps = conn.prepareStatement(
-                    "INSERT INTO discipline (name, teacher) VALUES (?, ?)",
+                    "INSERT INTO dicipline (name, teacher) VALUES (?, ?)",
                     Statement.RETURN_GENERATED_KEYS);
 
             ps.setString(1, discipline.getName());
@@ -37,7 +37,7 @@ public class CrudDiscipline {
         PreparedStatement ps = null;
         try {
             ps = conn.prepareStatement(
-                    "UPDATE discipline SET name = ?, teacher = ? WHERE id = ?");
+                    "UPDATE dicipline SET name = ?, teacher = ? WHERE id = ?");
 
             ps.setString(1, discipline.getName());
             ps.setString(2, discipline.getTeacher());
@@ -53,7 +53,7 @@ public class CrudDiscipline {
         PreparedStatement ps = null;
         try {
             ps = conn.prepareStatement(
-                    "DELETE FROM discipline WHERE id = ?");
+                    "DELETE FROM dicipline WHERE id = ?");
 
             ps.setInt(1, discipline.getId());
             ps.executeUpdate();
@@ -68,7 +68,7 @@ public class CrudDiscipline {
 
         try {
             ps = conn.prepareStatement(
-                    "SELECT * FROM discipline WHERE id = ?");
+                    "SELECT * FROM dicipline WHERE id = ?");
 
             ps.setInt(1, id);
             rs = ps.executeQuery();
@@ -87,7 +87,7 @@ public class CrudDiscipline {
         List<Discipline> list = new ArrayList<>();
 
         try {
-            ps = conn.prepareStatement("SELECT * FROM discipline");
+            ps = conn.prepareStatement("SELECT * FROM dicipline");
             rs = ps.executeQuery();
 
             while (rs.next()) {
@@ -106,7 +106,7 @@ public class CrudDiscipline {
 
         try {
             ps = conn.prepareStatement(
-                    "SELECT * FROM discipline WHERE id = ?");
+                    "SELECT * FROM dicipline WHERE name = ?");
 
             ps.setString(1, name);
             rs = ps.executeQuery();
