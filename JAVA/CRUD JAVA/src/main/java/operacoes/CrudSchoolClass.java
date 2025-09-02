@@ -97,6 +97,26 @@ public class CrudSchoolClass {
         }
         return null;
     }
+    
+    public SchoolClass findByDescription(String description){
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+
+        try {
+            ps = conn.prepareStatement(
+                    "SELECT * FROM school_class WHERE name = ?");
+
+            ps.setString(1, description);
+            rs = ps.executeQuery();
+
+            if (rs.next()) {
+                return setSchoolClass(rs);
+            }
+        } catch (SQLException e) {
+            System.out.println("Error findByName: " + e.getMessage());
+        }
+        return null;
+    }
 
     private SchoolClass setSchoolClass(ResultSet rs) throws SQLException {
         SchoolClass schoolClass = new SchoolClass();

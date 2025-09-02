@@ -37,6 +37,10 @@ public class SchoolClass implements Serializable {
     public List<Discipline> getDiscipline() {
         return discipline;
     }
+    
+    public void add_discipline(Discipline d){
+        this.discipline.add(d);
+    }
 
 
 }

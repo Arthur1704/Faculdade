@@ -99,6 +99,25 @@ public class CrudDiscipline {
         }
         return null;
     }
+    
+    public Discipline findByName(String name) {
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+
+        try {
+            ps = conn.prepareStatement(
+                    "SELECT * FROM discipline WHERE id = ?");
+
+            ps.setString(1, name);
+            rs = ps.executeQuery();
+            if (rs.next()) {
+                return setDiscipline(rs);
+            }
+        } catch (SQLException e) {
+            System.out.println("Error findByName: " + e.getMessage());
+        }
+        return null;
+    }
 
     private Discipline setDiscipline(ResultSet rs) throws SQLException {
         Discipline discipline = new Discipline();
