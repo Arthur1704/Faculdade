@@ -1,10 +1,7 @@
 package program;
 
 import connection.ConnectionDB;
-import entities.Student;
-import operacoes.Crud;
-
-import java.util.Calendar;
+import operacoes.CrudStudent;
 
 
 public class Main {
@@ -13,7 +10,7 @@ public class Main {
         conn.connect();
 
 
-        Crud crud = new Crud();
+        CrudStudent crud = new CrudStudent();
         /*
         crud.insert(new Student("Fabio", "Viana", new java.sql.Date(72, Calendar.OCTOBER, 7), "Lucélia"));
         crud.insert(new Student("Eliana", "Viana", new java.sql.Date(76, Calendar.JULY, 19), "Lucélia"));

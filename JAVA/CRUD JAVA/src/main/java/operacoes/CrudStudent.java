@@ -7,7 +7,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Crud{
+public class CrudStudent {
 
     private Connection conn = ConnectionDB.getConn();
 
