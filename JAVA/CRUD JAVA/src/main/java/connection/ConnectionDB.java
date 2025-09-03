@@ -7,7 +7,7 @@ import java.sql.Statement;
 
 public class ConnectionDB {
 
-    private String url = "jdbc:mysql://localhost:3307/faibank";
+    private String url = "jdbc:mysql://localhost:3306/faibank";
     private String user = "root";
     private String pass = "";
 
