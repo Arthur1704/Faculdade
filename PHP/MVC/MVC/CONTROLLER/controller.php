@@ -1,8 +1,10 @@
 <?php
 require "./Model/Model.php";
 require "./View/View.php";
+session_start();
 
     class Controller{
+        
 
         public function index(){
             $modelo = new Model();
@@ -16,14 +18,20 @@ require "./View/View.php";
 
 
             if($modelo->validar_login($user,$senha)){
-                $view->renderiza_sistema($modelo->get_nomeusuario());
+                $view->renderiza_crud();
+                $_SESSION['logado'] = true;
             }
             else{
                 $view->renderiza_tela($modelo->get_texto());
             }
         }
 
-        
+        public function carregar_prod(){
+              $view = new View();
+            if($_SESSION['logado'] == true){
+                $view->renderiza_sistema();
+            }
+        }
     }
 
 

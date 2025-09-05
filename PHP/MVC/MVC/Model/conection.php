@@ -1,7 +1,6 @@
 <?php
 
     class Conection{
-
         private $url = 'localhost';
         private $db_name = 'faidb';
         private $user = 'root';
