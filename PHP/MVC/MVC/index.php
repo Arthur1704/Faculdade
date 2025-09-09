@@ -15,6 +15,9 @@
    else if (isset($_POST["btn_select"])){
       $controlador->carregar_prod();
    }
+   else if (isset($_POST["btn_insert"])){
+      
+   }
    else{
       $controlador->index();
    }

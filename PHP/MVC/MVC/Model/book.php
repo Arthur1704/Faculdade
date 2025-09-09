@@ -15,7 +15,7 @@
         }
 
         public function getPrice(){
-            
+            return $price;
         }
     }
 

@@ -1,7 +1,7 @@
 <?php
 
     class Conection{
-        private $url = 'localhost';
+        private $url = 'localhost:3307';
         private $db_name = 'faidb';
         private $user = 'root';
         private $password = '';
@@ -17,6 +17,10 @@
             catch(PDOException $e){
                 echo 'Error connect: ' . $e->getMessage();
             }
+        }
+
+        public function getConn(){
+            return $this->conn;
         }
 
         public function consulta($sql, $param = []){

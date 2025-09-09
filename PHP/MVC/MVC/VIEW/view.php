@@ -85,6 +85,23 @@
             </div>
             ';
         }
+
+        public function form_insert(){
+            echo '
+                <head>
+                    <link rel="stylesheet" href="./VIEW/css.css">
+                </head>
+                <form action="index.php" method="POST">
+                    <label for="preco">Preço:</label><br>
+                    <input type="number" step="0.01" name="preco" id="preco" required><br><br>
+
+                    <label for="url">URL da Imagem:</label><br>
+                    <input type="url" name="url" id="url" required><br><br>
+
+                    <button type="submit">Cadastrar</button>
+                </form>
+            ';
+        }
     }
 
 ?>

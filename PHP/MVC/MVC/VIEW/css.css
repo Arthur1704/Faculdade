@@ -1,21 +1,18 @@
 body{
     background-color: rgb(108, 110, 110);
     font-family: Arial, sans-serif;
-     padding: 20px;
+    padding: 20px;
 }
 
 #login{
     background-color: #ffa600;
     width: 20%;
-    height: 35%;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
     margin-top: 15%;
     padding: 2%;
     border-radius: 7px;
-    
-
 }
 #login h1{
     font-size: 250%;
