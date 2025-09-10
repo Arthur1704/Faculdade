@@ -14,12 +14,12 @@
 
         public function insert($b){
 
-            $sql = "INSERT INTO book (price, urlphoto) VALUES (:price, :urlphoto)";
+            $sql = "INSERT INTO book (price, urlimge) VALUES (:price, :urlimage)";
 
             $state = $this->db->prepare($sql);
             
             $state->bindValue(":price", $b->getPrice());
-            $state->bindValue(":urlphoto", $b->getUrl());            
+            $state->bindValue(":urlimge", $b->getUrl());            
 
             $state->execute();
         }

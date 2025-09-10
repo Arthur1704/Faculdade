@@ -16,7 +16,10 @@
       $controlador->carregar_prod();
    }
    else if (isset($_POST["btn_insert"])){
-      
+      $controlador->carregar_insert();
+   }
+   else if(isset($_POST["submit_insert"])){
+      $controlador->
    }
    else{
       $controlador->index();
