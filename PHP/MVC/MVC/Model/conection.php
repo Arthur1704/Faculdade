@@ -30,8 +30,6 @@
             $smtp->execute($param);
             return $smtp->fetchALL(PDO::FETCH_ASSOC);
         }
-
-
         
     }
 

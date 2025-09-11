@@ -34,37 +34,25 @@
         }
 
 
-        public function renderiza_sistema(){
+        public function renderiza_sistema($list){
             echo '
             <head>
                 <link rel="stylesheet" href="./VIEW/css.css">
             </head>
-            <form>
-            <main class="container">
-                <div class="produto">
-                    <img src="https://rihappy.vtexassets.com/arquivos/ids/399649-800-auto?v=637050968026130000&width=800&height=auto&aspect=true" alt="Produto 1" >                
-                    </div>
+            <form method="POST" action="index.php">
+            <button name="voltar_crud">Voltar Crud</button>
+            <main class="container">';
 
-                    <div class="produto">
-                    <img src="https://www.americanas.com.br/_next/image?url=https%3A%2F%2Famericanas.vtexassets.com%2Farquivos%2Fids%2F30578310%2F132450206_1SZ.jpg%3Fv%3D638794243922330000&w=768&q=90" alt="Produto 2">                
-                    </div>
+            foreach($list as $prod){
+                echo '
+                    <div class="produto" id="' . $prod->getId() . '">
 
-                    <div class="produto">
-                    <img src="https://imgs.casasbahia.com.br/15057676/1xg.jpg?imwidth=500" alt="Produto 3">                
+                        <img src="' . $prod->getUrl() . '"><br>
+                        <p> Produto: ' . $prod->getId() . '</p><br>
+                        <p>R$ ' . number_format($prod->getPrice()) . '</p><br>                                                
                     </div>
-
-                    <div class="produto">
-                    <img src="https://images.tcdn.com.br/img/img_prod/1170935/harry_potter_vol_5_e_a_ordem_da_fenix_capa_dura_premium_3631_1_d97f30d2b7d7513f18b2d7fde9e24962.jpg" alt="Produto 4">                
-                    </div>
-
-                    <div class="produto">
-                    <img src="https://images.tcdn.com.br/img/img_prod/1073155/harry_potter_e_o_prisioneiro_de_askaban_capa_dura_17509_1_c974b26fecc2d112c89348aca0afb911.jpg" alt="Produto 5">                
-                    </div>
-
-                    <div class="produto">
-                    <img src="https://down-br.img.susercontent.com/file/893e9a8ec8997f7141ffa9bdad79c554_tn.webp" alt="Produto 6">                
-                </div>
-            </main>';
+                ';
+            }
         }
 
         public function renderiza_crud(){
@@ -72,6 +60,7 @@
             <head>
                 <link rel="stylesheet" href="./VIEW/css.css">
             </head>
+            <button name="voltar_crud">Voltar Crud</button>
             <div id="crud">
             <h1>CRUD</h1>
                 <form method="POST" action="index.php">
@@ -91,29 +80,55 @@
                 <head>
                     <link rel="stylesheet" href="./VIEW/css.css">
                 </head>
-                <form action="" method="POST">
+                <button name="voltar_crud">Voltar Crud</button>
+                <form action="" method="POST">              
                     <label for="preco">Preço:</label><br>
-                    <input type="number" step="0.01" name="preco" id="preco" required><br><br>
+                    <input type="number" step="0.01" name="price" id="preco" required><br><br>
 
                     <label for="url">URL da Imagem:</label><br>
-                    <input type="url" name="url" id="url" required><br><br>
+                    <input type="text" name="url" id="url" required><br><br>
 
                     <button name="submit_insert" type="submit">Cadastrar</button>
+                </form>
+            ';
+        }
+
+        public function form_update(){
+            echo '
+                <head>
+                    <link rel="stylesheet" href="./VIEW/css.css">                    
+                </head>
+                
+                <form action="index.php" method="POST">
+                    <button name="voltar_crud">Voltar Crud</button>
+                    <label for="id"> Numero do produto:</label><br>
+                    <input type="number" step="0.01" name="id" id="id" required><br><br>
+
+                    <label for="preco">Preço:</label><br>
+                    <input type="number" step="0.01" name="price" id="preco" required><br><br>
+
+                    <label for="url">URL da Imagem:</label><br>
+                    <input type="text" name="url" id="url" required><br><br>
+
+                    <button name="submit_update" type="submit">Atualizar</button>
+                </form>
+            ';
+        }
+
+        public function form_delete(){
+            echo '
+                <head>
+                    <link rel="stylesheet" href="./VIEW/css.css">                    
+                </head>
+                
+                <form action="index.php" method="POST">
+                    <button name="voltar_crud">Voltar Crud</button>
+                    <label for="id"> Numero do produto:</label><br>
+                    <input type="number" step="0.01" name="id" id="id" required><br><br>
+                    <button name="submit_delete" type="submit">Delete</button>
                 </form>
             ';
         }
     }
 
 ?>
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    
-</head>
-<body>
-    
-</body>
-</html> -->

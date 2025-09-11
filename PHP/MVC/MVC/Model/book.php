@@ -2,20 +2,36 @@
 
     class Book{
         
+        private $id;
         private $urlPhoto;
         private $price;
 
-        public Book($urlPhoto, $price){
-            $this->urlPhoto = $urlPhoto;
-            $this->price = $price;
+        public function __construct($id, $urlPhoto, $price){
+            if ($id === null){
+                $this->urlPhoto = $urlPhoto;
+                $this->price = $price;    
+            }
+            else{
+                $this->id = $id;
+                $this->urlPhoto = $urlPhoto;
+                $this->price = $price;
+            }
+        }
+
+        public function setId($id){
+            $this->id = $id;
+        }
+
+        public function getId(){
+            return $this->id;
         }
 
         public function getUrl(){
-            return $urlPhoto;
+            return $this->urlPhoto;
         }
 
         public function getPrice(){
-            return $price;
+            return $this->price;
         }
     }
 

@@ -19,7 +19,22 @@
       $controlador->carregar_insert();
    }
    else if(isset($_POST["submit_insert"])){
-      $controlador->
+      $controlador->insert($_POST['price'], $_POST['url']);
+   }
+   else if(isset($_POST["btn_update"])){
+      $controlador->carregar_update();
+   }
+   else if(isset($_POST["submit_update"])){
+      $controlador->update($_POST['id'],$_POST['price'], $_POST['url']);
+   }
+   else if(isset($_POST["btn_delete"])){
+      $controlador->carregar_delete();
+   }
+   else if(isset($_POST["submit_delete"])){
+      $controlador->delete($_POST['id']);
+   }
+   else if(isset($_POST["voltar_crud"])){
+      $controlador->voltar_crud();
    }
    else{
       $controlador->index();
