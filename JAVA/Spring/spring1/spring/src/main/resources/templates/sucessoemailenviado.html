@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Sucesso</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
+          rel="stylesheet">
+</head>
+<body>
+<div class="container mt-5">
+    <div class="alert alert-success">
+        <h4 class="alert-heading">E-mail enviado com sucesso!</h4>
+        <p>
+            O e-mail foi enviado para 
+            <strong th:text="${name}"></strong> 
+            no endereço 
+            <strong th:text="${email}"></strong>.
+        </p>
+
+        <p th:text="${message}"></p>
+        <hr>
+        <a href="/" class="btn btn-primary">Voltar ao formulário</a>
+    </div>
+</div>
+</body>
+</html>
