@@ -26,13 +26,10 @@ public class ConnectionDB {
             }
         }
     }
-
     public static Connection getConn(){
         if (conn == null) {
             throw new IllegalStateException("Conexão não foi inicializada. Chame connect() primeiro.");
         }
         return conn;
     }
-
-
 }
