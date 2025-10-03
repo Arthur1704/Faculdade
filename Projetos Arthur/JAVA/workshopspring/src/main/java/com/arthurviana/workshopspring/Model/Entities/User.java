@@ -1,9 +1,17 @@
-package com.arthurviana.workshopspring.Model;
+package com.arthurviana.workshopspring.Model.Entities;
 
 import java.io.Serializable;
 
-public class User implements Serializable{
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
+@Entity
+public class User implements Serializable{
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
     private String email;
@@ -11,8 +19,7 @@ public class User implements Serializable{
     public User(){
     }
 
-    public User(Integer id, String name, String email) {
-        this.id = id;
+    public User(String name, String email) {
         this.name = name;
         this.email = email;
     }
