@@ -24,14 +24,15 @@
     text-shadow: 2px 2px 4px #000000;
 }
 #texto_principal{
-    font-size: 3.1em;
-    -webkit-text-stroke: 2px #0b2042;
+    font-size: 5em;
+    -webkit-text-stroke: 3px #0b2042;
+    white-space: nowrap;
 }
 
 #texto_secundario{
-    font-size: 1.5em;
-    -webkit-text-stroke: 1px #0b2042;
-    margin-left: 7%;
+    font-size: 2em;
+    -webkit-text-stroke: 1.5px #0b2042;
+    margin-left: 15%;
 }
 
 #servicos h2{
@@ -41,4 +42,10 @@
     background-color: #0b2042;
     color:whitesmoke;
     padding: 0.5em;
+}
+
+.card{
+    background-color: #0b2042;
+    color: whitesmoke;
+    height: 20em;
 }
