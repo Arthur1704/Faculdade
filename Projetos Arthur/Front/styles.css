@@ -33,3 +33,12 @@
     -webkit-text-stroke: 1px #0b2042;
     margin-left: 7%;
 }
+
+#servicos h2{
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    background-color: #0b2042;
+    color:whitesmoke;
+    padding: 0.5em;
+}
