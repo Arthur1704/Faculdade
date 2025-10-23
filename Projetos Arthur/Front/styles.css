@@ -1,10 +1,8 @@
-/* ===== NAVBAR ===== */
 #navbar {
   background-color: #0b2042;
   padding: 0.5em 1em;
 }
 
-/* Deixa logo, nome e botão hambúrguer na mesma linha */
 #navbar .container-fluid {
   display: flex;
   align-items: center;
@@ -18,7 +16,6 @@
   width: auto;
 }
 
-/* Marca e texto ao lado da logo */
 .navbar-brand {
   color: whitesmoke !important;
   font-weight: bold;
@@ -29,7 +26,6 @@
   white-space: nowrap; /* impede quebra no nome */
 }
 
-/* Itens do menu */
 #navbarNav {
   justify-content: flex-end;
 }
@@ -66,7 +62,6 @@
   filter: invert(1);
 }
 
-/* ===== Navbar responsiva ===== */
 @media (max-width: 992px) {
   #navbar .container-fluid {
     flex-wrap: nowrap !important; /* continua tudo na mesma linha */
@@ -92,7 +87,6 @@
   }
 }
 
-/* ===== BANNER INICIAL ===== */
 #inicio {
   position: relative;
   width: 100%;
@@ -105,7 +99,6 @@
   object-fit: cover;
 }
 
-/* Texto sobre a imagem */
 .texto {
   position: absolute;
   top: 50%;
@@ -240,4 +233,37 @@
   #inicio img {
     height: 50vh;
   }
+}
+
+#quem_somos{
+  display: flex;
+}
+
+#imagem {
+  flex: 1;
+  background-image: url('caminho-da-imagem.jpg'); 
+  background-size: cover;
+  background-position: center;
+}
+
+#texto{
+
+  flex: 1;
+}
+
+#texto {
+  flex: 1; 
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: right; /* Alinha o texto à direita */
+  font-size: 16px;
+  color: #333; /* Cor do texto */
+  overflow-y: auto; /* Permite rolar o texto se for muito grande */
+}
+
+#texto h2 {
+  color:#0b2042;
+  padding: 0.5em;
 }
