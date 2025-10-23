@@ -1,64 +1,164 @@
-
-#navbar{
-    background-color:#0b2042;
+/* ===== NAVBAR ===== */
+#navbar {
+  background-color: #0b2042;
+  padding: 0.5em 1em;
 }
 
-#navbarNav li a{
-    margin-right: 20px;
-    color: whitesmoke;
-    font-weight: bold;
+/* Deixa logo, nome e botão hambúrguer na mesma linha */
+#navbar .container-fluid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap !important; /* impede quebra de linha */
 }
 
-#inicio img{
+/* Logo */
+#navbar img {
+  height: 55px;
+  width: auto;
+}
+
+/* Marca e texto ao lado da logo */
+.navbar-brand {
+  color: whitesmoke !important;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  white-space: nowrap; /* impede quebra no nome */
+}
+
+/* Itens do menu */
+#navbarNav {
+  justify-content: flex-end;
+}
+
+#navbarNav .navbar-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#navbarNav .nav-item {
+  margin-left: 20px;
+}
+
+#navbarNav .nav-link {
+  color: whitesmoke !important;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+#navbarNav .nav-link:hover {
+  color: #ffc107 !important;
+}
+
+/* Botão hamburguer */
+.navbar-toggler {
+  border: none;
+  background-color: transparent;
+  margin-left: auto; /* empurra o botão pro final */
+}
+
+.navbar-toggler-icon {
+  filter: invert(1);
+}
+
+/* ===== Navbar responsiva ===== */
+@media (max-width: 992px) {
+  #navbar .container-fluid {
+    flex-wrap: nowrap !important; /* continua tudo na mesma linha */
+  }
+
+  #navbarNav {
     width: 100%;
-    height: 45em;
-}
-
-.texto{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-weight: bold;
-    text-shadow: 2px 2px 4px #000000;
-}
-.texto_principal{
-    font-size: 5em;
-    -webkit-text-stroke: 3px #0b2042;
-    white-space: nowrap;
-}
-
-.texto_secundario{
-    font-size: 2em;
-    -webkit-text-stroke: 1.5px #0b2042;
-    margin-left: 15%;
-}
-
-#servicos h2{
+    background-color: #0b2042;
     text-align: center;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    background-color: #0b2042;
-    color:whitesmoke;
-    padding: 0.5em;
+    padding-bottom: 1em;
+  }
+
+  #navbarNav .navbar-nav {
+    flex-direction: column;
+  }
+
+  #navbarNav .nav-item {
+    margin: 10px 0;
+  }
+
+  #navbarNav .nav-link {
+    display: block;
+  }
 }
 
-.card{
-    background-color: #0b2042;
-    color: whitesmoke;
-    height: 27em;
-    border: none;
-    border-radius: 15px;
-    overflow: hidden;
+/* ===== BANNER INICIAL ===== */
+#inicio {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+#inicio img {
+  width: 100%;
+  height: 90vh;
+  object-fit: cover;
+}
+
+/* Texto sobre a imagem */
+.texto {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px #000;
+  width: 90%;
+  max-width: 800px;
+}
+
+.texto_principal {
+  font-size: 4em;
+  -webkit-text-stroke: 2px #0b2042;
+  white-space: normal;
+  line-height: 1.1em;
+}
+
+.texto_secundario {
+  font-size: 1.5em;
+  -webkit-text-stroke: 1px #0b2042;
+  margin-top: 0.5em;
+}
+
+/* ===== SERVIÇOS ===== */
+#servicos h2 {
+  text-align: center;
+  margin: 1em 0;
+  background-color: #0b2042;
+  color: whitesmoke;
+  padding: 0.5em;
+}
+
+/* ===== CARDS ===== */
+.card {
+  background-color: #0b2042;
+  color: whitesmoke;
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.card-servico:hover {
+  transform: translateY(-8px);
 }
 
 .img-bg {
   position: relative;
   height: 200px;
   background-color: #0b2042;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
   background-size: cover;
   background-position: center;
   display: flex;
@@ -67,36 +167,77 @@
   overflow: hidden;
 }
 
-/* Escurecimento geral */
 .img-bg::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-color: rgba(11, 32, 66, 0.8);
+  background-color: rgba(11, 32, 66, 0.7);
   z-index: 1;
 }
 
-/* Texto sobre a imagem */
 .titulo-card {
   position: relative;
   z-index: 2;
   color: white;
   font-weight: 900;
-  font-size: 1.8em;
-  letter-spacing: 1px;
+  font-size: 1.6em;
   text-shadow: 0 0 8px rgba(0,0,0,0.8);
-  -webkit-text-stroke: 2px #0b2042;
+  -webkit-text-stroke: 1px #0b2042;
 }
 
-/* Específicos para cada imagem */
 .freios-bg {
   background-image: url("imagens/freio.jpeg");
 }
 
 .tornearia-bg {
-  background-image: url("imagens/tornearia.jpg");
+  background-image: url("imagens/tornearia.jpeg");
 }
 
 .manutencao-bg {
-  background-image: url("imagens/manutencao.jpg");
+  background-image: url("imagens/manutencao.jpeg");
+}
+
+/* ===== RESPONSIVIDADE GERAL ===== */
+@media (max-width: 992px) {
+  .texto_principal {
+    font-size: 3em;
+  }
+
+  .texto_secundario {
+    font-size: 1.2em;
+  }
+
+  #inicio img {
+    height: 70vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .texto_principal {
+    font-size: 2.2em;
+    -webkit-text-stroke: 1px #0b2042;
+  }
+
+  .texto_secundario {
+    font-size: 1em;
+  }
+
+  #inicio img {
+    height: 60vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .texto_principal {
+    font-size: 1.8em;
+    line-height: 1.2em;
+  }
+
+  .texto_secundario {
+    font-size: 0.9em;
+  }
+
+  #inicio img {
+    height: 50vh;
+  }
 }
