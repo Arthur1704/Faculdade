@@ -7,10 +7,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: nowrap !important; /* impede quebra de linha */
+  flex-wrap: nowrap !important;
 }
 
-/* Logo */
 #navbar img {
   height: 55px;
   width: auto;
@@ -23,7 +22,7 @@
   align-items: center;
   gap: 10px;
   margin: 0;
-  white-space: nowrap; /* impede quebra no nome */
+  white-space: nowrap;
 }
 
 #navbarNav {
@@ -48,7 +47,8 @@
 }
 
 #navbarNav .nav-link:hover {
-  color: #ffc107 !important;
+  background-color: whitesmoke;
+  color: #0b2042 !important;
 }
 
 /* Botão hamburguer */
@@ -237,33 +237,80 @@
 
 #quem_somos{
   display: flex;
+  align-items: center; 
+  justify-content: center;
+  gap: 2em;
+  padding: 3em 8%;
+  background-color: #fff;
+  flex-wrap: wrap; 
 }
 
 #imagem {
   flex: 1;
-  background-image: url('caminho-da-imagem.jpg'); 
-  background-size: cover;
-  background-position: center;
-}
-
-#texto{
-
-  flex: 1;
+  max-width: 500px;
+  border-radius: 5px;
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 #texto {
-  flex: 1; 
-  padding: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: right; /* Alinha o texto à direita */
-  font-size: 16px;
-  color: #333; /* Cor do texto */
-  overflow-y: auto; /* Permite rolar o texto se for muito grande */
+  flex: 1;
+  min-width: 300px;
+  color: #333;
+  text-align: justify;
 }
 
 #texto h2 {
-  color:#0b2042;
-  padding: 0.5em;
+  color: #0b2042;
+  font-weight: 900;
+  margin-bottom: 1em;
+  text-transform: uppercase;
+}
+
+#texto p {
+  font-size: 1.5em;
+  line-height: 1.6em;
+  font-weight: bold;
+}
+
+
+@media (max-width: 992px) {
+  #quem_somos {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #quem_somos .texto {
+    text-align: center;
+  }
+
+  #quem_somos .imagem {
+    max-width: 350px;
+  }
+}
+
+#contato{
+  background-color: #192944;
+  padding-bottom: 2em;
+}
+
+#contato h2{
+  color: white;
+  font-size: 3em;
+  -webkit-text-stroke: 3px #0b2042;
+  white-space: normal;
+  line-height: 1.1em;
+  text-align: center;
+  font-weight: 800;
+  margin-bottom: 1em;
+}
+
+#contato p{
+  color: white;
+  font-size: 1em;
+  font-weight: bold;
+  margin-top: 1em;
+  margin-left: 5em;
 }
