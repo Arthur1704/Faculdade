@@ -291,26 +291,63 @@
   }
 }
 
-#contato{
-  background-color: #192944;
-  padding-bottom: 2em;
+#contato {
+  position: relative;
+  background-color: #192944; /* azul base */
+  color: #fff;
+  padding: 5em 8em;
+  overflow: hidden;
 }
 
-#contato h2{
-  color: white;
-  font-size: 3em;
-  -webkit-text-stroke: 3px #0b2042;
-  white-space: normal;
-  line-height: 1.1em;
-  text-align: center;
+/* ===== IMAGEM GRANDE AO LADO DIREITO ===== */
+#contato::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: 
+    linear-gradient(to left, rgba(25, 41, 68, 0.85), rgba(25, 41, 68, 0.85)),
+    url("imagens/LogoAutoTorno.png") no-repeat right center;
+  background-size: 35%;
+  opacity: 0.50;
+  z-index: 0;
+}
+
+/* ===== CONTEÚDO ===== */
+#contato h2,
+#contato p {
+  position: relative;
+  z-index: 1;
+}
+
+#contato h2 {
+  font-size: 2.6em;
   font-weight: 800;
-  margin-bottom: 1em;
+  margin-bottom: 1.5em;
 }
 
-#contato p{
-  color: white;
-  font-size: 1em;
-  font-weight: bold;
-  margin-top: 1em;
-  margin-left: 5em;
+#contato p {
+  font-size: 1.2em;
+  margin: 0.4em 0;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 992px) {
+  #contato {
+    padding: 3em 2em;
+    text-align: center;
+  }
+
+  #contato::before {
+    background-size: 80%;
+    background-position: center;
+    opacity: 0.1;
+  }
+
+  #contato h2 {
+    font-size: 2em;
+  }
+
+  #contato p {
+    font-size: 1em;
+  }
 }
