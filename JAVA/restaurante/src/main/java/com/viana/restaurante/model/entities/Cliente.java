@@ -1,9 +1,13 @@
 package com.viana.restaurante.model.entities;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 
@@ -16,6 +20,9 @@ public class Cliente {
     private Long id;
     private String nome;
     private String telefone;
+
+    @OneToMany(mappedBy = "cliente")
+    private List<Pedido> pedidos = new ArrayList<>();
 
 
     public Cliente() {
@@ -58,6 +65,18 @@ public class Cliente {
         this.telefone = telefone;
     }
 
+    
+    
+    public List<Pedido> getPedidos() {
+        return pedidos;
+    }
+
+
+    public void setPedido(Pedido pedido) {
+        this.pedidos.add(pedido);
+    }
+
+    
 
     @Override
     public int hashCode() {
@@ -83,9 +102,6 @@ public class Cliente {
         } else if (!id.equals(other.id))
             return false;
         return true;
-    }
-
-    
-    
+    }    
 
 }
