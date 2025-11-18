@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Pratos</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <h2>Lista de Pratos</h2>
+    <a href="/pratos/incluir" class="btn btn-success">Novo Prato</a>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Descrição</th>
+                <th>Preço</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="prato : ${pratos}">
+                <td th:text="${prato.id}"></td>
+                <td th:text="${prato.nome}"></td>
+                <td th:text="${prato.descricao}"></td>
+                <td th:text="${#numbers.formatDecimal(prato.preco, 1, 'COMMA', 2, 'POINT')}"></td>
+                <td>
+                    <a th:href="@{/pratos/editar/{id}(id=${prato.id})}">Editar</a> |
+                    <a th:href="@{/pratos/excluir/{id}(id=${prato.id})}">Excluir</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

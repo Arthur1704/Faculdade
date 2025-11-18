@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Pedidos</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <h2>Pedidos</h2>
+    
+    <a href="/pedidos/incluir" class="btn btn-success">Novo Pedido</a>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Cliente</th>
+                <th>Data</th>
+                <th>Pratos</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="pedido : ${pedidos}">
+                <td th:text="${pedido.id}"></td>
+                <td th:text="${pedido.cliente.nome}"></td>
+                <td th:text="${#dates.format(pedido.data, 'dd/MM/yyyy')}"></td>
+                <td>
+                    <ul>
+                        <li th:each="prato : ${pedido.pratos}" th:text="${prato.nome}"></li>
+                    </ul>
+                </td>
+                <td>
+                    <a th:href="@{/pedidos/editar/{id}(id=${pedido.id})}">Editar</a> |
+                    <a th:href="@{/pedidos/excluir/{id}(id=${pedido.id})}">Excluir</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

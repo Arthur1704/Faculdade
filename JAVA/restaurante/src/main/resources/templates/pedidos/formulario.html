@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulário Pedido</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <h2 th:text="${pedido.id == null} ? 'Incluir Pedido' : 'Editar Pedido'"></h2>
+    
+    <form th:action="@{/pedidos/salvar}" method="post" th:object="${pedido}">
+        <input type="hidden" th:field="*{id}">
+
+        <div>
+            <label>Data:</label>
+            <input type="date" th:field="*{data}" required>
+        </div>
+
+        <div>
+            <label>Cliente:</label>
+            <select th:field="*{cliente}" required>
+                <option value="" disabled selected>-- Selecione o cliente --</option>
+                <option th:each="cliente : ${clientes}" th:value="${cliente}" th:text="${cliente.nome}"></option>
+            </select>
+        </div>
+
+        <div>
+            <label>Pratos:</label>
+            <div th:each="prato : ${pratos}">
+                <input type="checkbox" th:field="*{pratos}" th:value="${prato}" />
+                <span th:text="${prato.nome}"></span>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Salvar</button>
+    </form>
+</body>
+</html>

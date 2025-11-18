@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulário de Prato</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <h2 th:text="${prato.id == null} ? 'Incluir Prato' : 'Editar Prato'"></h2>
+    <form th:action="@{/pratos/salvar}" method="post" th:object="${prato}">
+        <input type="hidden" th:field="*{id}">
+
+        <label>Nome:</label>
+        <input type="text" th:field="*{nome}" required>
+
+        <label>Descrição:</label>
+        <textarea th:field="*{descricao}" rows="3" required></textarea>
+
+        <label>Preço:</label>
+        <input type="number" th:field="*{preco}" step="0.01" required>
+
+        <button type="submit" class="btn btn-primary">Salvar</button>
+    </form>
+</body>
+</html>
