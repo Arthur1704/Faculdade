@@ -1,4 +1,10 @@
 import { useState } from 'react'
+
+// COMPONENTS
+
+import FirstComponent from "./components/FirstComponent"
+
+// CSS
 import './App.css'
 
 function App() {
@@ -8,6 +14,7 @@ function App() {
     <>
       <div>
         <h1>Fundamentos React</h1>
+        <FirstComponent />
       </div>
     </>
   )
