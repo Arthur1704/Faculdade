@@ -2,10 +2,12 @@ import { useState } from 'react'
 
 // COMPONENTS
 import FirstComponent from "./components/FirstComponent"
+import TemplateExpression from './components/TemplateExpression'
+import Events from './components/Events'
+
 
 // CSS
 import './App.css'
-import TemplateExpression from './components/TemplateExpression'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -16,6 +18,7 @@ function App() {
         <h1>Fundamentos React</h1>
         <FirstComponent />
         <TemplateExpression />
+        <Events />
       </div>
     </>
   )
