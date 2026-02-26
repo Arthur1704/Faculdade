@@ -1,0 +1,71 @@
+unit Form;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    Label1: TLabel;
+    edtNumero: TEdit;
+    Label2: TLabel;
+    lblContador: TLabel;
+    btnJogar: TButton;
+    btnIniciar: TButton;
+    procedure FormCreate(Sender: TObject);
+    procedure btnJogarClick(Sender: TObject);
+    procedure btnIniciarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+  var i : integer;
+  var quantTentativa : Integer;
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.btnIniciarClick(Sender: TObject);
+begin
+    i := Random(100);
+    quantTentativa := 0;
+end;
+
+procedure TForm1.btnJogarClick(Sender: TObject);
+
+  var numTentativa : Integer;
+
+begin
+  numTentativa := strToInt(edtNumero.Text);
+
+  if numTentativa < i then
+    begin
+      ShowMessage('O numero é maior !!');
+      quantTentativa := quantTentativa + 1
+    end
+
+  else if numTentativa > i then
+    begin
+      ShowMessage('O numero é menor!!');
+      quantTentativa := quantTentativa + 1
+    end
+  else
+    ShowMessage('Você acertou o Numero e Ganhou o Jogo');
+    i := Random(100);
+    quantTentativa := 0;
+end;
+
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+    i := Random(100);
+    quantTentativa := 0;
+end;
+
+end.
