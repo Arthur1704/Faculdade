@@ -68,6 +68,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="fCadAluno.aspx" />
+    <Content Include="fCadCursos.aspx" />
+    <Content Include="fFinal.aspx" />
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
   </ItemGroup>
@@ -78,6 +80,20 @@
     </Compile>
     <Compile Include="fCadAluno.aspx.designer.cs">
       <DependentUpon>fCadAluno.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="fCadCursos.aspx.cs">
+      <DependentUpon>fCadCursos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="fCadCursos.aspx.designer.cs">
+      <DependentUpon>fCadCursos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="fFinal.aspx.cs">
+      <DependentUpon>fFinal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="fFinal.aspx.designer.cs">
+      <DependentUpon>fFinal.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WebForm1.aspx.cs">
