@@ -1,0 +1,89 @@
+unit form;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    Button1: TButton;
+    btnMensagem: TButton;
+    edtNumero: TEdit;
+    btnFor: TButton;
+    procedure btnMensagemClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure edtNumeroChange(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure btnForClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.btnForClick(Sender: TObject);
+var i : integer;
+begin
+
+for I := 0 to 5 do
+  begin
+      if (i = 0) then
+        ShowMessage('Valor 0');
+      if i = 2 then
+        ShowMessage('Valor 2');
+  end;
+end;
+
+procedure TForm1.btnMensagemClick(Sender: TObject);
+
+var valor : integer;
+begin
+
+  valor := strToInt(edtNumero.Text);
+
+  case valor of
+    1 : ShowMessage('Valor 1');
+
+    2 :
+      begin
+        ShowMessage('Valor 2');
+        ShowMessage('Valor 2a');
+      end;
+
+      else
+        ShowMessage('Valor nenhum Testado!!');
+  end;
+
+
+
+
+end;
+
+procedure TForm1.edtNumeroChange(Sender: TObject);
+begin
+  if edtNumero.Text <> '' then
+      btnMensagem.Enabled := True
+  else
+      btnMensagem.Enabled := False;
+end;
+
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+    btnMensagem.Enabled := False;
+end;
+
+procedure TForm1.FormShow(Sender: TObject);
+begin
+     edtNumero.SetFocus;
+end;
+
+end.

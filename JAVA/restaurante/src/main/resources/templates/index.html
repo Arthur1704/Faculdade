@@ -1,14 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restaurante</title>
+   <link rel="stylesheet" th:href="@{/css/styles.css}">
 </head>
-
 <body>
-    <h1>Bem-vindo ao Restaurante</h1>
+    <header>
+        <h1>Bem-vindo ao Sistema de Restaurante</h1>
+        <nav>
+            <a href="/clientes">Clientes</a>
+            <a href="/pratos">Pratos</a>
+            <a href="/pedidos">Pedidos</a>
+        </nav>
+    </header>
 </body>
-
 </html>
