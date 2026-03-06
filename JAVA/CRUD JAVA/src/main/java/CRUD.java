@@ -20,10 +20,10 @@ import operacoes.CrudStudent;
  * @author unifai
  */
 public class CRUD extends javax.swing.JFrame {
+    ConnectionDB conn = new ConnectionDB();
 
-    /**
-     * Creates new form CRUD
-     */
+    conn.connect();
+
     public CRUD() {
         initComponents();
     }
