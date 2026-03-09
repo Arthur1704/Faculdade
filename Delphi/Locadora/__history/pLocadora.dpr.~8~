@@ -2,7 +2,7 @@ program pLocadora;
 
 uses
   Vcl.Forms,
-  uMenu in 'uMenu.pas' {frmMenu},
+  uMenu in '..\uMenu.pas' {frmMenu},
   uCliente in 'uCliente.pas' {frmCliente},
   uVeiculo in 'uVeiculo.pas' {frmVeiculo},
   uLocacao in 'uLocacao.pas' {frmLocacao},
