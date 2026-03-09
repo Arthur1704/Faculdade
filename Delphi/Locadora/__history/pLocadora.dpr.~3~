@@ -1,0 +1,18 @@
+program pLocadora;
+
+uses
+  Vcl.Forms,
+  uMenu in '..\uMenu.pas' {frmMenu},
+  uCliente in 'uCliente.pas' {frmCliente},
+  uVeiculo in 'uVeiculo.pas' {frmVeiculo};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TfrmMenu, frmMenu);
+  Application.CreateForm(TfrmCliente, frmCliente);
+  Application.CreateForm(TfrmVeiculo, frmVeiculo);
+  Application.Run;
+end.
