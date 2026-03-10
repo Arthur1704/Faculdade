@@ -42,6 +42,15 @@ namespace Universidade
         protected global::System.Web.UI.WebControls.TextBox TextBoxNome;
 
         /// <summary>
+        /// Controle Label1.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label1;
+
+        /// <summary>
         /// Controle LabelRA.
         /// </summary>
         /// <remarks>
@@ -60,6 +69,15 @@ namespace Universidade
         protected global::System.Web.UI.WebControls.TextBox TextBoxRA;
 
         /// <summary>
+        /// Controle Label2.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label2;
+
+        /// <summary>
         /// Controle LabelEstado.
         /// </summary>
         /// <remarks>
@@ -76,6 +94,15 @@ namespace Universidade
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlEstado;
+
+        /// <summary>
+        /// Controle Label3.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label3;
 
         /// <summary>
         /// Controle btnProx.
