@@ -2,10 +2,12 @@
 
 <!DOCTYPE html>
 
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
+    <link rel="stylesheet" type="text/css" href="estilo.css"/> 
     <style type="text/css">
         #form1 {
             height: 322px;
@@ -21,11 +23,13 @@
             <br />
         </div>
         <asp:TextBox ID="TextBoxNome" runat="server" Height="22px" OnTextChanged="TextBoxNome_TextChanged" AutoPostBack="True"></asp:TextBox>
+        <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
         <br />
         <br />
         <asp:Label ID="LabelRA" runat="server" Text="Ra:"></asp:Label>
         <br />
         <asp:TextBox ID="TextBoxRA" runat="server" Height="22px" OnTextChanged="TextBoxRA_TextChanged" AutoPostBack="True"></asp:TextBox>
+        <asp:Label ID="Label2" runat="server" Text=""></asp:Label>
         <br />
         <br />
         <asp:Label ID="LabelEstado" runat="server" Text="Estado:"></asp:Label>
@@ -37,8 +41,9 @@
             <asp:ListItem>MG</asp:ListItem>
             <asp:ListItem>SC</asp:ListItem>
         </asp:DropDownList>
+        <asp:Label ID="Label3" runat="server"></asp:Label>
         <p>
-            <asp:Button ID="btnProx" runat="server" Text="Proxima Pagina" PostBackUrl="~/fCadCursos.aspx"/>
+            <asp:Button ID="btnProx" runat="server" Text="Proxima Pagina" OnClick="btnProx_Click"/>
         </p>
     </form>
 </body>

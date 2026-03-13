@@ -42,6 +42,15 @@ namespace Universidade
         protected global::System.Web.UI.WebControls.CheckBoxList CheckBoxList1;
 
         /// <summary>
+        /// Controle LabelAviso1.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelAviso1;
+
+        /// <summary>
         /// Controle Label2.
         /// </summary>
         /// <remarks>
@@ -58,6 +67,15 @@ namespace Universidade
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButtonList RadioButtonList1;
+
+        /// <summary>
+        /// Controle LabelAviso2.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelAviso2;
 
         /// <summary>
         /// Controle btnProx.

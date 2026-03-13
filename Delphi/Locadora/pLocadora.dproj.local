@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2026/03/09 19:44:55.000.113,=C:\Users\unifai\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2026/03/09 19:48:19.000.454,C:\Users\unifai\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\unifai\Desktop\uMenu.dfm</Transaction>
+    <Transaction>2026/03/09 19:48:19.000.454,C:\Users\unifai\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\unifai\Desktop\uMenu.pas</Transaction>
+    <Transaction>2026/03/09 19:48:31.000.932,C:\Users\unifai\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\unifai\Desktop\Locadora\pLocadora.dproj</Transaction>
+    <Transaction>2026/03/09 19:53:10.000.121,=C:\Users\unifai\Desktop\Locadora\Unit1.pas</Transaction>
+    <Transaction>2026/03/09 19:53:35.000.245,C:\Users\unifai\Desktop\Locadora\Unit1.pas=C:\Users\unifai\Desktop\Locadora\fmrCliente.pas</Transaction>
+    <Transaction>2026/03/09 19:53:35.000.245,C:\Users\unifai\Desktop\Locadora\Unit1.dfm=C:\Users\unifai\Desktop\Locadora\fmrCliente.dfm</Transaction>
+    <Transaction>2026/03/09 19:54:34.000.830,C:\Users\unifai\Desktop\Locadora\fmrCliente.dfm=C:\Users\unifai\Desktop\Locadora\uCliente.dfm</Transaction>
+    <Transaction>2026/03/09 19:54:34.000.830,C:\Users\unifai\Desktop\Locadora\fmrCliente.pas=C:\Users\unifai\Desktop\Locadora\uCliente.pas</Transaction>
+    <Transaction>2026/03/09 19:55:27.000.737,=C:\Users\unifai\Desktop\Locadora\Unit1.pas</Transaction>
+    <Transaction>2026/03/09 19:56:07.000.441,C:\Users\unifai\Desktop\Locadora\Unit1.pas=C:\Users\unifai\Desktop\Locadora\uVeiculo.pas</Transaction>
+    <Transaction>2026/03/09 19:56:07.000.441,C:\Users\unifai\Desktop\Locadora\Unit1.dfm=C:\Users\unifai\Desktop\Locadora\uVeiculo.dfm</Transaction>
+    <Transaction>2026/03/09 19:56:13.000.096,=C:\Users\unifai\Desktop\Locadora\Unit1.pas</Transaction>
+    <Transaction>2026/03/09 19:56:46.000.707,C:\Users\unifai\Desktop\Locadora\Unit1.dfm=C:\Users\unifai\Desktop\Locadora\uLocacao.dfm</Transaction>
+    <Transaction>2026/03/09 19:56:46.000.707,C:\Users\unifai\Desktop\Locadora\Unit1.pas=C:\Users\unifai\Desktop\Locadora\uLocacao.pas</Transaction>
+    <Transaction>2026/03/09 19:56:52.000.474,=C:\Users\unifai\Desktop\Locadora\Unit1.pas</Transaction>
+    <Transaction>2026/03/09 19:57:50.000.019,C:\Users\unifai\Desktop\Locadora\Unit1.dfm=C:\Users\unifai\Desktop\Locadora\uDevolucao.dfm</Transaction>
+    <Transaction>2026/03/09 19:57:50.000.019,C:\Users\unifai\Desktop\Locadora\Unit1.pas=C:\Users\unifai\Desktop\Locadora\uDevolucao.pas</Transaction>
+    <Transaction>2026/03/09 19:57:54.000.921,=C:\Users\unifai\Desktop\Locadora\Unit1.pas</Transaction>
+    <Transaction>2026/03/09 19:58:32.000.733,C:\Users\unifai\Desktop\Locadora\Unit1.dfm=C:\Users\unifai\Desktop\Locadora\uLocados.dfm</Transaction>
+    <Transaction>2026/03/09 19:58:32.000.733,C:\Users\unifai\Desktop\Locadora\Unit1.pas=C:\Users\unifai\Desktop\Locadora\uLocados.pas</Transaction>
+    <Transaction>2026/03/09 19:58:38.000.684,=C:\Users\unifai\Desktop\Locadora\Unit1.pas</Transaction>
+    <Transaction>2026/03/09 19:59:29.000.758,C:\Users\unifai\Desktop\Locadora\Unit1.pas=C:\Users\unifai\Desktop\Locadora\uRelaVeiculos.pas</Transaction>
+    <Transaction>2026/03/09 19:59:29.000.758,C:\Users\unifai\Desktop\Locadora\Unit1.dfm=C:\Users\unifai\Desktop\Locadora\uRelaVeiculos.dfm</Transaction>
+  </Transactions>
+</BorlandProject>

@@ -42,6 +42,48 @@ namespace Universidade
             }
         }
 
-        
+        protected void btnProx_Click(object sender, EventArgs e)
+        {
+            string nome = TextBoxNome.Text;
+
+            if (string.IsNullOrWhiteSpace(nome))
+            {
+                //se o campo estiver vazio
+                Label1.Text = "O campo não pode estar vazio.";
+            }
+            else if (char.IsDigit(nome[0]))
+            {
+                //se o texto começar com um número
+                Label1.Text = "O campo não pode iniciar com um número.";
+            }
+            else
+            {
+                //caso contrário, limpar a mensagem
+                Label1.Text = "";
+                Response.Redirect("/fCadCursos.aspx");
+            }
+
+            if (!int.TryParse(TextBoxRA.Text, out _))
+            {
+                Label2.Text = "Campo exclusivamente numérico (tipo inteiro).";
+            }
+            else
+            {
+                Label2.Text = "";
+            }
+
+            if (ddlEstado.SelectedIndex <= 0)
+            {
+                Label3.Text = "Nenhuma opção selecionada.";
+            }
+            else
+            {
+                Label3.Text = "";
+                Response.Redirect("/fCadCursos.aspx");
+            }
+
+        }
+
+
     }
 }

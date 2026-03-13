@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\unifai\\Desktop\\Faculdade\\C#\\Universidade\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{03D1FD73-FAF8-488D-9DFE-137A87F7895F}|Universidade\\Universidade.csproj|c:\\users\\unifai\\desktop\\faculdade\\c#\\universidade\\universidade\\fcadaluno.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{03D1FD73-FAF8-488D-9DFE-137A87F7895F}|Universidade\\Universidade.csproj|solutionrelative:universidade\\fcadaluno.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03D1FD73-FAF8-488D-9DFE-137A87F7895F}|Universidade\\Universidade.csproj|C:\\Users\\unifai\\Desktop\\Faculdade\\C#\\Universidade\\universidade\\fcadcursos.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{03D1FD73-FAF8-488D-9DFE-137A87F7895F}|Universidade\\Universidade.csproj|solutionrelative:universidade\\fcadcursos.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03D1FD73-FAF8-488D-9DFE-137A87F7895F}|Universidade\\Universidade.csproj|C:\\Users\\unifai\\Desktop\\Faculdade\\C#\\Universidade\\universidade\\fcadcursos.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03D1FD73-FAF8-488D-9DFE-137A87F7895F}|Universidade\\Universidade.csproj|solutionrelative:universidade\\fcadcursos.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03D1FD73-FAF8-488D-9DFE-137A87F7895F}|Universidade\\Universidade.csproj|C:\\Users\\unifai\\Desktop\\Faculdade\\C#\\Universidade\\universidade\\estilo.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{03D1FD73-FAF8-488D-9DFE-137A87F7895F}|Universidade\\Universidade.csproj|solutionrelative:universidade\\estilo.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "estilo.css",
+              "DocumentMoniker": "C:\\Users\\unifai\\Desktop\\Faculdade\\C#\\Universidade\\Universidade\\estilo.css",
+              "RelativeDocumentMoniker": "Universidade\\estilo.css",
+              "ToolTip": "C:\\Users\\unifai\\Desktop\\Faculdade\\C#\\Universidade\\Universidade\\estilo.css",
+              "RelativeToolTip": "Universidade\\estilo.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-03-07T13:12:46.76Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "fCadCursos.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\unifai\\Desktop\\Faculdade\\C#\\Universidade\\Universidade\\fCadCursos.aspx.cs",
+              "RelativeDocumentMoniker": "Universidade\\fCadCursos.aspx.cs",
+              "ToolTip": "C:\\Users\\unifai\\Desktop\\Faculdade\\C#\\Universidade\\Universidade\\fCadCursos.aspx.cs",
+              "RelativeToolTip": "Universidade\\fCadCursos.aspx.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-07T12:59:13.575Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "fCadCursos.aspx",
+              "DocumentMoniker": "C:\\Users\\unifai\\Desktop\\Faculdade\\C#\\Universidade\\Universidade\\fCadCursos.aspx",
+              "RelativeDocumentMoniker": "Universidade\\fCadCursos.aspx",
+              "ToolTip": "C:\\Users\\unifai\\Desktop\\Faculdade\\C#\\Universidade\\Universidade\\fCadCursos.aspx",
+              "RelativeToolTip": "Universidade\\fCadCursos.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-03-07T12:58:54.13Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "fCadAluno.aspx",
+              "DocumentMoniker": "C:\\Users\\unifai\\Desktop\\Faculdade\\C#\\Universidade\\Universidade\\fCadAluno.aspx",
+              "RelativeDocumentMoniker": "Universidade\\fCadAluno.aspx",
+              "ToolTip": "C:\\Users\\unifai\\Desktop\\Faculdade\\C#\\Universidade\\Universidade\\fCadAluno.aspx",
+              "RelativeToolTip": "Universidade\\fCadAluno.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-03-07T12:54:27.07Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
