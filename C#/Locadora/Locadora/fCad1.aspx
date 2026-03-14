@@ -6,6 +6,8 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="estilo.css" rel="stylesheet"/>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -20,37 +22,37 @@
         <br />
         <asp:Label ID="lblData" runat="server" Text="Data Nascimento"></asp:Label>
         <br />
-        <asp:TextBox ID="txtData" runat="server" Height="16px" style="margin-bottom: 0px" AutoPostBack="True"></asp:TextBox>
+        <asp:TextBox ID="txtData" runat="server"  style="margin-bottom: 0px" AutoPostBack="True"></asp:TextBox>
         <br />
         <br />
         <asp:Label ID="lblCPF" runat="server" Text="CPF"></asp:Label>
         <br />
-        <asp:TextBox ID="txtCPF" runat="server" Height="16px" style="margin-bottom: 0px" AutoPostBack="True"></asp:TextBox>
+        <asp:TextBox ID="txtCPF" runat="server" style="margin-bottom: 0px" AutoPostBack="True"></asp:TextBox>
         <br />
         <br />
         <asp:Label ID="lblRG" runat="server" Text="RG"></asp:Label>
         <br />
-        <asp:TextBox ID="txtRG" runat="server" Height="16px" style="margin-bottom: 0px" AutoPostBack="True"></asp:TextBox>
+        <asp:TextBox ID="txtRG" runat="server" style="margin-bottom: 0px" AutoPostBack="True"></asp:TextBox>
         <br />
         <br />
         <asp:Label ID="lblEndereco" runat="server" Text="Endereço"></asp:Label>
         <br />
-        <asp:TextBox ID="txtEndereco" runat="server" Height="16px" style="margin-bottom: 0px" AutoPostBack="True"></asp:TextBox>
+        <asp:TextBox ID="txtEndereco" runat="server"  style="margin-bottom: 0px" AutoPostBack="True"></asp:TextBox>
         <br />
         <br />
         <asp:Label ID="lblNumero" runat="server" Text="Numero"></asp:Label>
         <br />
-        <asp:TextBox ID="txtNumero" runat="server" Height="16px" style="margin-bottom: 0px" AutoPostBack="True"></asp:TextBox>
+        <asp:TextBox ID="txtNumero" runat="server"  style="margin-bottom: 0px" AutoPostBack="True"></asp:TextBox>
         <br />
         <br />
         <asp:Label ID="lblBairro" runat="server" Text="Bairro"></asp:Label>
         <br />
-        <asp:TextBox ID="txtBairro" runat="server" Height="16px" style="margin-bottom: 0px" AutoPostBack="True"></asp:TextBox>
+        <asp:TextBox ID="txtBairro" runat="server"  style="margin-bottom: 0px" AutoPostBack="True"></asp:TextBox>
         <br />
         <br />
         <asp:Label ID="lblCidade" runat="server" Text="Cidade"></asp:Label>
         <br />
-        <asp:TextBox ID="txtCidade" runat="server" Height="16px" style="margin-bottom: 0px" AutoPostBack="True"></asp:TextBox>
+        <asp:TextBox ID="txtCidade" runat="server" style="margin-bottom: 0px" AutoPostBack="True"></asp:TextBox>
         <br />
         <br />
         <asp:Label ID="lblUF" runat="server" Text="UF"></asp:Label>

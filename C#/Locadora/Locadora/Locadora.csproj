@@ -67,7 +67,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css1.css" />
+    <Content Include="estilo.css" />
     <Content Include="fCad1.aspx" />
+    <Content Include="fCad2.aspx" />
+    <Content Include="final.aspx" />
     <Content Include="telaInicial.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -78,6 +82,20 @@
     </Compile>
     <Compile Include="fCad1.aspx.designer.cs">
       <DependentUpon>fCad1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="fCad2.aspx.cs">
+      <DependentUpon>fCad2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="fCad2.aspx.designer.cs">
+      <DependentUpon>fCad2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="final.aspx.cs">
+      <DependentUpon>final.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="final.aspx.designer.cs">
+      <DependentUpon>final.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="telaInicial.aspx.cs">
