@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\unifai\\Desktop\\Locadora\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{87A6F2DF-0069-4080-89FC-2D8FC891ADFB}|Locadora\\Locadora.csproj|c:\\users\\unifai\\desktop\\locadora\\locadora\\fcad1.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87A6F2DF-0069-4080-89FC-2D8FC891ADFB}|Locadora\\Locadora.csproj|solutionrelative:locadora\\fcad1.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87A6F2DF-0069-4080-89FC-2D8FC891ADFB}|Locadora\\Locadora.csproj|c:\\users\\unifai\\desktop\\locadora\\locadora\\fcad1.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{87A6F2DF-0069-4080-89FC-2D8FC891ADFB}|Locadora\\Locadora.csproj|solutionrelative:locadora\\fcad1.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87A6F2DF-0069-4080-89FC-2D8FC891ADFB}|Locadora\\Locadora.csproj|c:\\users\\unifai\\desktop\\locadora\\locadora\\telainicial.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87A6F2DF-0069-4080-89FC-2D8FC891ADFB}|Locadora\\Locadora.csproj|solutionrelative:locadora\\telainicial.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87A6F2DF-0069-4080-89FC-2D8FC891ADFB}|Locadora\\Locadora.csproj|c:\\users\\unifai\\desktop\\locadora\\locadora\\telainicial.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{87A6F2DF-0069-4080-89FC-2D8FC891ADFB}|Locadora\\Locadora.csproj|solutionrelative:locadora\\telainicial.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "fCad1.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\unifai\\Desktop\\Locadora\\Locadora\\fCad1.aspx.cs",
+              "RelativeDocumentMoniker": "Locadora\\fCad1.aspx.cs",
+              "ToolTip": "C:\\Users\\unifai\\Desktop\\Locadora\\Locadora\\fCad1.aspx.cs",
+              "RelativeToolTip": "Locadora\\fCad1.aspx.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAowDMAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-14T11:06:11.871Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "fCad1.aspx",
+              "DocumentMoniker": "C:\\Users\\unifai\\Desktop\\Locadora\\Locadora\\fCad1.aspx",
+              "RelativeDocumentMoniker": "Locadora\\fCad1.aspx",
+              "ToolTip": "C:\\Users\\unifai\\Desktop\\Locadora\\Locadora\\fCad1.aspx",
+              "RelativeToolTip": "Locadora\\fCad1.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-03-14T11:01:24.673Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "telaInicial.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\unifai\\Desktop\\Locadora\\Locadora\\telaInicial.aspx.cs",
+              "RelativeDocumentMoniker": "Locadora\\telaInicial.aspx.cs",
+              "ToolTip": "C:\\Users\\unifai\\Desktop\\Locadora\\Locadora\\telaInicial.aspx.cs",
+              "RelativeToolTip": "Locadora\\telaInicial.aspx.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-14T10:58:06.977Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "telaInicial.aspx",
+              "DocumentMoniker": "C:\\Users\\unifai\\Desktop\\Locadora\\Locadora\\telaInicial.aspx",
+              "RelativeDocumentMoniker": "Locadora\\telaInicial.aspx",
+              "ToolTip": "C:\\Users\\unifai\\Desktop\\Locadora\\Locadora\\telaInicial.aspx",
+              "RelativeToolTip": "Locadora\\telaInicial.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-03-14T10:52:56.267Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
