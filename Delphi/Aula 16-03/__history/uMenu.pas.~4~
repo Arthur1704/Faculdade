@@ -1,0 +1,52 @@
+unit uMenu;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Vcl.StdCtrls;
+
+type
+  TfrmMenu = class(TForm)
+    MainMenu1: TMainMenu;
+    Rotina1: TMenuItem;
+    Button1: TButton;
+    edtNumero: TEdit;
+    Label1: TLabel;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+  function teste (x : integer) : bool;
+  end;
+
+var
+  frmMenu: TfrmMenu;
+
+implementation
+
+function TfrmMenu.teste (x : integer) : bool;
+begin
+  if x mod 2 = 0 then
+      result := true
+    else
+      result := false;
+end;
+
+{$R *.dfm}
+
+procedure TfrmMenu.Button1Click(Sender: TObject);
+var x : integer;
+begin
+  x := strToInt(edtNumero.Text);
+  try
+    if not teste(x) then
+          showMessage('Impar')
+      else
+          showMessage('Par');
+  except
+    showMessage('Insira um numero');
+  end;
+end;
+
+end.

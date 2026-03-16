@@ -1,0 +1,47 @@
+unit uMenu;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Vcl.StdCtrls;
+
+type
+  TfrmMenu = class(TForm)
+    MainMenu1: TMainMenu;
+    Rotina1: TMenuItem;
+    Button1: TButton;
+    edtNumero: TEdit;
+    Label1: TLabel;
+    procedure Rotina1Click(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmMenu: TfrmMenu;
+
+implementation
+
+//function frmMenu.
+
+{$R *.dfm}
+
+procedure TfrmMenu.Button1Click(Sender: TObject);
+var x : double;
+begin
+  try
+    x := strToInt(edtNumero.Text);
+    x := x + 10;
+    label1.Caption := x.ToString;
+  except
+
+  end;
+
+
+end;
+
+end.

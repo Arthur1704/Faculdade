@@ -1,0 +1,78 @@
+object frmMenu: TfrmMenu
+  Left = 0
+  Top = 0
+  Caption = 'Menu'
+  ClientHeight = 376
+  ClientWidth = 560
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  TextHeight = 15
+  object Label1: TLabel
+    Left = 160
+    Top = 69
+    Width = 56
+    Height = 15
+    Caption = 'Numero 1:'
+  end
+  object Label2: TLabel
+    Left = 160
+    Top = 124
+    Width = 56
+    Height = 15
+    Caption = 'Numero 2:'
+  end
+  object btnSoma: TButton
+    Left = 160
+    Top = 201
+    Width = 97
+    Height = 40
+    Caption = '+'
+    TabOrder = 0
+    OnClick = btnMenosClick
+  end
+  object edtNumero1: TEdit
+    Left = 264
+    Top = 66
+    Width = 145
+    Height = 23
+    TabOrder = 1
+  end
+  object edtNumero2: TEdit
+    Left = 264
+    Top = 114
+    Width = 145
+    Height = 23
+    TabOrder = 2
+  end
+  object btnMenos: TButton
+    Left = 328
+    Top = 201
+    Width = 97
+    Height = 40
+    Caption = '-'
+    TabOrder = 3
+    OnClick = btnMenosClick
+  end
+  object btnDiv: TButton
+    Left = 160
+    Top = 265
+    Width = 97
+    Height = 40
+    Caption = '/'
+    TabOrder = 4
+    OnClick = btnMenosClick
+  end
+  object btnMult: TButton
+    Left = 328
+    Top = 265
+    Width = 97
+    Height = 40
+    Caption = '*'
+    TabOrder = 5
+    OnClick = btnMenosClick
+  end
+end

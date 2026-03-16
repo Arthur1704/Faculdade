@@ -1,0 +1,71 @@
+unit uMenu;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Vcl.StdCtrls;
+
+type
+  TfrmMenu = class(TForm)
+    btnSoma: TButton;
+    edtNumero1: TEdit;
+    edtNumero2: TEdit;
+    Button1: TButton;
+    Button2: TButton;
+    Button3: TButton;
+    Label1: TLabel;
+    Label2: TLabel;
+    procedure btnSomaClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+  function soma (num1 : integer; num2 : integer) : integer;
+  function menos (num1 : integer; num2 : integer) : integer;
+  function multiplicacao (num1 : integer; num2 : integer) : integer;
+  function divisao (num1 : integer; num2 : integer) : integer;
+  end;
+
+var
+  frmMenu: TfrmMenu;
+
+implementation
+
+function TfrmMenu.soma (num1 : integer; num2 : integer) : integer;
+begin
+    result := num1 + num2;
+end;
+
+function TfrmMenu.menos (num1 : integer; num2 : integer) : integer;
+begin
+    result := num1 - num2;
+end;
+
+function TfrmMenu.multiplicacao (num1 : integer; num2 : integer) : integer;
+begin
+    result := num1 * num2;
+end;
+
+function TfrmMenu.divisao (num1 : integer; num2 : integer) : integer;
+begin
+    result := num1 / num2;
+end;
+
+{$R *.dfm}
+
+procedure TfrmMenu.btnSomaClick(Sender: TObject);
+var num1, num2 : integer;
+begin
+  num1 := strToInt(edtNumero1.Text);
+  num2 := strToInt(edtNumero2.Text;)
+  try
+    if not teste(x) then
+          showMessage('Impar')
+      else
+          showMessage('Par');
+  except
+    showMessage('Insira um numero');
+  end;
+end;
+
+end.

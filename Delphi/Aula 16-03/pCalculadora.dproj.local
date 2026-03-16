@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2026/03/16 19:41:28.043,=C:\Users\unifai\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2026/03/16 19:51:51.734,C:\Users\unifai\Desktop\Aula 16-03\uMenu.pas=C:\Users\unifai\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2026/03/16 19:51:51.734,C:\Users\unifai\Desktop\Aula 16-03\uMenu.dfm=C:\Users\unifai\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2026/03/16 20:34:20.091,=C:\Users\unifai\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2026/03/16 20:34:30.963,C:\Users\unifai\Desktop\Aula 16-03\uRotina.pas=C:\Users\unifai\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2026/03/16 20:43:01.521,=C:\Users\unifai\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2026/03/16 20:43:28.476,C:\Users\unifai\Desktop\Aula 16-03\uRotinaN.pas=C:\Users\unifai\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2026/03/16 20:46:11.866,C:\Users\unifai\Desktop\Aula 16-03\pCalculadora.dproj=C:\Users\unifai\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+  </Transactions>
+</BorlandProject>
