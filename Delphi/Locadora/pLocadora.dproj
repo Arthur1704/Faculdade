@@ -141,6 +141,10 @@
             <Form>fCadProf</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="uCompCarro.pas">
+            <Form>fCompCarro</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

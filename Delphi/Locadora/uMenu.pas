@@ -16,9 +16,11 @@ type
     Carro1: TMenuItem;
     Carro2: TMenuItem;
     Alugarcarro1: TMenuItem;
+    ComprarCarro1: TMenuItem;
     procedure Carro1Click(Sender: TObject);
     procedure Carro2Click(Sender: TObject);
     procedure Alugarcarro1Click(Sender: TObject);
+    procedure ComprarCarro1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -32,7 +34,7 @@ implementation
 
 {$R *.dfm}
 
-uses uCadCarro, uCadProf, uMovAluga;
+uses uCadCarro, uCadProf, uMovAluga, uCompCarro;
 
 procedure TfMenu.Alugarcarro1Click(Sender: TObject);
 begin
@@ -62,6 +64,17 @@ begin
     fCadProf.ShowModal;
     FreeAndNil(fCadProf);
   end;
+end;
+
+procedure TfMenu.ComprarCarro1Click(Sender: TObject);
+begin
+  if (fCompCarro = Nil) then
+  begin
+    fCompCarro := TfCompCarro.Create(self);
+    fCompCarro.ShowModal;
+    FreeAndNil(fCompCarro);
+  end;
+
 end;
 
 end.

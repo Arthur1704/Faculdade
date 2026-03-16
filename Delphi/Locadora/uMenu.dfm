@@ -18,22 +18,24 @@ object fMenu: TfMenu
     Width = 624
     Height = 441
     Align = alClient
+    Color = clGradientActiveCaption
+    ParentBackground = False
     TabOrder = 0
-    ExplicitLeft = 456
-    ExplicitTop = 320
-    ExplicitWidth = 185
-    ExplicitHeight = 41
+    ExplicitLeft = -8
+    ExplicitTop = 8
     object Label1: TLabel
       Left = 184
       Top = 165
       Width = 275
       Height = 54
       Caption = 'Menu Locadora'
+      Color = clGradientActiveCaption
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -40
       Font.Name = 'Segoe UI'
       Font.Style = []
+      ParentColor = False
       ParentFont = False
     end
   end
@@ -56,6 +58,10 @@ object fMenu: TfMenu
       object Alugarcarro1: TMenuItem
         Caption = 'Alugar carro'
         OnClick = Alugarcarro1Click
+      end
+      object ComprarCarro1: TMenuItem
+        Caption = 'Comprar Carro'
+        OnClick = ComprarCarro1Click
       end
     end
   end

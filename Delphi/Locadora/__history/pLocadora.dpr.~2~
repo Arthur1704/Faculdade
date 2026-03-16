@@ -1,0 +1,19 @@
+program pLocadora;
+
+uses
+  Vcl.Forms,
+  uMenu in 'uMenu.pas' {fMenu},
+  uMovAluga in 'uMovAluga.pas' {fAluga},
+  uCadCarro in 'uCadCarro.pas' {fCadCarro},
+  uCadProf in 'uCadProf.pas' {fCadProf},
+  uCompCarro in 'uCompCarro.pas' {Form1};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TfMenu, fMenu);
+  Application.CreateForm(TForm1, Form1);
+  Application.Run;
+end.

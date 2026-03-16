@@ -1,0 +1,112 @@
+object fCompCarro: TfCompCarro
+  Left = 0
+  Top = 0
+  Caption = 'Compar Carro'
+  ClientHeight = 441
+  ClientWidth = 624
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  TextHeight = 15
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 625
+    Height = 441
+    TabOrder = 0
+    object Label1: TLabel
+      Left = 160
+      Top = 32
+      Width = 307
+      Height = 62
+      Caption = 'Comprar Carro'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -47
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label2: TLabel
+      Left = 40
+      Top = 136
+      Width = 73
+      Height = 28
+      Caption = 'Modelo:'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -20
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label3: TLabel
+      Left = 40
+      Top = 232
+      Width = 54
+      Height = 28
+      Caption = 'Placa: '
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -20
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Edit1: TEdit
+      Left = 160
+      Top = 133
+      Width = 145
+      Height = 36
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -20
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 0
+    end
+    object Edit2: TEdit
+      Left = 160
+      Top = 229
+      Width = 145
+      Height = 36
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -20
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 1
+    end
+    object ListBox1: TListBox
+      Left = 432
+      Top = 144
+      Width = 121
+      Height = 97
+      ItemHeight = 15
+      Items.Strings = (
+        'A vista'
+        'A Prazo'
+        'Boleto')
+      TabOrder = 2
+    end
+    object Button1: TButton
+      Left = 248
+      Top = 344
+      Width = 137
+      Height = 49
+      Caption = 'Cadastrar'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -20
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 3
+    end
+  end
+end
