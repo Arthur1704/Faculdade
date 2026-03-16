@@ -1,7 +1,7 @@
-object frmMenu: TfrmMenu
+object fMenu: TfMenu
   Left = 0
   Top = 0
-  Caption = 'Locadora de Veiculos'
+  Caption = 'Locadora de Carros'
   ClientHeight = 441
   ClientWidth = 624
   Color = clBtnFace
@@ -12,40 +12,50 @@ object frmMenu: TfrmMenu
   Font.Style = []
   Menu = MainMenu1
   TextHeight = 15
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 624
+    Height = 441
+    Align = alClient
+    TabOrder = 0
+    ExplicitLeft = 456
+    ExplicitTop = 320
+    ExplicitWidth = 185
+    ExplicitHeight = 41
+    object Label1: TLabel
+      Left = 184
+      Top = 165
+      Width = 275
+      Height = 54
+      Caption = 'Menu Locadora'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -40
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+    end
+  end
   object MainMenu1: TMainMenu
-    Left = 576
-    Top = 8
+    Left = 64
+    Top = 24
     object Cadastro1: TMenuItem
       Caption = 'Cadastro'
-      object Veiculo1: TMenuItem
-        Caption = 'Veiculo'
-        OnClick = Veiculo1Click
+      object Carro1: TMenuItem
+        Caption = 'Carro'
+        OnClick = Carro1Click
       end
-      object Cliente1: TMenuItem
-        Caption = 'Cliente'
-        OnClick = Cliente1Click
+      object Carro2: TMenuItem
+        Caption = 'Profissional'
+        OnClick = Carro2Click
       end
     end
     object Movimento1: TMenuItem
       Caption = 'Movimento'
-      object Locao1: TMenuItem
-        Caption = 'Loca'#231#227'o'
-        OnClick = Locao1Click
-      end
-      object Devoluo1: TMenuItem
-        Caption = 'Devolu'#231#227'o'
-        OnClick = Devoluo1Click
-      end
-    end
-    object Relatorio1: TMenuItem
-      Caption = 'Relatorio'
-      object Locados1: TMenuItem
-        Caption = 'Locados'
-        OnClick = Locados1Click
-      end
-      object Veiculos1: TMenuItem
-        Caption = 'Veiculos'
-        OnClick = Veiculos1Click
+      object Alugarcarro1: TMenuItem
+        Caption = 'Alugar carro'
+        OnClick = Alugarcarro1Click
       end
     end
   end
