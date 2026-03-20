@@ -1,0 +1,47 @@
+unit uMenu;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, uProcedures;
+
+type
+  TfrmMenu = class(TForm)
+    Panel1: TPanel;
+    Label1: TLabel;
+    Label2: TLabel;
+    edtNum1: TEdit;
+    edtNum2: TEdit;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    lblNum1: TLabel;
+    lblNum2: TLabel;
+    btnTrocar: TButton;
+    procedure btnTrocarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmMenu: TfrmMenu;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmMenu.btnTrocarClick(Sender: TObject);
+var num1, num2 : Integer;
+begin
+
+  num1 := strToInt(edtNum1.Text);
+  num2 := strToInt(edtNum2.Text);
+
+  trocar(num1, num2);
+end;
+
+
+end.

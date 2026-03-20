@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2026/03/20 19:41:03.015,=C:\Users\unifai\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2026/03/20 19:45:51.339,C:\Users\unifai\Desktop\Trabalho Procedures\uMenu.pas=C:\Users\unifai\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2026/03/20 19:45:51.339,C:\Users\unifai\Desktop\Trabalho Procedures\uMenu.dfm=C:\Users\unifai\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2026/03/20 19:46:06.228,=C:\Users\unifai\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2026/03/20 19:46:36.061,C:\Users\unifai\Desktop\Trabalho Procedures\uProcedures.pas=C:\Users\unifai\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2026/03/20 20:15:38.050,C:\Users\unifai\Desktop\Trabalho Procedures\pTroca.dproj=C:\Users\unifai\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+  </Transactions>
+</BorlandProject>
