@@ -19,7 +19,18 @@ type
     lblNum1: TLabel;
     lblNum2: TLabel;
     btnTrocar: TButton;
+    btnOrdenar: TButton;
+    Label6: TLabel;
+    edtNum3: TEdit;
+    Label7: TLabel;
+    Label8: TLabel;
+    Label10: TLabel;
+    Label11: TLabel;
+    lblOrdenar1: TLabel;
+    lblOrdenar2: TLabel;
+    lblOrdenar3: TLabel;
     procedure btnTrocarClick(Sender: TObject);
+    procedure btnOrdenarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -32,6 +43,23 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TfrmMenu.btnOrdenarClick(Sender: TObject);
+begin
+  var num1, num2, num3 : Integer;
+begin
+
+  num1 := strToInt(edtNum1.Text);
+  num2 := strToInt(edtNum2.Text);
+  num3 := strToInt(edtNum3.Text);
+
+  ordenar(num1, num2, num3);
+
+  lblOrdenar1.Caption := intToStr(num1);
+  lblOrdenar2.Caption := intToStr(num2);
+  lblOrdenar3.Caption := intToStr(num3);
+end;
+end;
 
 procedure TfrmMenu.btnTrocarClick(Sender: TObject);
 var num1, num2 : Integer;

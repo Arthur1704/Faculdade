@@ -3,6 +3,7 @@ unit uProcedures;
 interface
 
 procedure trocar (var num1 : Integer;var num2 : Integer);
+procedure ordenar (var num1 : Integer; var num2 : Integer; var num3 : Integer);
 
 implementation
 
@@ -12,6 +13,19 @@ begin
   aux := num1;
   num1 := num2;
   num2 := aux;
+end;
+
+procedure ordenar (var num1 : Integer; var num2 : Integer; var num3 : Integer);
+var aux : Integer;
+begin
+  if num1 > num2 then
+    trocar(num1, num2);
+
+  if num2 > num3 then
+    trocar(num2, num3);
+
+  if num1 > num2 then
+    trocar(num1, num2);
 end;
 
 end.

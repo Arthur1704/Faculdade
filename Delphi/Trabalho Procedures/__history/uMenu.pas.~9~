@@ -1,0 +1,79 @@
+unit uMenu;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, uProcedures;
+
+type
+  TfrmMenu = class(TForm)
+    Panel1: TPanel;
+    Label1: TLabel;
+    Label2: TLabel;
+    edtNum1: TEdit;
+    edtNum2: TEdit;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    lblNum1: TLabel;
+    lblNum2: TLabel;
+    btnTrocar: TButton;
+    btnOrdenar: TButton;
+    Label6: TLabel;
+    edtNum3: TEdit;
+    Label7: TLabel;
+    Label8: TLabel;
+    Label9: TLabel;
+    Label10: TLabel;
+    Label11: TLabel;
+    lblOrdenar1: TLabel;
+    lblOrdenar2: TLabel;
+    lblOrdenar3: TLabel;
+    procedure btnTrocarClick(Sender: TObject);
+    procedure btnOrdenarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmMenu: TfrmMenu;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmMenu.btnOrdenarClick(Sender: TObject);
+begin
+  var num1, num2, num3 : Integer;
+begin
+
+  num1 := strToInt(edtNum1.Text);
+  num2 := strToInt(edtNum2.Text);
+  num3 := strToInt(edtNum3.Text);
+
+  ordenar(num1, num2, num3);
+
+  lblOrdenar1.Caption := intToStr(num1);
+  lblOrdenar2.Caption := intToStr(num2);
+  lblOrdenar3.Caption := intToStr(num3);
+end;
+end;
+
+procedure TfrmMenu.btnTrocarClick(Sender: TObject);
+var num1, num2 : Integer;
+begin
+
+  num1 := strToInt(edtNum1.Text);
+  num2 := strToInt(edtNum2.Text);
+
+  trocar(num1, num2);
+
+  lblNum1.Caption := intToStr(num1);
+  lblNum2.Caption := intToStr(num2);
+end;
+
+
+end.
