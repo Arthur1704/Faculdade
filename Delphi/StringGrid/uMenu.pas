@@ -1,0 +1,61 @@
+unit uMenu;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, Grids;
+
+type
+  TForm1 = class(TForm)
+    grid1: TStringGrid;
+    Edit1: TEdit;
+    Edit2: TEdit;
+    btnNovo: TButton;
+    Label1: TLabel;
+    Label2: TLabel;
+    procedure FormCreate(Sender: TObject);
+    procedure btnNovoClick(Sender: TObject);
+    procedure grid1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+  cont : Integer;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+  grid1.Cells[1,0] := 'Nome';
+  grid1.Cells[2,0] := 'Endereço';
+  grid1.Cells[0,0] := 'Id';
+  cont := 1;
+  grid1.Cells[0,1] := intToStr(cont);
+end;
+
+procedure TForm1.btnNovoClick(Sender: TObject);
+begin
+
+
+  grid1.Cells[1,grid1.RowCount] := edit1.Text;
+  grid1.Cells[2,grid1.RowCount] := edit2.Text;
+  cont := cont + 1;
+  grid1.RowCount := grid1.RowCount + 1;
+  grid1.FixedRows := 1;
+  grid1.Cells[0,grid1.RowCount] := intToStr(cont);
+end;
+
+
+procedure TForm1.grid1Click(Sender: TObject);
+begin
+    showMessage(intToStr(grid1.Row));
+end;
+
+end.
