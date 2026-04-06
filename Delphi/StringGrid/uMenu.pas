@@ -24,6 +24,8 @@ type
     procedure grid1Click(Sender: TObject);
     procedure btnSalvarClick(Sender: TObject);
     procedure btnAtualizarClick(Sender: TObject);
+    procedure btnDeletarClick(Sender: TObject);
+    procedure btnCancelarClick(Sender: TObject);
   private
     procedure estadoLiberado;
     procedure estadoBloqueado;
@@ -124,6 +126,36 @@ begin
     atualizar()
   else
     ShowMessage('Não é possivel atualizar com valor em branco');
+end;
+
+procedure TForm1.btnDeletarClick(Sender: TObject);
+var contador : Integer;
+begin
+   if (grid1.RowCount > 2)then
+   begin
+      for contador := grid1.Row to grid1.RowCount - 2 do
+        begin
+         grid1.Cells[1, contador] := grid1.Cells[1, contador + 1];
+         grid1.Cells[2, contador] := grid1.Cells[2, contador + 1];
+        end;
+        grid1.RowCount := grid1.RowCount - 1;
+        cont := cont - 1;
+
+        for contador := 1 to grid1.RowCount -1 do
+        begin
+          grid1.Cells[0, contador] := intToStr(contador);
+        end
+   end
+   else
+   begin
+       grid1.RowCount := grid1.RowCount - 1;
+       cont := cont - 1;
+   end;
+end;
+
+procedure TForm1.btnCancelarClick(Sender: TObject);
+begin
+ estadoBloqueado();
 end;
 
 end.

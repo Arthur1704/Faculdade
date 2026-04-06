@@ -17,36 +17,36 @@ object Form1: TForm1
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 1037
-    Height = 519
+    Width = 1029
+    Height = 511
     Align = alClient
     TabOrder = 0
     object Label1: TLabel
       Left = 192
       Top = 16
-      Width = 49
+      Width = 34
       Height = 13
       Caption = 'Nome: '
     end
     object Label2: TLabel
       Left = 192
       Top = 72
-      Width = 57
-      Height = 17
+      Width = 52
+      Height = 13
       Caption = 'Endere'#231'o: '
     end
     object edtNome: TEdit
       Left = 192
       Top = 32
       Width = 241
-      Height = 33
+      Height = 21
       TabOrder = 0
     end
     object edtEndereco: TEdit
       Left = 192
       Top = 96
       Width = 241
-      Height = 33
+      Height = 21
       TabOrder = 1
     end
     object grid1: TStringGrid
@@ -89,7 +89,7 @@ object Form1: TForm1
       Height = 49
       Caption = 'Deletar'
       TabOrder = 5
-      OnClick = btnNovoClick
+      OnClick = btnDeletarClick
     end
     object btnCancelar: TButton
       Left = 608
@@ -98,7 +98,7 @@ object Form1: TForm1
       Height = 97
       Caption = 'Cancelar'
       TabOrder = 6
-      OnClick = btnNovoClick
+      OnClick = btnCancelarClick
     end
     object btnSalvar: TButton
       Left = 816
