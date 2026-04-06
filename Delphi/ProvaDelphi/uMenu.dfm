@@ -21,10 +21,10 @@ object frmMenu: TfrmMenu
     Height = 641
     TabOrder = 0
     object Label1: TLabel
-      Left = 272
-      Top = 80
-      Width = 353
-      Height = 81
+      Left = 232
+      Top = 56
+      Width = 312
+      Height = 46
       Caption = 'Auto Torno Viana'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
@@ -34,8 +34,8 @@ object frmMenu: TfrmMenu
       ParentFont = False
     end
     object Label2: TLabel
-      Left = 248
-      Top = 208
+      Left = 288
+      Top = 200
       Width = 64
       Height = 24
       Caption = 'Usuario'
@@ -47,8 +47,8 @@ object frmMenu: TfrmMenu
       ParentFont = False
     end
     object Label3: TLabel
-      Left = 248
-      Top = 304
+      Left = 288
+      Top = 296
       Width = 55
       Height = 24
       Caption = 'Senha'
@@ -60,8 +60,8 @@ object frmMenu: TfrmMenu
       ParentFont = False
     end
     object edtUsuario: TEdit
-      Left = 248
-      Top = 248
+      Left = 288
+      Top = 240
       Width = 209
       Height = 28
       Font.Charset = DEFAULT_CHARSET
@@ -73,8 +73,8 @@ object frmMenu: TfrmMenu
       TabOrder = 0
     end
     object edtSenha: TEdit
-      Left = 248
-      Top = 344
+      Left = 288
+      Top = 336
       Width = 209
       Height = 28
       Font.Charset = DEFAULT_CHARSET
@@ -86,7 +86,7 @@ object frmMenu: TfrmMenu
       TabOrder = 1
     end
     object btnLogar: TButton
-      Left = 288
+      Left = 328
       Top = 472
       Width = 113
       Height = 33

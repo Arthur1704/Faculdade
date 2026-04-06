@@ -57,7 +57,7 @@ begin
       FreeAndNil(frmSistema);
     end
   else
-    ShowMessage('usuario e senha incorretos');
+   MessageDlg('Dados invalidos',mtInformation,[mbOk],0);
 
 end;
 

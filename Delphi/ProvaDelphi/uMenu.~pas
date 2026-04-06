@@ -52,7 +52,6 @@ procedure TfrmMenu.btnLogarClick(Sender: TObject);
 begin
   if logar(edtUsuario.Text, edtSenha.Text) then
     begin
-      ShowMessage('Logado');
       frmSistema := TfrmSistema.Create(Self);
       frmSistema.ShowModal;
       FreeAndNil(frmSistema);
