@@ -1,0 +1,90 @@
+unit uSistema;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, ExtCtrls, StdCtrls, Mask, Grids;
+
+type
+  TfrmSistema = class(TForm)
+    Panel1: TPanel;
+    Label1: TLabel;
+    Label2: TLabel;
+    edtServico: TEdit;
+    rgUrgencia: TRadioGroup;
+    lbSituacao: TListBox;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    edtNomeCliente: TEdit;
+    medtCpf: TMaskEdit;
+    btnSalvar: TButton;
+    sgDados: TStringGrid;
+    procedure FormCreate(Sender: TObject);
+    procedure btnSalvarClick(Sender: TObject);
+  private
+    procedure salvar;
+  public
+    { Public declarations }
+  end;
+
+var
+  frmSistema: TfrmSistema;
+  cont : Integer;
+implementation
+
+procedure TfrmSistema.salvar;
+var servico, urgencia, nomeCliente, cpf, situacao : String;
+begin
+  servico := edtServico.Text;
+  urgencia := rgUrgencia.Items[rgUrgencia.ItemIndex];
+  nomeCliente := edtNomeCliente.Text;
+  cpf := medtCpf.Text;
+  situacao := lbSituacao.Items[lbSituacao.ItemIndex];
+  if (servico = '') or (urgencia = '') or (nomeCliente = '') or (cpf = '') or (situacao = '')then
+    ShowMessage('Não e possivel inserir com campos em banco!!')
+  else if (sgDados.RowCount < 2) then
+     begin
+     cont := cont + 1;
+     sgDados.RowCount := sgDados.RowCount + 1;
+     sgDados.Cells[0, sgDados.RowCount - 1] := intToStr(cont);
+     sgDados.Cells[1, sgDados.RowCount - 1] := servico;
+     sgDados.Cells[2, sgDados.RowCount - 1] := urgencia;
+     sgDados.Cells[3, sgDados.RowCount - 1] := nomeCliente;
+     sgDados.Cells[4, sgDados.RowCount - 1] := cpf;
+     sgDados.Cells[5, sgDados.RowCount - 1] := situacao;
+     end
+  else
+    begin
+    cont := cont + 1;
+    sgDados.RowCount := sgDados.RowCount + 1;
+    sgDados.Cells[0, sgDados.RowCount - 1] := intToStr(cont);
+    sgDados.Cells[1, sgDados.RowCount - 1] := servico;
+    sgDados.Cells[2, sgDados.RowCount - 1] := urgencia;
+    sgDados.Cells[3, sgDados.RowCount - 1] := nomeCliente;
+    sgDados.Cells[4, sgDados.RowCount - 1] := cpf;
+    sgDados.Cells[5, sgDados.RowCount - 1] := situacao;
+    sgDados.FixedRows := 1;
+    end;
+end;
+
+{$R *.dfm}
+
+procedure TfrmSistema.FormCreate(Sender: TObject);
+begin
+  cont := 0;
+  sgDados.Cells[0, 0] := 'id';
+  sgDados.Cells[1, 0] := 'Serviço';
+  sgDados.Cells[2, 0] := 'Urgencia';
+  sgDados.Cells[3, 0] := 'Cliente';
+  sgDados.Cells[4, 0] := 'CPF';
+  sgDados.Cells[5, 0] := 'Situação';
+end;
+
+procedure TfrmSistema.btnSalvarClick(Sender: TObject);
+begin
+  salvar;
+end;
+
+end.

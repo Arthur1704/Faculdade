@@ -4,7 +4,6 @@ uses
   Forms,
   uMenu in 'uMenu.pas' {Form1};
 
-{$R *.res}
 
 begin
   Application.Initialize;
