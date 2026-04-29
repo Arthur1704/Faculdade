@@ -1,0 +1,309 @@
+:root {
+    --brand-red: #c0392b;
+    --brand-dark: #1a1a1a;
+    --brand-gray: #2c2c2c;
+    --brand-light: #f4f4f4;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--brand-dark);
+    color: #eee;
+}
+
+h1,
+h2,
+h3,
+.display-1 {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 1px;
+}
+
+/* ── NAVBAR ── */
+.navbar {
+    background-color: #111 !important;
+    border-bottom: 3px solid var(--brand-red);
+}
+
+.navbar-brand span {
+    color: var(--brand-red);
+}
+
+.nav-link {
+    color: #ccc !important;
+    transition: color .2s;
+}
+
+.nav-link:hover {
+    color: var(--brand-red) !important;
+}
+
+/* ── HERO ── */
+.hero {
+    background: linear-gradient(135deg, #111 0%, #2a0000 100%);
+    min-height: 92vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    right: -80px;
+    bottom: -80px;
+    width: 480px;
+    height: 480px;
+    border-radius: 50%;
+    border: 60px solid rgba(192, 57, 43, .15);
+}
+
+.hero h1 {
+    font-size: clamp(3rem, 8vw, 6rem);
+    line-height: 1;
+}
+
+.hero h1 span {
+    color: var(--brand-red);
+}
+
+.btn-brand {
+    background-color: var(--brand-red);
+    color: #fff;
+    border: none;
+    font-weight: 600;
+    padding: .75rem 2rem;
+    border-radius: 2px;
+    transition: opacity .2s, transform .15s;
+}
+
+.btn-brand:hover {
+    opacity: .85;
+    transform: translateY(-2px);
+    color: #fff;
+}
+
+.btn-outline-brand {
+    border: 2px solid var(--brand-red);
+    color: var(--brand-red);
+    background: transparent;
+    font-weight: 600;
+    padding: .75rem 2rem;
+    border-radius: 2px;
+    transition: all .2s;
+}
+
+.btn-outline-brand:hover {
+    background-color: var(--brand-red);
+    color: #fff;
+}
+
+/* ── STATS BAR ── */
+.stats-bar {
+    background-color: var(--brand-red);
+}
+
+.stat-item {
+    padding: 1.5rem 1rem;
+    text-align: center;
+}
+
+.stat-item .num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.8rem;
+    line-height: 1;
+}
+
+.stat-item .label {
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: .85;
+}
+
+/* ── SERVICES ── */
+.services-section {
+    background-color: var(--brand-dark);
+}
+
+.section-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+.service-card {
+    background-color: var(--brand-gray);
+    border: 1px solid #3a3a3a;
+    border-radius: 4px;
+    transition: border-color .25s, transform .25s;
+    cursor: default;
+}
+
+.service-card:hover {
+    border-color: var(--brand-red);
+    transform: translateY(-4px);
+}
+
+.service-card .icon {
+    font-size: 2.5rem;
+    color: var(--brand-red);
+}
+
+/* ── ABOUT ── */
+.about-section {
+    background-color: #111;
+}
+
+.about-img-wrap {
+    position: relative;
+}
+
+.about-img-wrap::before {
+    content: '';
+    position: absolute;
+    inset: -14px -14px 14px 14px;
+    border: 3px solid var(--brand-red);
+    border-radius: 4px;
+    z-index: 0;
+}
+
+.about-img-wrap img {
+    position: relative;
+    z-index: 1;
+}
+
+/* ── TESTIMONIALS ── */
+.testimonials-section {
+    background-color: var(--brand-gray);
+}
+
+.testimonial-card {
+    background-color: #1a1a1a;
+    border-left: 4px solid var(--brand-red);
+    border-radius: 0 4px 4px 0;
+}
+
+.stars {
+    color: #f39c12;
+    font-size: .95rem;
+}
+
+/* ── FORM ── */
+.contact-section {
+    background-color: var(--brand-dark);
+}
+
+.form-control,
+.form-select {
+    background-color: #2c2c2c !important;
+    border: 1px solid #444 !important;
+    color: #eee !important;
+    border-radius: 2px !important;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--brand-red) !important;
+    box-shadow: 0 0 0 3px rgba(192, 57, 43, .25) !important;
+}
+
+.form-control::placeholder {
+    color: #777 !important;
+}
+
+.form-select option {
+    background-color: #2c2c2c;
+}
+
+/* ── BADGE customizado ── */
+.badge-brand {
+    background-color: var(--brand-red);
+    color: #fff;
+    font-size: .7rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: .35em .75em;
+    border-radius: 2px;
+    text-transform: uppercase;
+}
+
+/* ── ACCORDION ── */
+.accordion-item {
+    background-color: var(--brand-gray) !important;
+    border: 1px solid #3a3a3a !important;
+}
+
+.accordion-button {
+    background-color: var(--brand-gray) !important;
+    color: #eee !important;
+    font-weight: 500;
+}
+
+.accordion-button:not(.collapsed) {
+    color: var(--brand-red) !important;
+    box-shadow: none !important;
+}
+
+.accordion-button::after {
+    filter: invert(1);
+}
+
+.accordion-body {
+    background-color: #1a1a1a !important;
+    color: #bbb;
+}
+
+/* ── FOOTER ── */
+footer {
+    background-color: #0d0d0d;
+    border-top: 3px solid var(--brand-red);
+}
+
+footer a {
+    color: #999;
+    text-decoration: none;
+    transition: color .2s;
+}
+
+footer a:hover {
+    color: var(--brand-red);
+}
+
+/* ── TOAST ── */
+.toast-container {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 9999;
+}
+
+.toast {
+    background-color: #1a1a1a;
+    border: 1px solid var(--brand-red);
+    color: #eee;
+}
+
+/* ── PROGRESS ── */
+.progress {
+    background-color: #3a3a3a;
+    height: 8px;
+    border-radius: 2px;
+}
+
+.progress-bar {
+    background-color: var(--brand-red);
+}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #111;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--brand-red);
+    border-radius: 3px;
+}
