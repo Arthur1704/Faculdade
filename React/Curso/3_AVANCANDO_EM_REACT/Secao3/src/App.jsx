@@ -6,6 +6,7 @@ import ListRender from './components/ListRender';
 import CondicionalRender from './components/CondicionalRender';
 import ShowUserName from './components/ShowUserName';
 import CarDetails from './components/CarDetails';
+import Fragments from './components/Fragments';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -41,6 +42,8 @@ function App() {
       {cars.map((car) => (
         <CarDetails marca={car.marca} km={car.km} newCar={car.newCar} />
       ))}
+      {/* Fragments */}
+      <Fragments />
     </div>
 
   )
