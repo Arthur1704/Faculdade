@@ -28,7 +28,9 @@ function App() {
       {/* Props */}
       <ShowUserName name={name}/>
       {/* Destructuring */}
-      <CarDetails marca = "Fiat" km = {10000}/>
+      <CarDetails marca = "Fiat" km = {10000} newCar = {true}/>
+      {/* Reaproveitamento */}
+      <CarDetails marca = "Ford" km = {200} newCar = {false}/>
     </div>
 
   )
