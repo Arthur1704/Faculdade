@@ -11,6 +11,12 @@ function App() {
   const [count, setCount] = useState(0)
   const name = "Maria";
 
+  const cars = [
+    {id: 1, marca: "Chevrolet", km: 10000, newCar: false},
+    {id: 2, marca: "Maserati", km: 0, newCar: true},
+    {id: 3, marca: "Jaguar", km: 250, newCar: false}
+  ];
+
   return (
     <div className="App">
       <h1>Avancando em React</h1>
@@ -31,6 +37,10 @@ function App() {
       <CarDetails marca = "Fiat" km = {10000} newCar = {true}/>
       {/* Reaproveitamento */}
       <CarDetails marca = "Ford" km = {200} newCar = {false}/>
+      {/* Loop em array de Objetos */}
+      {cars.map((car) => (
+        <CarDetails marca={car.marca} km={car.km} newCar={car.newCar} />
+      ))}
     </div>
 
   )
