@@ -8,6 +8,7 @@ import ShowUserName from './components/ShowUserName';
 import CarDetails from './components/CarDetails';
 import Fragments from './components/Fragments';
 import Container from './components/Container';
+import ExecuteFunction from './components/ExecuteFunction';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -18,6 +19,10 @@ function App() {
     {id: 2, marca: "Maserati", km: 0, newCar: true},
     {id: 3, marca: "Jaguar", km: 250, newCar: false}
   ];
+
+  function showMessage() {
+    console.log("Evento do componente pai!!")
+  }
 
   return (
     <div className="App">
@@ -49,6 +54,8 @@ function App() {
       <Container>
         <p>Este é um comentario</p>
       </Container>
+      {/* Executar função */}
+      <ExecuteFunction myFunction={showMessage}/>
     </div>
 
   )
