@@ -7,6 +7,7 @@ import CondicionalRender from './components/CondicionalRender';
 import ShowUserName from './components/ShowUserName';
 import CarDetails from './components/CarDetails';
 import Fragments from './components/Fragments';
+import Container from './components/Container';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -44,6 +45,10 @@ function App() {
       ))}
       {/* Fragments */}
       <Fragments />
+      {/* Children */}
+      <Container>
+        <p>Este é um comentario</p>
+      </Container>
     </div>
 
   )
