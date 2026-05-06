@@ -11,7 +11,7 @@ function App() {
   return (
     <div>
       <h2>Forms</h2>
-      <Myform />
+      <Myform user={{name:"Arthur", email:"arthur@gmail.com"}}/>
     </div>
   )
 }
