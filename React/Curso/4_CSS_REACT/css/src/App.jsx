@@ -11,6 +11,8 @@ function App() {
       <h1>React com css</h1>
       {/* CSS DE COMPONENTE */}
       <MyComponent />
+      {/* CSS INLINE */}
+      <p style={{color: "white"}}>Este elemento foi estilizado de forma inline</p>
     </div>
   )
 }
