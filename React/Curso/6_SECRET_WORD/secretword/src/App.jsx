@@ -1,13 +1,33 @@
-import { useState } from 'react'
+//React
+import { useState, useCallback, useEffect} from 'react'
+
+//CSS
 import './App.css'
+
+//DADOS
+import { wordsList } from "./data/words";
+
+//COMPONENST
 import StartScreen from './components/StartScreen'
+import Game from './components/Game';
+import GameOver from './components/GameOver';
+
+const stages = [
+  {id: 1, name: "start"},
+  {id: 2, name: "game"},
+  {id: 3, name: "end"},
+];
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [gameStage, setGameStage] = useState(stages[0].name);
+
+  const [words] = useState(wordsList);
 
   return (
     <div className="App">
-      <StartScreen />
+      {gameStage === "start" && <StartScreen />}
+      {gameStage === "game" && <Game />}
+      {gameStage === "end" && <GameOver />}
     </div>
   )
 }
