@@ -23,11 +23,11 @@ const Game = ({verifyLetter, pickedWord, pickedCategory, letters, guessedLetters
       </div>
       <div className="letterContainer">
         <p>Tente adivinhar a letra da palavra: </p>
-      </div>
-      <form>
-        <input type="text" name="letter" maxLength="1" required />
+        <form>
+          <input type="text" name="letter" maxLength="1" required />
         <button>Jogar!</button>
       </form>
+      </div>
       <div className="wrongLetterContainer">
         <p>Letras já utilizadas:</p>
         {wrongLetters.map((letter, i) => (
