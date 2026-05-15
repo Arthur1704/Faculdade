@@ -2,23 +2,30 @@ import './App.css'
 
 import { useState, useEffect } from "react"
 
+// 4 - Custom hook
+import { useFecth } from './hooks/useFetch';
+
 const url = "http://localhost:3000/products";
+
 function App() {
   const [products, setProducts] = useState([]);
+
+  // 4 - custom
+  const {data: items} = useFecth(url);
 
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
 
   // 1 - Resgatando Dados
-  useEffect(() => {
-    async function fechdata() {
-      const res = await fetch(url);
-      const data = await res.json();
+  // useEffect(() => {
+  //   async function fechdata() {
+  //     const res = await fetch(url);
+  //     const data = await res.json();
 
-      setProducts(data);
-    }
-    fechdata();
-  }, []);
+  //     setProducts(data);
+  //   }
+  //   fechdata();
+  // }, []);
 
   // 2 - Adição de Produtos
 
@@ -52,7 +59,7 @@ function App() {
     <div className="App">
       <h1>Lista de Produtos</h1>
       <ul>
-        {products.map((product) => (
+        {items && items.map((product) => (
           <li key={product.id}>{product.name} - R$: {product.price}</li>
         ))}
       </ul>
