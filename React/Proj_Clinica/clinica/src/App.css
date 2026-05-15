@@ -1,0 +1,19 @@
+.app {
+    display: flex;       /* Coloca NavigationBar e .container lado a lado */
+    width: 100vw;        /* Garante que ocupe a largura total da janela */
+    min-height: 100vh;   /* Garante a altura total */
+}
+
+.container {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container h1 {
+    color: #333;
+    margin: 10px 0;
+}
