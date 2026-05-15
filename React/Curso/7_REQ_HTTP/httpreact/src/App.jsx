@@ -11,7 +11,7 @@ function App() {
   const [products, setProducts] = useState([]);
 
   // 4 - custom
-  const {data: items} = useFecth(url);
+  const {data: items, httpConfig, loading} = useFecth(url);
 
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
@@ -37,18 +37,21 @@ function App() {
       price
     };
 
-    const res = await fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(product),
-    });
+    // const res = await fetch(url, {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json"
+    //   },
+    //   body: JSON.stringify(product),
+    // });
 
     // 3 - Carregamento dinamico
 
-    const addedProduct = await res.json();
-    setProducts((pervProducts) => [...pervProducts, addedProduct]);
+    // const addedProduct = await res.json();
+    // setProducts((pervProducts) => [...pervProducts, addedProduct]);
+
+    //5 - Refactor POST
+    httpConfig(product, "POST")
 
     setName("");
     setPrice("");
@@ -58,11 +61,15 @@ function App() {
   return (
     <div className="App">
       <h1>Lista de Produtos</h1>
-      <ul>
+      {/* 6 - Loading */}
+      {loading && <p>Carregando os Dados...</p>}
+      {!loading &&(
+        <ul>
         {items && items.map((product) => (
           <li key={product.id}>{product.name} - R$: {product.price}</li>
         ))}
       </ul>
+      )}
       <div className="add-product">
         <form onSubmit={handleSubmit}>
           <label>

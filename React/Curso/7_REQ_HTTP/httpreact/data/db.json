@@ -24,6 +24,11 @@
       "name": "Generic H2 (Embedded)",
       "price": "36.50",
       "id": "hCv-uNWhf1s"
+    },
+    {
+      "name": "HH LaserJet 3050",
+      "price": "22.80",
+      "id": "LnUju6srOrA"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
