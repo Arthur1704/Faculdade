@@ -23,8 +23,29 @@ function App() {
   // 2 - Adição de Produtos
 
   const handleSubmit = async (e) => {
-    
-  }
+    e.preventDefault();
+
+    const product = {
+      name,
+      price
+    };
+
+    const res = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(product),
+    });
+
+    // 3 - Carregamento dinamico
+
+    const addedProduct = await res.json();
+    setProducts((pervProducts) => [...pervProducts, addedProduct]);
+
+    setName("");
+    setPrice("");
+  };
 
 
   return (
@@ -45,7 +66,7 @@ function App() {
             Preço: 
             <input type="number" value={price} name="price" onChange={(e) => setPrice(e.target.value)}/>
           </label>
-          <input type="submit" value={Criar} />
+          <input type="submit" value="Criar" />
         </form>
       </div>
     </div>
