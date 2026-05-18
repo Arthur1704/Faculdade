@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="um">1</string>
+    <string name="dois">2</string>
+    <string name="tres">3</string>
+    <string name="quatro">4</string>
+    <string name="sim">Sim</string>
+    <string name="nao">Não</string>
+    <string name="piscina">Piscina</string>
+    <string name="area">Área Gourmet</string>
+    <string name="lavanderia">Lavanderia</string>
+
+    <string-array name="estados">
+        <item>São Paulo</item>
+        <item>Rio de Janeiro</item>
+        <item>Bahia</item>
+        <item>Rio Grande do Sul</item>
+    </string-array>
+</resources>
