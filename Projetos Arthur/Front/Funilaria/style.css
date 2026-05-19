@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #000000cc;
+    background-color: #000;
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -20,8 +20,56 @@ body {
     letter-spacing: 1px;
 }
 
+.carousel-item {
+    position: relative;
+}
+
+.carousel-item::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.85));
+    z-index: 1;
+}
+
 .carousel-inner img {
     height: 400px;
     width: 100%;
     object-fit: cover;
+    z-index: 0;
+    position: relative;
+}
+
+.carousel-caption {
+    position: absolute;
+    z-index: 2;
+    /* Força a caixa a ocupar todo o espaço do slide */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100% !important;
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    /* Alinha no meio vertical */
+    align-items: center !important;
+    /* Alinha no meio horizontal */
+    text-align: center !important;
+}
+
+.carousel-caption h5 {
+    font-size: 3rem;
+}
+
+.carousel-caption p {
+    font-size: 1.5rem;
+}
+
+.btn-navegacao {
+    z-index: 3;
 }
