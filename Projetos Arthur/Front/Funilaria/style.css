@@ -1,0 +1,21 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #000000cc;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.nav-funilaria {
+    background-color: #1a1a1a !important;
+    text-transform: uppercase;
+    border-bottom: 5px solid orange;
+}
+
+.nav-titulo {
+    font-size: 2em !important;
+    font-weight: 750; /*Grossura da letra*/
+    color: aliceblue;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
