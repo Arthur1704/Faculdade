@@ -11,7 +11,7 @@ function App() {
   const [products, setProducts] = useState([]);
 
   // 4 - custom
-  const {data: items, httpConfig, loading} = useFecth(url);
+  const {data: items, httpConfig, loading, error} = useFecth(url);
 
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
@@ -63,7 +63,8 @@ function App() {
       <h1>Lista de Produtos</h1>
       {/* 6 - Loading */}
       {loading && <p>Carregando os Dados...</p>}
-      {!loading &&(
+      {error && <p>{error}</p>}
+      {!error &&(
         <ul>
         {items && items.map((product) => (
           <li key={product.id}>{product.name} - R$: {product.price}</li>
