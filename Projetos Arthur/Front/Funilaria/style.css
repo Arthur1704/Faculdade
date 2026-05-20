@@ -10,7 +10,7 @@ body {
     text-transform: uppercase;
     border-bottom: 5px solid red;
     padding-left: 5em;
-    padding-right: 20em;
+    padding-right: 10em;
 }
 
 .nav-titulo {
@@ -82,18 +82,18 @@ body {
     background-color: red;
 }
 
-.conteudo{
+.conteudo {
     width: 65%;
     margin: 0 auto;
     padding: 0;
-    margin-top: 10em;
+    margin-top: 6em;
     text-align: center;
     padding-top: 1em;
     display: flex;
     flex-wrap: nowrap;
 }
 
-.conteudo h2{
+.conteudo h2 {
     color: rgb(172, 2, 2);
     text-transform: uppercase;
     font-size: 2.2em;
@@ -107,4 +107,21 @@ body {
     text-align: justify;
     padding: 0;
     margin: 0;
+}
+
+.porqueNos {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(172, 2, 2);
+    padding: 2em 10em 2em 10em;
+}
+
+.porqueNos h2 {
+    font-size: 3em;
+    padding-bottom: 0.5em;
+}
+
+.porqueNos .card {
+    color: #000 !important;
+    height: 30em;
 }
