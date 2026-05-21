@@ -83,14 +83,14 @@ body {
 }
 
 .conteudo {
-    width: 65%;
+    width: 100%;
     margin: 0 auto;
+    margin-right: 0;
     padding: 0;
-    margin-top: 6em;
-    text-align: center;
-    padding-top: 1em;
     display: flex;
+    align-items: stretch;
     flex-wrap: nowrap;
+    min-height: 500px;
 }
 
 .conteudo h2 {
@@ -98,6 +98,11 @@ body {
     text-transform: uppercase;
     font-size: 2.2em;
     text-align: left;
+}
+
+.conteudo-texto {
+    padding: 4em;
+    position: relative;
 }
 
 .conteudo p {
@@ -109,6 +114,27 @@ body {
     margin: 0;
 }
 
+
+.container-imagem-efeito {
+    display: flex;
+    overflow: hidden;
+    padding: 0 !important;
+    align-self: stretch;
+}
+
+.imagem-oficina {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    border-radius: 0;
+    clip-path: polygon(8% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.imagem-oficina:hover {
+    transform: scale(1.03);
+}
+
 .porqueNos {
     margin: 0;
     padding: 0;
@@ -118,22 +144,22 @@ body {
     overflow: hidden;
 }
 
-.porqueNos::before{
+.porqueNos::before {
     content: "";
     position: absolute;
     right: 2%;
-    width: 150%; 
+    width: 150%;
     height: 150%;
     background-image: url("https://icons.getbootstrap.com/assets/icons/tools.svg");
     background-repeat: no-repeat;
-    background-position:right;
+    background-position: right;
     background-size: 30%;
-    opacity: 0.3; 
+    opacity: 0.3;
 }
 
 .porqueNos h2 {
     font-size: 3em;
-    padding-bottom: 0.5em;
+    padding-bottom: 1.5em;
 }
 
 .porqueNos .card {
@@ -141,7 +167,7 @@ body {
     height: 30em;
 }
 
-.card-body p{
+.card-body p {
     font-size: 1.2em;
     text-align: justify;
 }
