@@ -14,6 +14,7 @@ export const useFecth = (url) => {
     const [loading, setLoading] = useState(false);
 
     // 7 - Tratando erros
+
     const [error, setError] = useState(null);
 
 
@@ -51,7 +52,6 @@ export const useFecth = (url) => {
         }
 
         fechData();
-       
 
     }, [url, callFetch]);
 
