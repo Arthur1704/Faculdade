@@ -18,7 +18,7 @@ const Home = () => {
             <h2>Nome: {product.name}</h2>
             <p>Preço: R${product.price}</p>
             {/* 4 - rota Dimanmica */}
-            <Link to={`product/${product.id}`}>Detalhes</Link>
+            <Link to={`products/${product.id}`}>Detalhes</Link>
           </li>
         ))};
       </ul>
