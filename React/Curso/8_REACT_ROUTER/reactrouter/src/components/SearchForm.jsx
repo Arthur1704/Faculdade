@@ -8,7 +8,7 @@ const SearchForm = () => {
   const handleSubmit = (e) =>{
     e.preventDefault();
 
-    navigate("/search?name=" + query);
+    navigate("/search?q=" + query);
   }
   return (
    <form onSubmit={handleSubmit}>
