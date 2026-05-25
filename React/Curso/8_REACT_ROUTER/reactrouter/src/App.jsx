@@ -3,13 +3,15 @@ import './App.css'
 // 1 - Config react Router
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 
+//Components
+import NavBar from './components/NavBar'
+
 // Pages
 import Home from './pages/Home'
 import About from './pages/About'
-
-//Components
-import NavBar from './components/NavBar'
+import Info from './pages/Info'
 import Product from './pages/Product'
+
 
 function App() {
 
@@ -22,7 +24,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />}/>
-          <Route path="/product/:id" element={<Product />}/>
+          <Route path="/products/:id" element={<Product />}/>
+          {/* 6 - nested route */}
+          <Route path='/products/:id/info' element={<Info />}/>
         </Routes>
       </BrowserRouter>
     </div>
