@@ -9,6 +9,7 @@ import About from './pages/About'
 
 //Components
 import NavBar from './components/NavBar'
+import Product from './pages/Product'
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />}/>
+          <Route path="/product/:id" element={<Product />}/>
         </Routes>
       </BrowserRouter>
     </div>
