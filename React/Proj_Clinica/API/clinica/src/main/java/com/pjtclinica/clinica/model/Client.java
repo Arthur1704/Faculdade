@@ -8,8 +8,8 @@ import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
 
 @Entity
-@Table(name = "doctor")
-public class Doctor {
+@Table(name = "client")
+public class Client {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,15 +18,22 @@ public class Doctor {
     @NotNull
     private String name;
 
+    private String cidade;
+
     @NotNull
-    private String CRM;
+    private String CPF;
 
-    private String Cidade;
+    private int idade;
 
-    public Doctor(String name, String cRM, String cidade) {
+    private String sexo;
+
+    public Client(Long id, String name, String cidade, String cPF, int idade, String sexo) {
+        this.id = id;
         this.name = name;
-        CRM = cRM;
-        Cidade = cidade;
+        this.cidade = cidade;
+        CPF = cPF;
+        this.idade = idade;
+        this.sexo = sexo;
     }
 
     public Long getId() {
@@ -45,20 +52,36 @@ public class Doctor {
         this.name = name;
     }
 
-    public String getCRM() {
-        return CRM;
-    }
-
-    public void setCRM(String cRM) {
-        CRM = cRM;
-    }
-
     public String getCidade() {
-        return Cidade;
+        return cidade;
     }
 
     public void setCidade(String cidade) {
-        Cidade = cidade;
+        this.cidade = cidade;
+    }
+
+    public String getCPF() {
+        return CPF;
+    }
+
+    public void setCPF(String cPF) {
+        CPF = cPF;
+    }
+
+    public int getIdade() {
+        return idade;
+    }
+
+    public void setIdade(int idade) {
+        this.idade = idade;
+    }
+
+    public String getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
     }
 
     @Override
@@ -77,7 +100,7 @@ public class Doctor {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        Doctor other = (Doctor) obj;
+        Client other = (Client) obj;
         if (id == null) {
             if (other.id != null)
                 return false;
@@ -85,5 +108,12 @@ public class Doctor {
             return false;
         return true;
     }
+
+    
+
+    
+
+
+
 
 }
