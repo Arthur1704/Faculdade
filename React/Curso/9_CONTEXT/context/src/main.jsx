@@ -4,12 +4,15 @@ import './index.css'
 import App from './App.jsx'
 
 import { ConstContextProvider } from './context/CounterContext.jsx'
+import { TitleColorContextProvider } from './context/TitleColorContext.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     {/* 2 - Criando Provider */}
     <ConstContextProvider>
-      <App />
+      <TitleColorContextProvider>
+        <App />
+      </TitleColorContextProvider>
     </ConstContextProvider>
   </StrictMode>,
 )
