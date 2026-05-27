@@ -6,7 +6,7 @@
     padding: .5em 2em;
 }
 
-.brand {
+.brand span {
     font-weight: 900;
     text-transform: uppercase;
 }
