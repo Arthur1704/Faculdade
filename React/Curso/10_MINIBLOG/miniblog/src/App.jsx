@@ -1,8 +1,9 @@
 import "./App.css"
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useAuthentication } from "./hooks/useAuthentication";
 
 // CONTEXT
-
 import { AuthProvider } from "./context/AuthContext";
 
 // PAGES
@@ -12,13 +13,32 @@ import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
+import { onAuthStateChanged } from "firebase/auth";
+
 
 
 function App() {
 
+  const [user, setUser] = useState(undefined)
+  const {auth} = useAuthentication()
+
+  const loadingUser = user === undefined
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) =>{
+      setUser(user)
+    })
+  }, [auth]);
+
+  if(loadingUser){
+    return <p>Carregando...</p>
+  }
+
+
+
   return (
     <div className="App">
-      <AuthProvider>
+      <AuthProvider value={{user}}>
         <BrowserRouter>
         <NavBar />
         <div className="container">
