@@ -1,6 +1,10 @@
 import "./App.css"
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
+// CONTEXT
+
+import { AuthProvider } from "./context/AuthContext";
+
 // PAGES
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
@@ -14,7 +18,8 @@ function App() {
 
   return (
     <div className="App">
-      <BrowserRouter>
+      <AuthProvider>
+        <BrowserRouter>
         <NavBar />
         <div className="container">
           <Routes>
@@ -26,6 +31,7 @@ function App() {
         </div>
         <Footer />
       </BrowserRouter>
+      </AuthProvider>
     </div>
   )
 }
