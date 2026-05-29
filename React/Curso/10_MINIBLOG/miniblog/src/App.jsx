@@ -14,6 +14,8 @@ import Footer from "./components/Footer";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import { onAuthStateChanged } from "firebase/auth";
+import Dashboard from "./pages/Dashboard/Dashboard";
+import CreatePost from "./pages/CreatePost/CreatePost";
 
 
 
@@ -45,8 +47,10 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />}/>
             <Route path="/about" element={<About />}/>
-            <Route path="/login" element={<Login />}/>
-            <Route path="/register" element={<Register />}/>
+            <Route path="/login" element={!user ? <Login /> : <Navigate to="/"/>}/>
+            <Route path="/register" element={!user ? <Register /> : <Navigate to="/"/>}/>
+            <Route path="/posts/create" element={user ? <CreatePost /> : <Navigate to="/login"/>}/>
+            <Route path="/dashboard" element={user ? <Dashboard /> : <Navigate to="/login"/>}/>
           </Routes>
         </div>
         <Footer />
