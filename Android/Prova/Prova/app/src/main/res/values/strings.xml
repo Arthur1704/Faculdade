@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Prova</string>
+
+
+    <string-array name="tipo_aula">
+        <item>Desenvolvimento</item>
+        <item>Hardware</item>
+        <item>Banco de Dados</item>
+        <item>Informatica Basica</item>
+    </string-array>
+
+    <string-array name="dificuldade">
+        <item>Facil</item>
+        <item>Medio</item>
+        <item>Dicil</item>
+    </string-array>
+</resources>
