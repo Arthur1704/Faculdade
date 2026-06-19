@@ -1,0 +1,44 @@
+﻿.container-demandas {
+margin-top: 2rem;
+}
+
+.tabela-demandas {
+border: 1px solid #dee2e6;
+}
+
+.tabela-demandas thead {
+background-color: #343a40;
+color: white;
+}
+
+.status-badge {
+padding: 0.25em 0.6em;
+border-radius: 0.25rem;
+font-size: 0.85em;
+}
+
+.status-analise {
+background-color: #ffc107;
+color: #000;
+}
+
+.btn-detalhes {
+background-color: #0d6efd;
+color: white;
+border: none;
+padding: 0.2rem 0.5rem;
+border-radius: 4px;
+}
+
+.btn-editar {
+background-color: #198754;
+color: white;
+border: none;
+padding: 0.2rem 0.5rem;
+border-radius: 4px;
+margin-left: 5px;
+}
+
+.btn-detalhes:hover, .btn-editar:hover {
+    filter: brightness(90%);
+}

@@ -67,16 +67,41 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CadCliente.aspx" />
+    <Content Include="CadTecnico.aspx" />
     <Content Include="index.aspx" />
+    <Content Include="index.css" />
+    <Content Include="OS.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CadCliente.aspx.cs">
+      <DependentUpon>CadCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CadCliente.aspx.designer.cs">
+      <DependentUpon>CadCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CadTecnico.aspx.cs">
+      <DependentUpon>CadTecnico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CadTecnico.aspx.designer.cs">
+      <DependentUpon>CadTecnico.aspx</DependentUpon>
+    </Compile>
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OS.aspx.cs">
+      <DependentUpon>OS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OS.aspx.designer.cs">
+      <DependentUpon>OS.aspx</DependentUpon>
     </Compile>
     <Compile Include="PaginaPrincipal.Master.cs">
       <DependentUpon>PaginaPrincipal.Master</DependentUpon>
