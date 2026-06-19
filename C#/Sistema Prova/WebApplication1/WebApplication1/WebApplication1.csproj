@@ -69,9 +69,14 @@
   <ItemGroup>
     <Content Include="CadCliente.aspx" />
     <Content Include="CadTecnico.aspx" />
+    <Content Include="Clientes.aspx" />
+    <Content Include="Clientes.css" />
     <Content Include="index.aspx" />
     <Content Include="index.css" />
     <Content Include="OS.aspx" />
+    <Content Include="Tecnico.aspx" />
+    <Content Include="Tecnico.css" />
+    <Content Include="TodasOS.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -89,6 +94,13 @@
     <Compile Include="CadTecnico.aspx.designer.cs">
       <DependentUpon>CadTecnico.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Clientes.aspx.cs">
+      <DependentUpon>Clientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Clientes.aspx.designer.cs">
+      <DependentUpon>Clientes.aspx</DependentUpon>
+    </Compile>
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -105,11 +117,26 @@
     </Compile>
     <Compile Include="PaginaPrincipal.Master.cs">
       <DependentUpon>PaginaPrincipal.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="PaginaPrincipal.Master.designer.cs">
       <DependentUpon>PaginaPrincipal.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tecnico.aspx.cs">
+      <DependentUpon>Tecnico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tecnico.aspx.designer.cs">
+      <DependentUpon>Tecnico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TodasOS.aspx.cs">
+      <DependentUpon>TodasOS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TodasOS.aspx.designer.cs">
+      <DependentUpon>TodasOS.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

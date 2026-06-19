@@ -15,13 +15,13 @@ namespace WebApplication1
     {
 
         /// <summary>
-        /// Controle txtCliente.
+        /// Controle ddlCliente.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCliente;
+        protected global::System.Web.UI.WebControls.DropDownList ddlCliente;
 
         /// <summary>
         /// Controle txtEquipamento.
@@ -78,13 +78,13 @@ namespace WebApplication1
         protected global::System.Web.UI.WebControls.DropDownList ddlStatus;
 
         /// <summary>
-        /// Controle txtTecnico.
+        /// Controle ddlTecnico.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTecnico;
+        protected global::System.Web.UI.WebControls.DropDownList ddlTecnico;
 
         /// <summary>
         /// Controle btnSalvar.

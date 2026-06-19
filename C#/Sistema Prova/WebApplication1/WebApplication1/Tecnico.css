@@ -1,15 +1,17 @@
-﻿body{
+﻿body {
     background-color: lightgray;
+    font-family: Arial, sans-serif;
 }
+
 .container-demandas {
     margin-top: 30px;
 }
 
-    .container-demandas h2 {
-        margin-bottom: 20px;
-        font-weight: 600;
-        color: #333;
-    }
+.container-demandas h2 {
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #333;
+}
 
 .tabela-demandas {
     width: 100%;
@@ -20,22 +22,22 @@
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
-    .tabela-demandas th {
-        background-color: #343a40;
-        color: white;
-        padding: 14px;
-        text-align: center;
-    }
+.tabela-demandas th {
+    background-color: #343a40;
+    color: white;
+    padding: 14px;
+    text-align: center;
+}
 
-    .tabela-demandas td {
-        padding: 14px;
-        text-align: center;
-        border-bottom: 1px solid #e9ecef;
-    }
+.tabela-demandas td {
+    padding: 14px;
+    text-align: center;
+    border-bottom: 1px solid #e9ecef;
+}
 
-    .tabela-demandas tbody tr:hover {
-        background-color: #f8f9fa;
-    }
+.tabela-demandas tbody tr:hover {
+    background-color: #f8f9fa;
+}
 
 .status-badge {
     display: inline-block;
@@ -50,15 +52,17 @@
     color: #856404;
 }
 
-.btn-detalhes,
-.btn-editar {
+.btn-detalhes, .btn-editar, .btn-excluir {
     border: none;
     padding: 8px 14px;
     border-radius: 5px;
     cursor: pointer;
-    color: white;
+    color: white !important;
     font-size: 14px;
     transition: 0.3s;
+    text-decoration: none;
+    display: inline-block;
+    margin-left: 5px;
 }
 
 .btn-detalhes {
@@ -67,7 +71,10 @@
 
 .btn-editar {
     background-color: #198754 !important;
-    margin-left: 5px;
+}
+
+.btn-excluir {
+    background-color: #dc3545 !important;
 }
 
 .btn-detalhes:hover {
@@ -76,4 +83,8 @@
 
 .btn-editar:hover {
     background-color: #157347 !important;
+}
+
+.btn-excluir:hover {
+    background-color: #bb2d3b !important;
 }

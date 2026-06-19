@@ -20,19 +20,22 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>João Silva</td>
-                    <td>Notebook Dell Inspiron</td>
-                    <td>Não liga</td>
-                    <td>10/06/2026</td>
-                    <td><span class="status-badge status-analise">Em Análise</span></td>
-                    <td>Carlos Souza</td>
-                    <td>
-                        <button class="btn btn-detalhes">Detalhes</button>
-                        <button class="btn btn-editar">Editar</button>
-                    </td>
-                </tr>
+                <asp:Repeater ID="rptDemandas" runat="server">
+                    <ItemTemplate>
+                        <tr>
+                            <td><%# Eval("id") %></td>
+                            <td><%# Eval("nome_cliente") %></td>
+                            <td><%# Eval("equipamento") %></td>
+                            <td><%# Eval("defeito") %></td>
+                            <td><%# Eval("data_entrada", "{0:dd/MM/yyyy}") %></td>
+                            <td><span class="status-badge"><%# Eval("status") %></span></td>
+                            <td><%# Eval("nome_tecnico") %></td>
+                            <td>                                
+                                <a href='OS.aspx?id=<%# Eval("id") %>' class="btn btn-editar btn-sm">Editar</a>
+                            </td>
+                        </tr>
+                    </ItemTemplate>
+                </asp:Repeater>
             </tbody>
         </table>
     </div>

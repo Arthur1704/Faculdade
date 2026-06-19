@@ -1,30 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Arthur\\Desktop\\Faculdade\\2\u00BA ANO\\C#\\Sistema Prova\\WebApplication1\\",
+  "WorkspaceRootPath": "C:\\Users\\arthu\\Desktop\\Faculdade\\C#\\Sistema Prova\\WebApplication1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{75B3195A-E899-4218-B401-69DE8BBDFA3A}|WebApplication1\\WebApplication1.csproj|c:\\users\\arthur\\desktop\\faculdade\\2\u00BA ano\\c#\\sistema prova\\webapplication1\\webapplication1\\cadtecnico.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{75B3195A-E899-4218-B401-69DE8BBDFA3A}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\cadtecnico.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{75B3195A-E899-4218-B401-69DE8BBDFA3A}|WebApplication1\\WebApplication1.csproj|c:\\users\\arthu\\desktop\\faculdade\\c#\\sistema prova\\webapplication1\\webapplication1\\tecnico.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{75B3195A-E899-4218-B401-69DE8BBDFA3A}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\tecnico.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{75B3195A-E899-4218-B401-69DE8BBDFA3A}|WebApplication1\\WebApplication1.csproj|c:\\users\\arthur\\desktop\\faculdade\\2\u00BA ano\\c#\\sistema prova\\webapplication1\\webapplication1\\cadcliente.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{75B3195A-E899-4218-B401-69DE8BBDFA3A}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\cadcliente.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{75B3195A-E899-4218-B401-69DE8BBDFA3A}|WebApplication1\\WebApplication1.csproj|c:\\users\\arthu\\desktop\\faculdade\\c#\\sistema prova\\webapplication1\\webapplication1\\clientes.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{75B3195A-E899-4218-B401-69DE8BBDFA3A}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\clientes.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{75B3195A-E899-4218-B401-69DE8BBDFA3A}|WebApplication1\\WebApplication1.csproj|c:\\users\\arthur\\desktop\\faculdade\\2\u00BA ano\\c#\\sistema prova\\webapplication1\\webapplication1\\os.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{75B3195A-E899-4218-B401-69DE8BBDFA3A}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\os.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{75B3195A-E899-4218-B401-69DE8BBDFA3A}|WebApplication1\\WebApplication1.csproj|C:\\Users\\Arthur\\Desktop\\Faculdade\\2\u00BA ANO\\C#\\Sistema Prova\\WebApplication1\\webapplication1\\index.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{75B3195A-E899-4218-B401-69DE8BBDFA3A}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\index.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{75B3195A-E899-4218-B401-69DE8BBDFA3A}|WebApplication1\\WebApplication1.csproj|c:\\users\\arthur\\desktop\\faculdade\\2\u00BA ano\\c#\\sistema prova\\webapplication1\\webapplication1\\index.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{75B3195A-E899-4218-B401-69DE8BBDFA3A}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\index.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{75B3195A-E899-4218-B401-69DE8BBDFA3A}|WebApplication1\\WebApplication1.csproj|c:\\users\\arthur\\desktop\\faculdade\\2\u00BA ano\\c#\\sistema prova\\webapplication1\\webapplication1\\paginaprincipal.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
-      "RelativeMoniker": "D:0:0:{75B3195A-E899-4218-B401-69DE8BBDFA3A}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\paginaprincipal.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
+      "AbsoluteMoniker": "D:0:0:{75B3195A-E899-4218-B401-69DE8BBDFA3A}|WebApplication1\\WebApplication1.csproj|c:\\users\\arthu\\desktop\\faculdade\\c#\\sistema prova\\webapplication1\\webapplication1\\tecnico.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{75B3195A-E899-4218-B401-69DE8BBDFA3A}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\tecnico.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,84 +22,45 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "CadTecnico.aspx",
-              "DocumentMoniker": "C:\\Users\\Arthur\\Desktop\\Faculdade\\2\u00BA ANO\\C#\\Sistema Prova\\WebApplication1\\WebApplication1\\CadTecnico.aspx",
-              "RelativeDocumentMoniker": "WebApplication1\\CadTecnico.aspx",
-              "ToolTip": "C:\\Users\\Arthur\\Desktop\\Faculdade\\2\u00BA ANO\\C#\\Sistema Prova\\WebApplication1\\WebApplication1\\CadTecnico.aspx",
-              "RelativeToolTip": "WebApplication1\\CadTecnico.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2026-06-19T14:52:00Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "CadCliente.aspx",
-              "DocumentMoniker": "C:\\Users\\Arthur\\Desktop\\Faculdade\\2\u00BA ANO\\C#\\Sistema Prova\\WebApplication1\\WebApplication1\\CadCliente.aspx",
-              "RelativeDocumentMoniker": "WebApplication1\\CadCliente.aspx",
-              "ToolTip": "C:\\Users\\Arthur\\Desktop\\Faculdade\\2\u00BA ANO\\C#\\Sistema Prova\\WebApplication1\\WebApplication1\\CadCliente.aspx",
-              "RelativeToolTip": "WebApplication1\\CadCliente.aspx",
+              "Title": "Clientes.aspx",
+              "DocumentMoniker": "C:\\Users\\arthu\\Desktop\\Faculdade\\C#\\Sistema Prova\\WebApplication1\\WebApplication1\\Clientes.aspx",
+              "RelativeDocumentMoniker": "WebApplication1\\Clientes.aspx",
+              "ToolTip": "C:\\Users\\arthu\\Desktop\\Faculdade\\C#\\Sistema Prova\\WebApplication1\\WebApplication1\\Clientes.aspx",
+              "RelativeToolTip": "WebApplication1\\Clientes.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2026-06-19T14:46:13.592Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "index.css",
-              "DocumentMoniker": "C:\\Users\\Arthur\\Desktop\\Faculdade\\2\u00BA ANO\\C#\\Sistema Prova\\WebApplication1\\WebApplication1\\index.css",
-              "RelativeDocumentMoniker": "WebApplication1\\index.css",
-              "ToolTip": "C:\\Users\\Arthur\\Desktop\\Faculdade\\2\u00BA ANO\\C#\\Sistema Prova\\WebApplication1\\WebApplication1\\index.css",
-              "RelativeToolTip": "WebApplication1\\index.css",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAQwBgAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2026-06-19T14:28:33.624Z",
+              "WhenOpened": "2026-06-19T19:06:39.178Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "OS.aspx",
-              "DocumentMoniker": "C:\\Users\\Arthur\\Desktop\\Faculdade\\2\u00BA ANO\\C#\\Sistema Prova\\WebApplication1\\WebApplication1\\OS.aspx",
-              "RelativeDocumentMoniker": "WebApplication1\\OS.aspx",
-              "ToolTip": "C:\\Users\\Arthur\\Desktop\\Faculdade\\2\u00BA ANO\\C#\\Sistema Prova\\WebApplication1\\WebApplication1\\OS.aspx",
-              "RelativeToolTip": "WebApplication1\\OS.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2026-06-19T14:24:21.81Z",
+              "Title": "Tecnico.css",
+              "DocumentMoniker": "C:\\Users\\arthu\\Desktop\\Faculdade\\C#\\Sistema Prova\\WebApplication1\\WebApplication1\\Tecnico.css",
+              "RelativeDocumentMoniker": "WebApplication1\\Tecnico.css",
+              "ToolTip": "C:\\Users\\arthu\\Desktop\\Faculdade\\C#\\Sistema Prova\\WebApplication1\\WebApplication1\\Tecnico.css",
+              "RelativeToolTip": "WebApplication1\\Tecnico.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-06-19T19:04:15.74Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "index.aspx",
-              "DocumentMoniker": "C:\\Users\\Arthur\\Desktop\\Faculdade\\2\u00BA ANO\\C#\\Sistema Prova\\WebApplication1\\WebApplication1\\index.aspx",
-              "RelativeDocumentMoniker": "WebApplication1\\index.aspx",
-              "ToolTip": "C:\\Users\\Arthur\\Desktop\\Faculdade\\2\u00BA ANO\\C#\\Sistema Prova\\WebApplication1\\WebApplication1\\index.aspx",
-              "RelativeToolTip": "WebApplication1\\index.aspx",
+              "DocumentIndex": 0,
+              "Title": "Tecnico.aspx",
+              "DocumentMoniker": "C:\\Users\\arthu\\Desktop\\Faculdade\\C#\\Sistema Prova\\WebApplication1\\WebApplication1\\Tecnico.aspx",
+              "RelativeDocumentMoniker": "WebApplication1\\Tecnico.aspx",
+              "ToolTip": "C:\\Users\\arthu\\Desktop\\Faculdade\\C#\\Sistema Prova\\WebApplication1\\WebApplication1\\Tecnico.aspx",
+              "RelativeToolTip": "WebApplication1\\Tecnico.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2026-06-13T14:31:39.752Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "PaginaPrincipal.Master",
-              "DocumentMoniker": "C:\\Users\\Arthur\\Desktop\\Faculdade\\2\u00BA ANO\\C#\\Sistema Prova\\WebApplication1\\WebApplication1\\PaginaPrincipal.Master",
-              "RelativeDocumentMoniker": "WebApplication1\\PaginaPrincipal.Master",
-              "ToolTip": "C:\\Users\\Arthur\\Desktop\\Faculdade\\2\u00BA ANO\\C#\\Sistema Prova\\WebApplication1\\WebApplication1\\PaginaPrincipal.Master",
-              "RelativeToolTip": "WebApplication1\\PaginaPrincipal.Master",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2026-06-13T14:27:25.452Z",
+              "WhenOpened": "2026-06-19T19:03:58.023Z",
               "EditorCaption": ""
             }
           ]

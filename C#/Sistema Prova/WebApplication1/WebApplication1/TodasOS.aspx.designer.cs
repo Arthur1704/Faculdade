@@ -11,16 +11,16 @@ namespace WebApplication1
 {
 
 
-    public partial class index
+    public partial class TodasOS
     {
 
         /// <summary>
-        /// Controle rptDemandas.
+        /// Controle rptTodasDemandas.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptDemandas;
+        protected global::System.Web.UI.WebControls.Repeater rptTodasDemandas;
     }
 }

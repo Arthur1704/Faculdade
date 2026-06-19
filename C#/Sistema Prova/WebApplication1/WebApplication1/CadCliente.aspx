@@ -22,8 +22,8 @@
             <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control" TextMode="Email" placeholder="exemplo@email.com"></asp:TextBox>
         </div>
         <div class="col-12 mt-3">
-            <asp:Button ID="btnSalvar" runat="server" Text="Cadastrar Cliente" CssClass="btn btn-primary" />
-            <a href="index.aspx" class="btn btn-secondary">Voltar</a>
+            <asp:Button ID="btnSalvar" runat="server" Text="Cadastrar Cliente" CssClass="btn btn-primary" OnClick="btnSalvar_Click" />
+            <a href="Clientes.aspx" class="btn btn-secondary">Voltar</a>
         </div>
     </div>
 </div>

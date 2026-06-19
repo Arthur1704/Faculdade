@@ -7,7 +7,8 @@
     <div class="row g-3">
         <div class="col-md-6">
             <label class="form-label">Cliente</label>
-            <asp:TextBox ID="txtCliente" runat="server" CssClass="form-control" placeholder="Nome do Cliente"></asp:TextBox>
+            <asp:DropDownList ID="ddlCliente" runat="server" CssClass="form-select">
+            </asp:DropDownList>
         </div>
         <div class="col-md-6">
             <label class="form-label">Equipamento</label>
@@ -42,11 +43,12 @@
         </div>
         <div class="col-md-4">
             <label class="form-label">Técnico</label>
-            <asp:TextBox ID="txtTecnico" runat="server" CssClass="form-control"></asp:TextBox>
+            <asp:DropDownList ID="ddlTecnico" runat="server" CssClass="form-select">
+            </asp:DropDownList>
         </div>
         
         <div class="col-12 mt-3">
-            <asp:Button ID="btnSalvar" runat="server" Text="Salvar Demanda" CssClass="btn btn-success" />
+            <asp:Button ID="btnSalvar" runat="server" Text="Salvar Demanda" CssClass="btn btn-success" OnClick="btnSalvar_Click" />
             <a href="index.aspx" class="btn btn-secondary">Cancelar</a>
         </div>
     </div>
