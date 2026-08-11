@@ -1,13 +1,29 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\unifai\\Desktop\\WebApplication1\\",
+  "WorkspaceRootPath": "C:\\Users\\unifai\\Desktop\\Faculdade\\C#\\CadernetaObras\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{447196BA-F254-4EBB-9E8A-7D0108298069}|WebApplication1\\WebApplication1.csproj|c:\\users\\unifai\\desktop\\webapplication1\\webapplication1\\login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "AbsoluteMoniker": "D:0:0:{447196BA-F254-4EBB-9E8A-7D0108298069}|WebApplication1\\WebApplication1.csproj|c:\\users\\unifai\\desktop\\faculdade\\c#\\cadernetaobras\\webapplication1\\cadusuario.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{447196BA-F254-4EBB-9E8A-7D0108298069}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\cadusuario.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{447196BA-F254-4EBB-9E8A-7D0108298069}|WebApplication1\\WebApplication1.csproj|c:\\users\\unifai\\desktop\\faculdade\\c#\\cadernetaobras\\webapplication1\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{447196BA-F254-4EBB-9E8A-7D0108298069}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{447196BA-F254-4EBB-9E8A-7D0108298069}|WebApplication1\\WebApplication1.csproj|c:\\users\\unifai\\desktop\\faculdade\\c#\\cadernetaobras\\webapplication1\\base.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
+      "RelativeMoniker": "D:0:0:{447196BA-F254-4EBB-9E8A-7D0108298069}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\base.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{447196BA-F254-4EBB-9E8A-7D0108298069}|WebApplication1\\WebApplication1.csproj|c:\\users\\unifai\\desktop\\faculdade\\c#\\cadernetaobras\\webapplication1\\base.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{447196BA-F254-4EBB-9E8A-7D0108298069}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\base.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{447196BA-F254-4EBB-9E8A-7D0108298069}|WebApplication1\\WebApplication1.csproj|c:\\users\\unifai\\desktop\\faculdade\\c#\\cadernetaobras\\webapplication1\\login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{447196BA-F254-4EBB-9E8A-7D0108298069}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{447196BA-F254-4EBB-9E8A-7D0108298069}|WebApplication1\\WebApplication1.csproj|c:\\users\\unifai\\desktop\\webapplication1\\webapplication1\\login.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "AbsoluteMoniker": "D:0:0:{447196BA-F254-4EBB-9E8A-7D0108298069}|WebApplication1\\WebApplication1.csproj|C:\\Users\\unifai\\Desktop\\Faculdade\\C#\\CadernetaObras\\webapplication1\\login.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{447196BA-F254-4EBB-9E8A-7D0108298069}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\login.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     }
   ],
@@ -18,28 +34,80 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Web.config",
+              "DocumentMoniker": "C:\\Users\\unifai\\Desktop\\Faculdade\\C#\\CadernetaObras\\WebApplication1\\Web.config",
+              "RelativeDocumentMoniker": "WebApplication1\\Web.config",
+              "ToolTip": "C:\\Users\\unifai\\Desktop\\Faculdade\\C#\\CadernetaObras\\WebApplication1\\Web.config",
+              "RelativeToolTip": "WebApplication1\\Web.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2026-08-11T23:35:04.635Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "base.css",
+              "DocumentMoniker": "C:\\Users\\unifai\\Desktop\\Faculdade\\C#\\CadernetaObras\\WebApplication1\\base.css",
+              "RelativeDocumentMoniker": "WebApplication1\\base.css",
+              "ToolTip": "C:\\Users\\unifai\\Desktop\\Faculdade\\C#\\CadernetaObras\\WebApplication1\\base.css",
+              "RelativeToolTip": "WebApplication1\\base.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-08-11T23:20:46.246Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CadUsuario.aspx",
+              "DocumentMoniker": "C:\\Users\\unifai\\Desktop\\Faculdade\\C#\\CadernetaObras\\WebApplication1\\CadUsuario.aspx",
+              "RelativeDocumentMoniker": "WebApplication1\\CadUsuario.aspx",
+              "ToolTip": "C:\\Users\\unifai\\Desktop\\Faculdade\\C#\\CadernetaObras\\WebApplication1\\CadUsuario.aspx",
+              "RelativeToolTip": "WebApplication1\\CadUsuario.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-08-11T23:19:27.565Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "base.Master",
+              "DocumentMoniker": "C:\\Users\\unifai\\Desktop\\Faculdade\\C#\\CadernetaObras\\WebApplication1\\base.Master",
+              "RelativeDocumentMoniker": "WebApplication1\\base.Master",
+              "ToolTip": "C:\\Users\\unifai\\Desktop\\Faculdade\\C#\\CadernetaObras\\WebApplication1\\base.Master",
+              "RelativeToolTip": "WebApplication1\\base.Master",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-08-11T23:07:42.565Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "login.css",
-              "DocumentMoniker": "C:\\Users\\unifai\\Desktop\\WebApplication1\\WebApplication1\\login.css",
+              "DocumentMoniker": "C:\\Users\\unifai\\Desktop\\Faculdade\\C#\\CadernetaObras\\WebApplication1\\login.css",
               "RelativeDocumentMoniker": "WebApplication1\\login.css",
-              "ToolTip": "C:\\Users\\unifai\\Desktop\\WebApplication1\\WebApplication1\\login.css",
+              "ToolTip": "C:\\Users\\unifai\\Desktop\\Faculdade\\C#\\CadernetaObras\\WebApplication1\\login.css",
               "RelativeToolTip": "WebApplication1\\login.css",
-              "ViewState": "AgIAAEMAAAAAAAAAAAAAwGsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2026-08-10T23:18:34.757Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "login.aspx",
-              "DocumentMoniker": "C:\\Users\\unifai\\Desktop\\WebApplication1\\WebApplication1\\login.aspx",
+              "DocumentMoniker": "C:\\Users\\unifai\\Desktop\\Faculdade\\C#\\CadernetaObras\\WebApplication1\\login.aspx",
               "RelativeDocumentMoniker": "WebApplication1\\login.aspx",
-              "ToolTip": "C:\\Users\\unifai\\Desktop\\WebApplication1\\WebApplication1\\login.aspx",
+              "ToolTip": "C:\\Users\\unifai\\Desktop\\Faculdade\\C#\\CadernetaObras\\WebApplication1\\login.aspx",
               "RelativeToolTip": "WebApplication1\\login.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",

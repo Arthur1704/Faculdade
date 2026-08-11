@@ -23,19 +23,10 @@
                 <asp:TextBox ID="txtSenha" runat="server" CssClass="campo-input" TextMode="Password" placeholder="********" autocomplete="current-password" />
             </div>
 
-            <div class="linha-opcoes">
-                <label class="opcao-checkbox">
-                    <asp:CheckBox ID="chkManterConectado" runat="server" />
-                    <span>Manter conectado</span>
-                </label>
-                <asp:HyperLink ID="lnkEsqueciSenha" runat="server" CssClass="link-secundario" NavigateUrl="#">Esqueci minha senha</asp:HyperLink>
-            </div>
-
             <asp:Button ID="btnAcessar" runat="server" CssClass="botao-acessar" Text="Acessar" />
 
-            <footer class="rodape-acesso">
-                <span>Sem acesso ainda?</span>
-                <asp:HyperLink ID="lnkCadastro" runat="server" CssClass="link-secundario" NavigateUrl="#">Solicitar cadastro</asp:HyperLink>
+            <footer class="rodape-acesso">    
+                <asp:HyperLink ID="lnkCadastro" runat="server" CssClass="link-secundario" NavigateUrl="#">Esqueci minha senha</asp:HyperLink>
             </footer>
         </div>
     </form>

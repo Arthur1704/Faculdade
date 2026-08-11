@@ -1,0 +1,52 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="base.Master.cs" Inherits="WebApplication1._base" %>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Caderneta de Obras</title>
+
+    <link rel="stylesheet" href="base.css" />
+
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server" />
+</head>
+
+<body>
+    <form id="form1" runat="server">
+
+        <nav class="co-navbar">
+            <a href="~/Default.aspx" runat="server" class="co-navbar__brand">
+                Caderneta de Obras
+            </a>
+
+            <div class="co-navbar__links">
+                <a href="~/Diario.aspx" runat="server" class="co-navbar__link">
+                    Diário de Obras
+                </a>
+
+                <a href="~/Obras.aspx" runat="server" class="co-navbar__link">
+                    Obras
+                </a>
+
+                <a href="~/Relatorios.aspx" runat="server" class="co-navbar__link">
+                    Relatórios
+                </a>
+
+                <a href="~/Usuarios.aspx" runat="server" class="co-navbar__link">
+                    Usuários
+                </a>
+            </div>
+
+            <asp:LinkButton ID="lnkSair"
+                runat="server"
+                CssClass="co-navbar__logout">
+                Sair
+            </asp:LinkButton>
+        </nav>
+        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+        </asp:ContentPlaceHolder>
+
+    </form>
+</body>
+</html>
