@@ -5,14 +5,11 @@ using System.Web;
 
 namespace WebApplication1.Utilitarios
 {
-    // Envio, gravação e download de arquivos (anexos dos relatos e documentos da obra).
-    // Os arquivos ficam em App_Data, que o IIS não deixa baixar direto pela URL.
     public static class Arquivos
     {
-        public const int TamanhoMaximo = 10 * 1024 * 1024;   // 10 MB
+        public const int TamanhoMaximo = 10 * 1024 * 1024;
         public static readonly string[] Extensoes = { ".pdf", ".jpg", ".jpeg", ".png", ".doc", ".docx", ".xls", ".xlsx" };
 
-        // Pega só os arquivos escolhidos no campo de upload informado (pelo UniqueID do controle)
         public static List<HttpPostedFile> Enviados(HttpRequest request, string uniqueId)
         {
             List<HttpPostedFile> lista = new List<HttpPostedFile>();
@@ -24,7 +21,6 @@ namespace WebApplication1.Utilitarios
             return lista;
         }
 
-        // Devolve "" se estiver tudo certo, ou a mensagem de erro
         public static string Validar(List<HttpPostedFile> arquivos)
         {
             foreach (HttpPostedFile f in arquivos)
@@ -41,7 +37,6 @@ namespace WebApplication1.Utilitarios
             return "";
         }
 
-        // Confere os primeiros bytes (assinatura do formato), para não aceitar um .exe renomeado para .pdf
         private static bool ConteudoConfere(HttpPostedFile f, string extensao)
         {
             byte[] cab = new byte[8];
@@ -51,19 +46,18 @@ namespace WebApplication1.Utilitarios
 
             switch (extensao)
             {
-                case ".pdf": return cab[0] == 0x25 && cab[1] == 0x50 && cab[2] == 0x44 && cab[3] == 0x46;      // %PDF
+                case ".pdf": return cab[0] == 0x25 && cab[1] == 0x50 && cab[2] == 0x44 && cab[3] == 0x46;
                 case ".jpg":
                 case ".jpeg": return cab[0] == 0xFF && cab[1] == 0xD8;
                 case ".png": return cab[0] == 0x89 && cab[1] == 0x50 && cab[2] == 0x4E && cab[3] == 0x47;
                 case ".docx":
-                case ".xlsx": return cab[0] == 0x50 && cab[1] == 0x4B;                                         // PK (zip)
+                case ".xlsx": return cab[0] == 0x50 && cab[1] == 0x4B;
                 case ".doc":
-                case ".xls": return cab[0] == 0xD0 && cab[1] == 0xCF && cab[2] == 0x11 && cab[3] == 0xE0;     // formato antigo do Office
+                case ".xls": return cab[0] == 0xD0 && cab[1] == 0xCF && cab[2] == 0x11 && cab[3] == 0xE0;
                 default: return false;
             }
         }
 
-        // Grava o arquivo com nome aleatório e devolve o caminho relativo (ex.: ~/App_Data/Uploads/obras/5/abc.pdf)
         public static string Salvar(HttpPostedFile arquivo, string pastaRelativa)
         {
             string pastaFisica = HttpContext.Current.Server.MapPath(pastaRelativa);
@@ -87,7 +81,6 @@ namespace WebApplication1.Utilitarios
             if (Directory.Exists(pasta)) Directory.Delete(pasta, true);
         }
 
-        // Envia o arquivo para o navegador (download). Devolve false se o arquivo não existir.
         public static bool Baixar(string caminhoRelativo, string nomeOriginal, string contentType)
         {
             HttpContext ctx = HttpContext.Current;

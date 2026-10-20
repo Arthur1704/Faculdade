@@ -3,7 +3,6 @@ using WebApplication1.Dados;
 
 namespace WebApplication1.Dados
 {
-    // Consultas simples que alimentam os DropDownLists e checklists das telas.
     public static class ListaDAO
     {
         public static DataTable Perfis()
@@ -41,7 +40,6 @@ namespace WebApplication1.Dados
             return Banco.Consultar("SELECT EtapaObraId, Descricao FROM EtapasObra WHERE Ativo = 1 ORDER BY Ordem");
         }
 
-        // somenteAtivos = true mostra só proprietários ativos (mais o "incluirId", que é o já gravado na obra)
         public static DataTable Proprietarios(bool somenteAtivos, int incluirId)
         {
             string sql = "SELECT ProprietarioId, NomeRazaoSocial FROM Proprietarios";
@@ -57,7 +55,6 @@ namespace WebApplication1.Dados
                 Banco.P("@incluir", incluirId));
         }
 
-        // Profissionais ativos (mais o já gravado na obra, quando for edição)
         public static DataTable ProfissionaisAtivos(int incluirId)
         {
             return Banco.Consultar(

@@ -1,12 +1,9 @@
-﻿// Funções de tela (não acessam o banco).
-
-// Abre/fecha o menu lateral no celular
+﻿
 function toggleSidebar() {
     var menu = document.getElementById('sidebar');
     if (menu) menu.classList.toggle('open');
 }
 
-// Marca no menu a página atual
 document.addEventListener('DOMContentLoaded', function () {
     var atual = window.location.pathname.split('/').pop().toLowerCase();
     var links = document.querySelectorAll('.menu-item');
@@ -16,8 +13,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-// Evita clique duplo em Salvar/Assinar (duplicaria o registro). Libera de novo após 4 segundos
-// (necessário porque o download de arquivo não recarrega a página).
 document.addEventListener('DOMContentLoaded', function () {
     var bloqueado = false;
     function travar() {
@@ -30,7 +25,6 @@ document.addEventListener('DOMContentLoaded', function () {
     if (formulario) {
         formulario.addEventListener('submit', function (e) { if (!travar()) e.preventDefault(); });
     }
-    // links do ASP.NET (LinkButton) chamam __doPostBack direto, sem passar pelo evento submit
     if (typeof window.__doPostBack === 'function') {
         var original = window.__doPostBack;
         window.__doPostBack = function (alvo, argumento) {
@@ -107,7 +101,6 @@ function capturarAssinatura(botao) {
     return true;
 }
 
-// Tela de obras: soma as quatro áreas e mostra o total (o servidor recalcula ao salvar)
 function numeroDoCampo(id) {
     var campo = document.getElementById(id);
     if (!campo) return 0;

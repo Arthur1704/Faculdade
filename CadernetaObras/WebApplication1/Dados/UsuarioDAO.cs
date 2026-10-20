@@ -67,7 +67,6 @@ namespace WebApplication1.Dados
             return u;
         }
 
-        // Se SenhaHash vier vazio na edição, a senha atual é mantida.
         public static void Salvar(Usuario u)
         {
             string sql;
@@ -98,7 +97,6 @@ namespace WebApplication1.Dados
                              WHERE UsuarioId = @id", Banco.P("@id", id));
         }
 
-        // Devolve o usuário se login e senha conferem; senão devolve null.
         public static Usuario Autenticar(string login, string senha)
         {
             string sql = @"SELECT u.*, p.Nome AS PerfilNome
@@ -116,7 +114,6 @@ namespace WebApplication1.Dados
             return u;
         }
 
-        // Quantos administradores ativos existem (impede ficar sem nenhum)
         public static int ContarAdministradoresAtivos()
         {
             object n = Banco.Escalar(@"SELECT COUNT(*) FROM Usuarios u
@@ -125,14 +122,12 @@ namespace WebApplication1.Dados
             return Convert.ToInt32(n);
         }
 
-        // ---------- Proteção contra tentativas repetidas de login ----------
         public static void RegistrarTentativa(string login, string ip, bool sucesso)
         {
             Banco.Executar("INSERT INTO TentativasLogin (Login, Ip, Sucesso) VALUES (@login, @ip, @sucesso)",
                 Banco.P("@login", login), Banco.P("@ip", ip), Banco.P("@sucesso", sucesso));
         }
 
-        // Falhas desse login nos últimos X minutos (depois do último acerto)
         public static int FalhasRecentes(string login, int minutos)
         {
             object n = Banco.Escalar(@"SELECT COUNT(*) FROM TentativasLogin

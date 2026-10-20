@@ -6,7 +6,6 @@ using WebApplication1.Utilitarios;
 
 namespace WebApplication1
 {
-    // Tela pública: quem ainda não tem acesso pede o cadastro. O administrador analisa na tela Usuários.
     public partial class solicitar_cadastro : System.Web.UI.Page
     {
         protected void btnEnviar_Click(object sender, EventArgs e)

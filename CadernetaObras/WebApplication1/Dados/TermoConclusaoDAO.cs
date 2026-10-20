@@ -67,7 +67,6 @@ namespace WebApplication1.Dados
             return t;
         }
 
-        // Na edição o usuário que criou o termo continua sendo o mesmo. Devolve o ID do termo.
         public static int Salvar(TermoConclusao t)
         {
             string sql;
@@ -92,7 +91,6 @@ namespace WebApplication1.Dados
             return Convert.ToInt32(id);
         }
 
-        // Guarda o caminho do último PDF gerado (capa + termo)
         public static void AtualizarPdf(int termoId, string caminho)
         {
             Banco.Executar("UPDATE TermosConclusao SET PdfFinal = @pdf WHERE TermoConclusaoId = @id",

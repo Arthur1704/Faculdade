@@ -4,7 +4,6 @@ namespace WebApplication1.Dados
 {
     public static class DashboardDAO
     {
-        // Uma única consulta com os números dos cartões da tela inicial
         public static DataRow Totais()
         {
             string sql = @"

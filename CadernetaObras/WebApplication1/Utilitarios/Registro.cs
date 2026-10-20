@@ -4,7 +4,6 @@ using System.Web.Hosting;
 
 namespace WebApplication1.Utilitarios
 {
-    // Grava os erros técnicos em App_Data/Logs (o usuário vê só uma mensagem amigável).
     public static class Registro
     {
         public static void Erro(Exception ex)
@@ -19,7 +18,6 @@ namespace WebApplication1.Utilitarios
             }
             catch
             {
-                // se não conseguir gravar o log, segue sem interromper a tela
             }
         }
     }

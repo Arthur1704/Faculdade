@@ -9,7 +9,6 @@ using WebApplication1.Utilitarios;
 
 namespace WebApplication1
 {
-    // Manual: "Administrador - Realizar backup dos dados"
     public partial class backup : PaginaBase
     {
         protected override bool SomenteAdministrador
@@ -47,7 +46,6 @@ namespace WebApplication1
             }
         }
 
-        // Lista os .bak da pasta (só funciona se a pasta for acessível pelo servidor do site)
         private void CarregarArquivos()
         {
             DataTable dt = new DataTable();
@@ -85,7 +83,7 @@ namespace WebApplication1
             try
             {
                 try { Directory.CreateDirectory(PastaBackup); }
-                catch (Exception) { /* se o SQL Server for outro computador, a pasta precisa existir lá */ }
+                catch (Exception) {  }
 
                 BackupDAO.Executar(caminho);
 
@@ -98,7 +96,6 @@ namespace WebApplication1
             {
                 Registro.Erro(ex);
                 try { BackupDAO.RegistrarLog(UsuarioLogadoId, caminho, null, false, Texto.Resumo(ex.Message, 400)); } catch (Exception) { }
-                // tela só do administrador: mostra o motivo (ex.: falta de permissão na pasta)
                 MensagemErro("Não foi possível gerar o backup: " + ex.Message);
             }
             Carregar();
@@ -108,7 +105,6 @@ namespace WebApplication1
         {
             if (e.CommandName != "Baixar") return;
 
-            // só aceita o NOME do arquivo (evita acessar outras pastas)
             string nome = Path.GetFileName(Convert.ToString(e.CommandArgument));
             if (!nome.EndsWith(".bak", StringComparison.OrdinalIgnoreCase)) return;
 

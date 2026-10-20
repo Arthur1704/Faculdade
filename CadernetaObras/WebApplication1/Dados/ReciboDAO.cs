@@ -8,7 +8,6 @@ namespace WebApplication1.Dados
 {
     public static class ReciboDAO
     {
-        // periodo: "" = todos, "mes" = este mês, "90" = últimos 90 dias
         public static DataTable Listar(string pesquisa, string status, string periodo)
         {
             string sql = @"SELECT r.ReciboId, r.Numero, o.Nome AS Obra, p.NomeRazaoSocial AS Proprietario,

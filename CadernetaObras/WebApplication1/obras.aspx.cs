@@ -19,8 +19,6 @@ namespace WebApplication1
             CarregarGrid();
         }
 
-        // Os combos de proprietário, tipo e responsável mostram só os ativos
-        // (mais o que já está gravado na obra, quando for edição).
         private void CarregarCombos(int proprietarioAtual, int tipoAtual, int profissionalAtual)
         {
             try
@@ -89,7 +87,6 @@ namespace WebApplication1
             }
         }
 
-        // ---------- Visualização ----------
         private void Visualizar(int id)
         {
             Obra o = ObraDAO.Obter(id);
@@ -122,7 +119,6 @@ namespace WebApplication1
             AbrirModal(pnlView);
         }
 
-        // ---------- Capa e primeira página (Manual: "Preencher dados da capa") ----------
         private void AbrirCapa(int id)
         {
             CapaObra c = ObraDAO.ObterCapa(id);
@@ -161,7 +157,6 @@ namespace WebApplication1
             FecharModal(pnlCapa);
         }
 
-        // ---------- Edição ----------
         private void Editar(int id)
         {
             Obra o = ObraDAO.Obter(id);
@@ -204,7 +199,7 @@ namespace WebApplication1
             }
 
             List<ObraDocumento> documentos = ObraDAO.ObterDocumentosDaObra(id);
-            ObraDAO.Excluir(id);      // os registros dos documentos saem junto (ON DELETE CASCADE)
+            ObraDAO.Excluir(id);
             foreach (ObraDocumento d in documentos) Arquivos.Apagar(d.CaminhoArquivo);
             Arquivos.ApagarPasta("~/App_Data/Uploads/obras/" + id);
 
@@ -253,7 +248,6 @@ namespace WebApplication1
         {
             if (!PodeEditar) { ErroForm(lblErroForm, "Seu perfil não tem permissão para alterar dados."); return; }
 
-            // campos obrigatórios (conforme o Manual)
             if (txtNome.Text.Trim() == "") { ErroForm(lblErroForm, "Informe o nome da obra."); return; }
             if (ddlProprietario.SelectedValue == "") { ErroForm(lblErroForm, "Selecione o proprietário."); return; }
             if (ddlProfissional.SelectedValue == "") { ErroForm(lblErroForm, "Selecione o responsável técnico."); return; }
@@ -270,7 +264,6 @@ namespace WebApplication1
                 return;
             }
 
-            // valor e áreas
             decimal? valor = Texto.ParseDecimal(txtValorObra.Text);
             if (txtValorObra.Text.Trim() != "" && (!valor.HasValue || valor.Value < 0)) { ErroForm(lblErroForm, "Valor da obra inválido."); return; }
 
@@ -281,7 +274,6 @@ namespace WebApplication1
             if (erroArea == "") erroArea = LerArea(areaReforma.Text, "reformar", out areaR); else areaR = null;
             if (erroArea != "") { ErroForm(lblErroForm, erroArea); return; }
 
-            // confere os documentos antes de gravar qualquer coisa
             List<HttpPostedFile> documentos = Arquivos.Enviados(Request, fuDocumentos.UniqueID);
             string erroArquivo = Arquivos.Validar(documentos);
             if (erroArquivo != "") { ErroForm(lblErroForm, erroArquivo); return; }
@@ -304,13 +296,12 @@ namespace WebApplication1
             o.AreaConstruir = areaC;
             o.AreaAmpliar = areaA;
             o.AreaRegularizar = areaG;
-            o.AreaReforma = areaR;     // a área total é calculada pelo próprio banco
+            o.AreaReforma = areaR;
             o.Observacoes = txtObservacoes.Text.Trim();
 
             try
             {
                 int obraId = ObraDAO.Salvar(o);
-                // se o upload falhar abaixo, o formulário já fica em "edição" (evita criar a obra duas vezes)
                 hfId.Value = obraId.ToString();
 
                 SalvarDocumentos(obraId, documentos);
@@ -324,7 +315,6 @@ namespace WebApplication1
             }
         }
 
-        // Lê uma área; vazio = sem valor. Devolve "" se estiver ok ou a mensagem de erro.
         private string LerArea(string texto, string nome, out decimal? valor)
         {
             valor = null;
@@ -335,7 +325,6 @@ namespace WebApplication1
             return "";
         }
 
-        // ---------- Documentos da obra ----------
         private void SalvarDocumentos(int obraId, List<HttpPostedFile> arquivos)
         {
             foreach (HttpPostedFile arquivo in arquivos)
@@ -355,7 +344,7 @@ namespace WebApplication1
                 }
                 catch
                 {
-                    Arquivos.Apagar(d.CaminhoArquivo);   // não deixa arquivo órfão se o banco falhar
+                    Arquivos.Apagar(d.CaminhoArquivo);
                     throw;
                 }
             }
@@ -367,7 +356,6 @@ namespace WebApplication1
             rptDocumentosForm.DataBind();
         }
 
-        // Botões "Baixar" e "Remover" da lista de documentos
         protected void rptDocumentos_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
             int documentoId = Convert.ToInt32(e.CommandArgument);

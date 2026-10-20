@@ -14,7 +14,6 @@ namespace WebApplication1
             if (IsPostBack) return;
             try
             {
-                // Proprietários: todos (um recibo antigo pode ser de proprietário hoje inativo)
                 PreencherCombo(ddlObra, ListaDAO.Obras(), "ObraId", "Nome", "Selecione");
                 PreencherCombo(ddlProprietario, ListaDAO.Proprietarios(false, 0), "ProprietarioId", "NomeRazaoSocial", "Selecione");
                 PreencherCombo(ddlForma, ListaDAO.FormasPagamento(), "FormaPagamentoId", "Descricao", "Selecione");
@@ -75,7 +74,6 @@ namespace WebApplication1
                 else
                 {
                     Visualizar(id);
-                    // "Imprimir" abre a visualização e chama a impressão do navegador
                     if (e.CommandName == "Imprimir")
                         ClientScript.RegisterStartupScript(GetType(), "imprimir", "window.print();", true);
                 }
@@ -150,7 +148,6 @@ namespace WebApplication1
             txtObservacoes.Text = "";
         }
 
-        // Ao escolher a obra, já sugere o proprietário dela
         protected void ddlObra_SelectedIndexChanged(object sender, EventArgs e)
         {
             int? obraId = Texto.Inteiro(ddlObra.SelectedValue);

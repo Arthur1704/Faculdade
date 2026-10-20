@@ -5,7 +5,6 @@ using WebApplication1.Utilitarios;
 
 namespace WebApplication1.Dados
 {
-    // Pedidos feitos em "Solicitar cadastro" (tela de login). O administrador analisa na tela Usuários.
     public static class SolicitacaoCadastroDAO
     {
         public static bool ExistePendente(string email)
@@ -46,7 +45,6 @@ namespace WebApplication1.Dados
             return s;
         }
 
-        // status: "Aprovada" ou "Rejeitada"
         public static void Analisar(int id, string status, int usuarioId)
         {
             Banco.Executar(

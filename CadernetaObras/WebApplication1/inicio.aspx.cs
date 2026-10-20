@@ -8,7 +8,6 @@ namespace WebApplication1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            // só o administrador vê o atalho para Usuários
             cardUsuarios.Visible = (PerfilLogado == "Administrador");
 
             if (IsPostBack) return;

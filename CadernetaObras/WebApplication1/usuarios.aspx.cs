@@ -9,7 +9,6 @@ namespace WebApplication1
 {
     public partial class usuarios : PaginaBase
     {
-        // Só o administrador acessa esta tela
         protected override bool SomenteAdministrador
         {
             get { return true; }
@@ -192,7 +191,6 @@ namespace WebApplication1
                 ErroForm(lblErroForm, "Você não pode inativar o seu próprio usuário.");
                 return;
             }
-            // evita ficar sem nenhum administrador
             if (u.Id == UsuarioLogadoId && ddlPerfil.SelectedItem.Text != "Administrador")
             {
                 ErroForm(lblErroForm, "Você não pode retirar o seu próprio perfil de administrador.");
@@ -203,7 +201,6 @@ namespace WebApplication1
             {
                 UsuarioDAO.Salvar(u);
 
-                // se veio de uma solicitação de cadastro, marca como aprovada
                 if (hfSolicitacaoId.Value != "")
                 {
                     SolicitacaoCadastroDAO.Analisar(int.Parse(hfSolicitacaoId.Value), "Aprovada", UsuarioLogadoId);
@@ -221,7 +218,6 @@ namespace WebApplication1
             }
         }
 
-        // ---------- Solicitações de cadastro (feitas na tela de login) ----------
         private void CarregarSolicitacoes()
         {
             try
@@ -261,7 +257,6 @@ namespace WebApplication1
                     return;
                 }
 
-                // "Criar usuário": abre o formulário já preenchido com os dados do pedido
                 LimparFormulario();
                 hfSolicitacaoId.Value = id.ToString();
                 lblTituloForm.Text = "Novo usuário (solicitação)";

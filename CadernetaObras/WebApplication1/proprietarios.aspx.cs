@@ -28,7 +28,6 @@ namespace WebApplication1
             }
         }
 
-        // ---------- Filtros e paginação ----------
         protected void btnPesquisar_Click(object sender, EventArgs e)
         {
             gvDados.PageIndex = 0;
@@ -50,7 +49,6 @@ namespace WebApplication1
             CarregarGrid();
         }
 
-        // ---------- Botões da tabela (Ver / Editar / Excluir) ----------
         protected void gvDados_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             if (e.CommandName != "Ver" && e.CommandName != "Editar" && e.CommandName != "Excluir") return;
@@ -124,7 +122,6 @@ namespace WebApplication1
             CarregarGrid();
         }
 
-        // ---------- Formulário ----------
         protected void btnNovo_Click(object sender, EventArgs e)
         {
             LimparFormulario();

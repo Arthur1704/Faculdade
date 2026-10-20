@@ -12,7 +12,6 @@ namespace WebApplication1
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            // Quem já está logado vai direto para o início
             if (!IsPostBack && Session["UsuarioId"] != null)
             {
                 Response.Redirect("inicio.aspx");
@@ -43,7 +42,6 @@ namespace WebApplication1
             Usuario usuario = null;
             try
             {
-                // bloqueio temporário depois de várias senhas erradas seguidas
                 if (UsuarioDAO.FalhasRecentes(login, JanelaBloqueioMinutos) >= MaximoFalhas)
                 {
                     MostrarErro("Muitas tentativas incorretas. Aguarde " + JanelaBloqueioMinutos + " minutos e tente novamente.");
@@ -69,12 +67,10 @@ namespace WebApplication1
                 return;
             }
 
-            // Guarda os dados do usuário na sessão
             Session["UsuarioId"] = usuario.Id;
             Session["UsuarioNome"] = usuario.Nome;
             Session["UsuarioPerfil"] = usuario.Perfil;
 
-            // "Manter conectado": sessão mais longa (8 horas) em vez de 30 minutos
             Session.Timeout = chkManterConectado.Checked ? 480 : 30;
 
             Response.Redirect("inicio.aspx");

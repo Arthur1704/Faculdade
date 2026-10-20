@@ -21,9 +21,7 @@ namespace WebApplication1.Modelos
         public string Status { get; set; }
         public string Proprietario { get; set; }
 
-        // ids das etapas marcadas no checklist
         public List<int> EtapasIds { get; set; }
-        // nomes das etapas (para a tela de visualização)
         public List<string> EtapasNomes { get; set; }
 
         public RelatoVisita()

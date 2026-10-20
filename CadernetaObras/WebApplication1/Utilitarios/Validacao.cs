@@ -10,7 +10,6 @@ namespace WebApplication1.Utilitarios
             try
             {
                 MailAddress m = new MailAddress(email);
-                // precisa ter ponto no domínio (a@b.com), senão "a@b" passaria
                 return m.Address == email.Trim() && m.Host.Contains(".") && !m.Host.EndsWith(".");
             }
             catch (FormatException)
@@ -19,7 +18,6 @@ namespace WebApplication1.Utilitarios
             }
         }
 
-        // Telefone com DDD: 10 ou 11 números (só confere se foi preenchido)
         public static bool Telefone(string digitos)
         {
             return digitos.Length == 10 || digitos.Length == 11;

@@ -7,7 +7,6 @@ namespace WebApplication1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            // A tela de login não usa esta master; as demais já passaram pela verificação do PaginaBase.
             string nome = Convert.ToString(Session["UsuarioNome"]);
             string perfil = Convert.ToString(Session["UsuarioPerfil"]);
 
@@ -15,12 +14,10 @@ namespace WebApplication1
             lblPerfilUsuario.Text = HttpUtility.HtmlEncode(perfil);
             lblIniciais.Text = HttpUtility.HtmlEncode(Iniciais(nome));
 
-            // Só o administrador enxerga o menu de usuários
             menuUsuarios.Visible = (perfil == "Administrador");
             menuBackup.Visible = (perfil == "Administrador");
         }
 
-        // Mostra a faixa de mensagem no topo da página
         public void MostrarMensagem(string texto, bool erro)
         {
             lblMensagem.Text = HttpUtility.HtmlEncode(texto);

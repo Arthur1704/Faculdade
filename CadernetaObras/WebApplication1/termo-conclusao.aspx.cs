@@ -12,7 +12,6 @@ namespace WebApplication1
 {
     public partial class termo_conclusao : PaginaBase
     {
-        // Texto do Manual: declaração de que a obra foi finalizada conforme o projeto aprovado e as normas técnicas
         private const string DeclaracaoPadrao =
             "Nós, abaixo assinados, proprietário e profissional responsável, pela execução da obra acima apontada, " +
             "declaramos que a obra foi finalizada conforme o projeto aprovado e as normas técnicas vigentes.";
@@ -86,7 +85,6 @@ namespace WebApplication1
                 else
                 {
                     Visualizar(id);
-                    // "Imprimir" abre a visualização e chama a impressão do navegador
                     if (e.CommandName == "Imprimir")
                         ClientScript.RegisterStartupScript(GetType(), "imprimir", "window.print();", true);
                 }
@@ -97,7 +95,6 @@ namespace WebApplication1
             }
         }
 
-        // ---------- Visualização ----------
         private void Visualizar(int id)
         {
             TermoConclusao t = TermoConclusaoDAO.Obter(id);
@@ -125,7 +122,6 @@ namespace WebApplication1
             AbrirModal(pnlView);
         }
 
-        // ---------- Edição ----------
         private void Editar(int id)
         {
             TermoConclusao t = TermoConclusaoDAO.Obter(id);
@@ -168,7 +164,6 @@ namespace WebApplication1
             MostrarDadosObra(0);
         }
 
-        // Ao escolher a obra, o termo já traz proprietário, profissional, registro, empresa, telefone e local
         protected void ddlObra_SelectedIndexChanged(object sender, EventArgs e)
         {
             int? obraId = Texto.Inteiro(ddlObra.SelectedValue);
@@ -208,7 +203,6 @@ namespace WebApplication1
                 tAviso.Text = "Esta obra ainda não tem responsável técnico: cadastre-o na tela Obras antes de salvar o termo.";
         }
 
-        // ---------- Salvar ----------
         protected void btnSalvar_Click(object sender, EventArgs e)
         {
             if (!PodeEditar) { ErroForm(lblErroForm, "Seu perfil não tem permissão para alterar dados."); return; }
@@ -238,7 +232,7 @@ namespace WebApplication1
                 TermoConclusao t = new TermoConclusao();
                 t.Id = hfId.Value == "" ? 0 : int.Parse(hfId.Value);
                 t.ObraId = obraId;
-                t.ProprietarioId = ObraDAO.ObterProprietarioId(obraId).Value;   // sempre o proprietário da obra
+                t.ProprietarioId = ObraDAO.ObterProprietarioId(obraId).Value;
                 t.UsuarioId = UsuarioLogadoId;
                 t.DataConclusao = data.Value;
                 t.Status = ddlStatus.SelectedValue;
@@ -249,7 +243,6 @@ namespace WebApplication1
                 int termoId = TermoConclusaoDAO.Salvar(t);
                 hfId.Value = termoId.ToString();
 
-                // termo concluído = obra concluída
                 string aviso = "";
                 if (t.Status == "Concluído")
                 {
@@ -260,7 +253,6 @@ namespace WebApplication1
                 FecharModal(pnlForm);
                 Mensagem("Termo de conclusão salvo com sucesso." + aviso);
 
-                // o filtro de anos pode ter ganhado um ano novo
                 string anoSelecionado = ddlAno.SelectedValue;
                 PreencherCombo(ddlAno, ListaDAO.AnosTermos(), "Ano", "Ano", "Todos");
                 Selecionar(ddlAno, anoSelecionado);
@@ -272,7 +264,6 @@ namespace WebApplication1
             }
         }
 
-        // ---------- PDF único: capa + primeira página + termo (Manual, seção 4.2.6) ----------
         protected void btnGerarPdf_Click(object sender, EventArgs e)
         {
             int id;
@@ -303,7 +294,6 @@ namespace WebApplication1
             byte[] pdf = DocumentosPdf.GerarCaderneta(capa, t,
                 AssinaturaDAO.Listar("Obra", t.ObraId), AssinaturaDAO.Listar("Termo", termoId), cidade);
 
-            // guarda uma cópia em App_Data/Pdfs e o caminho no termo (campo PdfFinal do Manual)
             string relativo = "~/App_Data/Pdfs/termo-" + termoId + ".pdf";
             string fisico = Server.MapPath(relativo);
             Directory.CreateDirectory(Path.GetDirectoryName(fisico));

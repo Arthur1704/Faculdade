@@ -137,7 +137,6 @@ namespace WebApplication1
             txtDecisoes.Text = r.DecisoesOrientacoes;
             Selecionar(ddlStatus, r.Status);
 
-            // marca as etapas que já estavam gravadas
             foreach (RepeaterItem linha in rptEtapas.Items)
             {
                 HiddenField etapaId = (HiddenField)linha.FindControl("hfEtapaId");
@@ -158,7 +157,6 @@ namespace WebApplication1
                 return;
             }
 
-            // guarda os arquivos antes, porque o registro some do banco junto com o relato
             List<Anexo> anexos = RelatoVisitaDAO.ObterAnexosDoRelato(id);
             RelatoVisitaDAO.Excluir(id);
             foreach (Anexo a in anexos)
@@ -190,7 +188,6 @@ namespace WebApplication1
             txtDecisoes.Text = "";
             ddlStatus.SelectedIndex = 0;
 
-            // lista de etapas sem nenhuma marcada
             rptEtapas.DataSource = ListaDAO.EtapasObra();
             rptEtapas.DataBind();
 
@@ -214,7 +211,6 @@ namespace WebApplication1
             if (!data.HasValue) { ErroForm(lblErroForm, "Informe a data da visita."); return; }
             if (txtRelato.Text.Trim() == "") { ErroForm(lblErroForm, "Escreva o relato da visita."); return; }
 
-            // valida os anexos antes de gravar qualquer coisa
             List<HttpPostedFile> anexosEnviados = Arquivos.Enviados(Request, fuAnexos.UniqueID);
             string erroAnexo = Arquivos.Validar(anexosEnviados);
             if (erroAnexo != "") { ErroForm(lblErroForm, erroAnexo); return; }
@@ -241,7 +237,6 @@ namespace WebApplication1
             try
             {
                 int relatoId = RelatoVisitaDAO.Salvar(r);
-                // se o anexo falhar abaixo, o formulário já fica em "edição" (evita criar o relato duas vezes)
                 hfId.Value = relatoId.ToString();
                 SalvarAnexos(relatoId, anexosEnviados);
                 FecharModal(pnlForm);
@@ -254,7 +249,6 @@ namespace WebApplication1
             }
         }
 
-        // ---------- Anexos (imagens e documentos da visita) ----------
         private void SalvarAnexos(int relatoId, List<HttpPostedFile> arquivos)
         {
             foreach (HttpPostedFile arquivo in arquivos)
@@ -272,13 +266,12 @@ namespace WebApplication1
                 }
                 catch
                 {
-                    Arquivos.Apagar(a.CaminhoArquivo);   // não deixa arquivo órfão se o banco falhar
+                    Arquivos.Apagar(a.CaminhoArquivo);
                     throw;
                 }
             }
         }
 
-        // Botões "Baixar" e "Remover" da lista de anexos
         protected void rptAnexos_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
             int anexoId = Convert.ToInt32(e.CommandArgument);

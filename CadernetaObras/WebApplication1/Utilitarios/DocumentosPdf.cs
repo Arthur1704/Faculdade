@@ -5,8 +5,6 @@ using WebApplication1.Modelos;
 
 namespace WebApplication1.Utilitarios
 {
-    // Monta o PDF único do Manual: Capa + Primeira página (dados da obra e valor) + Termo de Conclusão.
-    // Os dados vêm do cadastro da obra, do responsável técnico, do proprietário e das assinaturas digitais.
     public static class DocumentosPdf
     {
         private const double Margem = 60;
@@ -29,7 +27,6 @@ namespace WebApplication1.Utilitarios
             return pdf.Gerar();
         }
 
-        // ---------- Peças de desenho ----------
         private static void Moldura(PdfSimples pdf)
         {
             pdf.Retangulo(26, 26, PdfSimples.Largura - 52, PdfSimples.Altura - 52, 2);
@@ -41,7 +38,6 @@ namespace WebApplication1.Utilitarios
             return texto ?? "";
         }
 
-        // Rótulo em negrito + valor sobre uma linha (o valor reduz a fonte se não couber)
         private static void Campo(PdfSimples pdf, double x, double y, double largura, string rotulo, string valor)
         {
             double wRotulo = pdf.LarguraTexto(rotulo, 11, true);
@@ -93,7 +89,6 @@ namespace WebApplication1.Utilitarios
             }
         }
 
-        // ---------- Página 1: capa ----------
         private static void Capa(PdfSimples pdf, CapaObra c)
         {
             double W = PdfSimples.Largura;
@@ -113,7 +108,6 @@ namespace WebApplication1.Utilitarios
             pdf.TextoCentralizado(W / 2, 520, "Obra: " + c.NomeObra, 9, false);
         }
 
-        // ---------- Página 2: primeira página (dados técnicos e valor) ----------
         private static void PrimeiraPagina(PdfSimples pdf, CapaObra c, List<Assinatura> assinaturas)
         {
             double W = PdfSimples.Largura;
@@ -158,7 +152,6 @@ namespace WebApplication1.Utilitarios
             return valor.ToString("0.00", PtBr) + " m²";
         }
 
-        // ---------- Página 3: termo de conclusão ----------
         private static void Termo(PdfSimples pdf, CapaObra c, TermoConclusao t, List<Assinatura> assinaturas, string cidade)
         {
             double W = PdfSimples.Largura;

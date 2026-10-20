@@ -3,8 +3,6 @@ using System.Security.Cryptography;
 
 namespace WebApplication1.Utilitarios
 {
-    // Senha nunca é guardada pura: gravamos um "hash" com salt (PBKDF2).
-    // Formato gravado no banco:  iterações.salt.hash   (salt e hash em Base64)
     public static class Seguranca
     {
         private const int Iteracoes = 100000;
@@ -31,7 +29,6 @@ namespace WebApplication1.Utilitarios
             byte[] esperado = Convert.FromBase64String(partes[2]);
             byte[] calculado = Calcular(senha, salt, iteracoes);
 
-            // comparação sem parar no primeiro byte diferente
             int diferenca = esperado.Length ^ calculado.Length;
             for (int i = 0; i < esperado.Length && i < calculado.Length; i++)
                 diferenca |= esperado[i] ^ calculado[i];

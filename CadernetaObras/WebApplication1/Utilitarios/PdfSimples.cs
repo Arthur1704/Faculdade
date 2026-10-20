@@ -6,12 +6,9 @@ using System.Text;
 
 namespace WebApplication1.Utilitarios
 {
-    // Gerador de PDF bem simples, sem bibliotecas externas.
-    // Suporta: texto (Helvetica normal e negrito), linhas, retângulos e imagens JPEG, em páginas A4 paisagem.
-    // As posições são em pontos (1 pt = 1/72 polegada) medidas a partir do CANTO SUPERIOR ESQUERDO.
     public class PdfSimples
     {
-        public const double Largura = 841.89;   // A4 paisagem
+        public const double Largura = 841.89;
         public const double Altura = 595.28;
 
         public static readonly double[] Vermelho = { 0.78, 0.1, 0.1 };
@@ -35,7 +32,6 @@ namespace WebApplication1.Utilitarios
         private static readonly Encoding Win1252 = Encoding.GetEncoding(1252);
         private static readonly Encoding Latin1 = Encoding.GetEncoding(28591);
 
-        // Larguras dos caracteres ASCII 32..126 da fonte Helvetica (unidades de 1/1000 do tamanho da fonte)
         private static readonly int[] LarguraNormal = {
             278, 278, 355, 556, 556, 889, 667, 191, 333, 333, 389, 584, 278, 333, 278, 278,
             556, 556, 556, 556, 556, 556, 556, 556, 556, 556, 278, 278, 584, 584, 584, 556,
@@ -72,7 +68,6 @@ namespace WebApplication1.Utilitarios
             return v.ToString("0.##", CultureInfo.InvariantCulture);
         }
 
-        // ---------- Medidas de texto ----------
         public double LarguraTexto(string texto, double tamanho, bool negrito)
         {
             if (string.IsNullOrEmpty(texto)) return 0;
@@ -83,7 +78,6 @@ namespace WebApplication1.Utilitarios
                 char b = c;
                 if (b < 32 || b > 126)
                 {
-                    // letra acentuada: usa a largura da letra sem acento
                     string decomposta = c.ToString().Normalize(NormalizationForm.FormD);
                     b = decomposta.Length > 0 ? decomposta[0] : 'a';
                     if (b < 32 || b > 126) b = 'n';
@@ -93,7 +87,6 @@ namespace WebApplication1.Utilitarios
             return soma * tamanho / 1000.0;
         }
 
-        // Quebra o texto em linhas que cabem na largura informada (respeita quebras de linha)
         public List<string> Quebrar(string texto, double larguraMax, double tamanho, bool negrito)
         {
             List<string> linhas = new List<string>();
@@ -117,10 +110,8 @@ namespace WebApplication1.Utilitarios
             return linhas;
         }
 
-        // ---------- Desenho ----------
         private static string Literal(string texto)
         {
-            // converte para os bytes do Windows-1252 e escapa ( ) e \
             string latin = Latin1.GetString(Win1252.GetBytes(texto ?? ""));
             return "(" + latin.Replace("\\", "\\\\").Replace("(", "\\(").Replace(")", "\\)") + ")";
         }
@@ -150,7 +141,6 @@ namespace WebApplication1.Utilitarios
             Texto(xDireita - LarguraTexto(texto, tamanho, negrito), y, texto, tamanho, negrito, cor);
         }
 
-        // Texto com várias linhas dentro de uma largura. Devolve o Y logo abaixo do texto.
         public double Paragrafo(double x, double y, double larguraMax, string texto, double tamanho, double espacamento)
         {
             foreach (string linha in Quebrar(texto, larguraMax, tamanho, false))
@@ -175,7 +165,6 @@ namespace WebApplication1.Utilitarios
                 .Append(N(largura)).Append(' ').Append(N(altura)).Append(" re S\n");
         }
 
-        // Desenha um JPEG dentro da caixa, mantendo a proporção e centralizando
         public bool Imagem(byte[] jpeg, double x, double y, double larguraCaixa, double alturaCaixa)
         {
             ImagemPdf img = LerJpeg(jpeg);
@@ -193,7 +182,6 @@ namespace WebApplication1.Utilitarios
             return true;
         }
 
-        // Lê largura, altura e nº de componentes do cabeçalho JPEG
         private static ImagemPdf LerJpeg(byte[] d)
         {
             if (d == null || d.Length < 4 || d[0] != 0xFF || d[1] != 0xD8) return null;
@@ -219,7 +207,6 @@ namespace WebApplication1.Utilitarios
             return null;
         }
 
-        // ---------- Montagem do arquivo ----------
         private static void Escrever(MemoryStream ms, string texto)
         {
             byte[] b = Latin1.GetBytes(texto);
@@ -229,7 +216,7 @@ namespace WebApplication1.Utilitarios
         public byte[] Gerar()
         {
             MemoryStream ms = new MemoryStream();
-            List<long> posicoes = new List<long>();   // posição de cada objeto (índice 0 = objeto 1)
+            List<long> posicoes = new List<long>();
 
             Escrever(ms, "%PDF-1.4\n%\u00e2\u00e3\u00cf\u00d3\n");
 
@@ -237,7 +224,6 @@ namespace WebApplication1.Utilitarios
             int primeiroPagina = primeiroImagem + imagens.Count;
             int totalObjetos = primeiroPagina + paginas.Count * 2 - 1;
 
-            // 1: catálogo, 2: lista de páginas, 3 e 4: fontes
             posicoes.Add(ms.Position); Escrever(ms, "1 0 obj\n<< /Type /Catalog /Pages 2 0 R >>\nendobj\n");
             StringBuilder kids = new StringBuilder();
             for (int p = 0; p < paginas.Count; p++) kids.Append(primeiroPagina + p * 2).Append(" 0 R ");
@@ -245,7 +231,6 @@ namespace WebApplication1.Utilitarios
             posicoes.Add(ms.Position); Escrever(ms, "3 0 obj\n<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>\nendobj\n");
             posicoes.Add(ms.Position); Escrever(ms, "4 0 obj\n<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>\nendobj\n");
 
-            // imagens
             for (int i = 0; i < imagens.Count; i++)
             {
                 ImagemPdf img = imagens[i];
@@ -260,7 +245,6 @@ namespace WebApplication1.Utilitarios
             StringBuilder xobjetos = new StringBuilder();
             for (int i = 0; i < imagens.Count; i++) xobjetos.Append("/Im").Append(i + 1).Append(' ').Append(primeiroImagem + i).Append(" 0 R ");
 
-            // páginas
             for (int p = 0; p < paginas.Count; p++)
             {
                 int objPagina = primeiroPagina + p * 2;

@@ -5,19 +5,16 @@ using System.Web;
 
 namespace WebApplication1.Utilitarios
 {
-    // Funções de texto/número/data usadas em várias telas.
     public static class Texto
     {
         private static readonly CultureInfo PtBr = new CultureInfo("pt-BR");
 
-        // Deixa só os números de um texto ("123.456.789-00" -> "12345678900")
         public static string SoDigitos(string valor)
         {
             if (string.IsNullOrEmpty(valor)) return "";
             return new string(valor.Where(char.IsDigit).ToArray());
         }
 
-        // Converte o valor de uma coluna do banco para texto (DBNull vira "")
         public static string Valor(object o)
         {
             if (o == null || o == DBNull.Value) return "";
@@ -44,7 +41,6 @@ namespace WebApplication1.Utilitarios
             return Convert.ToDecimal(o);
         }
 
-        // Escapa HTML e troca quebra de linha por <br/> (usar ao mostrar texto digitado pelo usuário)
         public static string Html(string texto)
         {
             if (texto == null) return "";
@@ -59,7 +55,6 @@ namespace WebApplication1.Utilitarios
             return texto.Substring(0, tamanho) + "...";
         }
 
-        // ---------- Formatação para exibir ----------
         public static string FormatarDocumento(string d)
         {
             d = SoDigitos(d);
@@ -102,21 +97,17 @@ namespace WebApplication1.Utilitarios
             return v.HasValue ? v.Value.ToString("0.00", PtBr) : "";
         }
 
-        // ---------- Leitura do que o usuário digitou ----------
 
-        // Aceita "1.234,56", "R$ 1.234,56", "2.450" (= 2450) ou "12.5" (= 12,5)
         public static decimal? ParseDecimal(string texto)
         {
             if (string.IsNullOrWhiteSpace(texto)) return null;
             texto = texto.Replace("R$", "").Replace(" ", "").Trim();
             if (texto.Contains(","))
             {
-                // 1.234,56  ->  1234.56
                 texto = texto.Replace(".", "").Replace(",", ".");
             }
             else if (System.Text.RegularExpressions.Regex.IsMatch(texto, @"^-?[1-9]\d{0,2}(\.\d{3})+$"))
             {
-                // 2.450 ou 1.234.567 (ponto só como separador de milhar)  ->  2450 / 1234567
                 texto = texto.Replace(".", "");
             }
             decimal resultado;
@@ -125,7 +116,6 @@ namespace WebApplication1.Utilitarios
             return null;
         }
 
-        // O <input type="date"> envia a data no formato yyyy-MM-dd
         public static DateTime? ParseData(string texto)
         {
             DateTime resultado;
@@ -139,8 +129,6 @@ namespace WebApplication1.Utilitarios
             return d.HasValue ? d.Value.ToString("yyyy-MM-dd") : "";
         }
 
-        // Monta o ORDER BY a partir das opções do filtro "Ordenar por".
-        // Só aceita valores conhecidos (evita SQL Injection).
         public static string Ordenar(string ordem, string colunaNome, string colunaData)
         {
             if (ordem == "az") return " ORDER BY " + colunaNome + " ASC";

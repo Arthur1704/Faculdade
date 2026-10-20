@@ -5,8 +5,6 @@ using System.Data.SqlClient;
 
 namespace WebApplication1.Dados
 {
-    // Classe central de acesso ao SQL Server (ADO.NET).
-    // Todas as consultas usam parâmetros (@nome) para evitar SQL Injection.
     public static class Banco
     {
         private static string StringConexao
@@ -19,7 +17,6 @@ namespace WebApplication1.Dados
             return new SqlConnection(StringConexao);
         }
 
-        // Cria um parâmetro. Texto vazio ou null vira NULL no banco.
         public static SqlParameter P(string nome, object valor)
         {
             if (valor == null) return new SqlParameter(nome, DBNull.Value);
@@ -28,7 +25,6 @@ namespace WebApplication1.Dados
             return new SqlParameter(nome, valor);
         }
 
-        // SELECT que devolve várias linhas
         public static DataTable Consultar(string sql, params SqlParameter[] parametros)
         {
             using (SqlConnection con = NovaConexao())
@@ -42,7 +38,6 @@ namespace WebApplication1.Dados
             }
         }
 
-        // INSERT / UPDATE / DELETE
         public static int Executar(string sql, params SqlParameter[] parametros)
         {
             using (SqlConnection con = NovaConexao())
@@ -54,7 +49,6 @@ namespace WebApplication1.Dados
             }
         }
 
-        // Igual ao Executar, mas com tempo limite maior (usado no backup do banco)
         public static int ExecutarLongo(string sql, int segundos, params SqlParameter[] parametros)
         {
             using (SqlConnection con = NovaConexao())
@@ -67,14 +61,12 @@ namespace WebApplication1.Dados
             }
         }
 
-        // Nome do banco configurado na string de conexão
         public static string NomeDoBanco()
         {
             SqlConnectionStringBuilder sb = new SqlConnectionStringBuilder(StringConexao);
             return sb.InitialCatalog;
         }
 
-        // SELECT que devolve um único valor (COUNT, SCOPE_IDENTITY...)
         public static object Escalar(string sql, params SqlParameter[] parametros)
         {
             using (SqlConnection con = NovaConexao())
@@ -86,7 +78,6 @@ namespace WebApplication1.Dados
             }
         }
 
-        // Versões que usam uma conexão/transação já aberta (para gravar várias tabelas juntas)
         public static int Executar(SqlConnection con, SqlTransaction tx, string sql, params SqlParameter[] parametros)
         {
             using (SqlCommand cmd = new SqlCommand(sql, con, tx))

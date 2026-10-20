@@ -63,7 +63,6 @@ namespace WebApplication1.Dados
             r.DecisoesOrientacoes = Texto.Valor(x["DecisoesOrientacoes"]);
             r.Status = Texto.Valor(x["Status"]);
 
-            // etapas marcadas no checklist
             DataTable etapas = Banco.Consultar(
                 @"SELECT e.EtapaObraId, e.Descricao
                   FROM RelatoVisitaEtapas v
@@ -77,8 +76,6 @@ namespace WebApplication1.Dados
             return r;
         }
 
-        // Grava o relato e as etapas na mesma transação: ou grava tudo, ou nada.
-        // Devolve o ID do relato (necessário para salvar os anexos).
         public static int Salvar(RelatoVisita r)
         {
             using (SqlConnection con = Banco.NovaConexao())
@@ -117,7 +114,6 @@ namespace WebApplication1.Dados
                                 Banco.P("@decisoes", r.DecisoesOrientacoes), Banco.P("@status", r.Status));
                         }
 
-                        // refaz a lista de etapas marcadas
                         Banco.Executar(con, tx, "DELETE FROM RelatoVisitaEtapas WHERE RelatoVisitaId = @id", Banco.P("@id", id));
                         foreach (int etapaId in r.EtapasIds)
                         {
@@ -138,14 +134,11 @@ namespace WebApplication1.Dados
             }
         }
 
-        // As etapas e os registros de anexos são apagados junto (ON DELETE CASCADE).
-        // Os arquivos físicos são apagados pela página.
         public static void Excluir(int id)
         {
             Banco.Executar("DELETE FROM RelatosVisita WHERE RelatoVisitaId = @id", Banco.P("@id", id));
         }
 
-        // ---------- Anexos ----------
         public static DataTable ListarAnexos(int relatoId)
         {
             return Banco.Consultar(

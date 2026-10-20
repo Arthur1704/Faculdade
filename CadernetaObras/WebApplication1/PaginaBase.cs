@@ -10,11 +10,8 @@ using WebApplication1.Utilitarios;
 
 namespace WebApplication1
 {
-    // Página-mãe de todas as telas internas (todas herdam daqui em vez de System.Web.UI.Page).
-    // Aqui ficam as coisas que se repetem: verificar login, mensagens, abrir/fechar modal, formatações.
     public class PaginaBase : Page
     {
-        // Telas que só o Administrador pode abrir (ex.: Usuários) sobrescrevem esta propriedade.
         protected virtual bool SomenteAdministrador
         {
             get { return false; }
@@ -24,14 +21,11 @@ namespace WebApplication1
         {
             base.OnInit(e);
 
-            // Quem não fez login volta para a tela de acesso
             if (Session["UsuarioId"] == null)
             {
                 Response.Redirect("login.aspx");
                 return;
             }
-            // Confere no banco se o usuário continua ativo e atualiza o perfil
-            // (assim, inativar ou trocar o perfil de alguém vale já na próxima tela que ele abrir)
             try
             {
                 Usuario atual = UsuarioDAO.Obter(UsuarioLogadoId);
@@ -47,7 +41,7 @@ namespace WebApplication1
             }
             catch (SqlException ex)
             {
-                Registro.Erro(ex);   // banco fora do ar: a própria tela mostra o aviso de erro
+                Registro.Erro(ex);
             }
 
             if (SomenteAdministrador && PerfilLogado != "Administrador")
@@ -56,7 +50,6 @@ namespace WebApplication1
             }
         }
 
-        // ---------- Usuário logado ----------
         protected int UsuarioLogadoId
         {
             get { return (int)Session["UsuarioId"]; }
@@ -67,14 +60,11 @@ namespace WebApplication1
             get { return Convert.ToString(Session["UsuarioPerfil"]); }
         }
 
-        // O perfil "Visualizador" só consulta, não grava nem exclui
         protected bool PodeEditar
         {
             get { return PerfilLogado != "Visualizador"; }
         }
 
-        // ---------- Mensagens ----------
-        // Mensagem no topo da página (feita no Site.Master)
         protected void Mensagem(string texto)
         {
             SiteMaster m = Master as SiteMaster;
@@ -87,14 +77,12 @@ namespace WebApplication1
             if (m != null) m.MostrarMensagem(texto, true);
         }
 
-        // Mensagem de erro dentro do formulário (modal)
         protected void ErroForm(Label label, string texto)
         {
             label.Text = HttpUtility.HtmlEncode(texto);
             label.Visible = true;
         }
 
-        // Traduz o erro do SQL Server para algo que o usuário entenda
         protected string TextoErroBanco(Exception ex)
         {
             SqlException sql = ex as SqlException;
@@ -107,12 +95,10 @@ namespace WebApplication1
                 if (sql.Number == 53 || sql.Number == -1 || sql.Number == 4060 || sql.Number == 18456)
                     return "Não foi possível conectar ao banco de dados. Verifique a string de conexão no Web.config.";
             }
-            // erro inesperado: o detalhe técnico vai para App_Data/Logs, o usuário vê uma mensagem simples
             Registro.Erro(ex);
             return "Ocorreu um erro inesperado. Tente novamente; se continuar, avise o administrador.";
         }
 
-        // ---------- Modais (Panel com a classe "modal-backdrop") ----------
         protected void AbrirModal(Panel painel)
         {
             painel.CssClass = "modal-backdrop open";
@@ -123,7 +109,6 @@ namespace WebApplication1
             painel.CssClass = "modal-backdrop";
         }
 
-        // ---------- Controles ----------
         protected void PreencherCombo(DropDownList combo, DataTable dados, string campoValor, string campoTexto, string primeiroItem)
         {
             combo.DataSource = dados;
@@ -134,7 +119,6 @@ namespace WebApplication1
                 combo.Items.Insert(0, new ListItem(primeiroItem, ""));
         }
 
-        // Seleciona o item de um combo sem dar erro se o valor não existir
         protected void Selecionar(DropDownList combo, object valor)
         {
             combo.ClearSelection();
@@ -143,7 +127,6 @@ namespace WebApplication1
             if (item != null) item.Selected = true;
         }
 
-        // Mostra os dados no GridView (volta uma página se a atual ficou vazia, ex.: após excluir)
         protected void Vincular(GridView grid, DataTable dados)
         {
             if (grid.PageIndex > 0 && dados.Rows.Count <= grid.PageIndex * grid.PageSize)
@@ -160,7 +143,6 @@ namespace WebApplication1
                 grid.HeaderRow.TableSection = TableRowSection.TableHeader;
         }
 
-        // ---------- Métodos usados dentro dos .aspx (<%# ... %>) ----------
         protected string ClasseStatus(object status)
         {
             switch (Convert.ToString(status))

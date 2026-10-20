@@ -77,8 +77,6 @@ namespace WebApplication1.Dados
             return o;
         }
 
-        // Reúne os dados da obra, do responsável técnico e do proprietário.
-        // Usado na capa, no termo de conclusão e no PDF ("aproveita os dados já cadastrados").
         public static CapaObra ObterCapa(int obraId)
         {
             string sql = @"SELECT o.ObraId, o.NumeroCaderneta, o.Nome, o.ProfissionalId, o.NumeroRT, o.Empresa, o.EnderecoObra,
@@ -135,7 +133,6 @@ namespace WebApplication1.Dados
             return Texto.Inteiro(Banco.Escalar("SELECT ProprietarioId FROM Obras WHERE ObraId = @id", Banco.P("@id", obraId)));
         }
 
-        // Grava a obra. Devolve o ID (necessário para gravar os documentos de uma obra nova).
         public static int Salvar(Obra o)
         {
             string sql;
@@ -169,7 +166,6 @@ namespace WebApplication1.Dados
             return Convert.ToInt32(id);
         }
 
-        // Usado pelo termo de conclusão: ao concluir o termo, a obra passa a "Concluída"
         public static void AtualizarStatus(int obraId, string status)
         {
             Banco.Executar("UPDATE Obras SET Status = @status, AtualizadoEm = SYSDATETIME() WHERE ObraId = @id",
@@ -181,7 +177,6 @@ namespace WebApplication1.Dados
             Banco.Executar("DELETE FROM Obras WHERE ObraId = @id", Banco.P("@id", id));
         }
 
-        // ---------- Documentos da obra (ART/RRT, projeto aprovado, alvará...) ----------
         public static DataTable ListarDocumentos(int obraId)
         {
             return Banco.Consultar(

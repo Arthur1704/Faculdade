@@ -53,7 +53,6 @@
         </div>
     </div>
 
-    <!-- Formulário (cadastro / edição) -->
     <asp:Panel ID="pnlForm" runat="server" CssClass="modal-backdrop">
         <div class="modal">
             <div class="modal-header">
@@ -93,7 +92,6 @@
         </div>
     </asp:Panel>
 
-    <!-- Visualização -->
     <asp:Panel ID="pnlView" runat="server" CssClass="modal-backdrop">
         <div class="modal">
             <div class="modal-header">

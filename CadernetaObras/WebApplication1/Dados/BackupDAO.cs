@@ -2,9 +2,6 @@
 
 namespace WebApplication1.Dados
 {
-    // Backup completo do banco (Manual: o Administrador realiza backup dos dados).
-    // O arquivo .bak é gravado NO COMPUTADOR DO SQL SERVER; a conta de serviço do SQL Server
-    // precisa ter permissão de escrita na pasta informada.
     public static class BackupDAO
     {
         public static void Executar(string arquivoCompleto)
