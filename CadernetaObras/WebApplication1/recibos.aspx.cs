@@ -101,6 +101,11 @@ namespace WebApplication1
             vStatus.Text = r.Status;
             vReferente.Text = Texto.Html(r.ReferenteA);
             vObservacoes.Text = Texto.Html(r.Observacoes);
+
+            // assinaturas digitais: emitente = responsável técnico da obra; o outro assinante é o proprietário do recibo
+            CapaObra capa = ObraDAO.ObterCapa(r.ObraId);
+            ucAssinaturas.TituloResponsavel = "Assinatura do Emitente (Responsável Técnico)";
+            ucAssinaturas.Carregar("Recibo", id, capa == null ? "" : capa.ProfissionalNome, r.Proprietario);
             AbrirModal(pnlView);
         }
 

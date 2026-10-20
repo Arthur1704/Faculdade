@@ -41,7 +41,14 @@ namespace WebApplication1
             set { ViewState["nomeProp"] = value; }
         }
 
-        // tipo: "Obra", "Visita" ou "Termo"
+        // Título do quadro do responsável técnico (no recibo ele é o "Emitente")
+        public string TituloResponsavel
+        {
+            get { return (string)ViewState["tituloRT"] ?? "Assinatura do Responsável Técnico"; }
+            set { ViewState["tituloRT"] = value; }
+        }
+
+        // tipo: "Obra", "Visita", "Termo" ou "Recibo"
         public void Carregar(string tipo, int documentoId, string nomeResponsavelTecnico, string nomeProprietario)
         {
             Tipo = tipo;
@@ -76,7 +83,7 @@ namespace WebApplication1
             dt.Columns.Add("DataTexto", typeof(string));
             dt.Columns.Add("Ip", typeof(string));
 
-            AdicionarPapel(dt, gravadas, "RT", "Assinatura do Responsável Técnico", NomeRT, hashAtual, podeAssinar, administrador);
+            AdicionarPapel(dt, gravadas, "RT", TituloResponsavel, NomeRT, hashAtual, podeAssinar, administrador);
             AdicionarPapel(dt, gravadas, "PROPRIETARIO", "Assinatura do Proprietário", NomeProprietario, hashAtual, podeAssinar, administrador);
 
             rptPapeis.DataSource = dt;

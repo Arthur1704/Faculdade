@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="Recibos" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="recibos.aspx.cs" Inherits="WebApplication1.recibos" %>
+<%@ Register Src="~/Assinaturas.ascx" TagPrefix="uc" TagName="Assinaturas" %>
 <asp:Content ID="Title" ContentPlaceHolderID="TitleContent" runat="server">Recibos</asp:Content>
 <asp:Content ID="Breadcrumb" ContentPlaceHolderID="BreadcrumbContent" runat="server">Recibos</asp:Content>
 <asp:Content ID="Main" ContentPlaceHolderID="MainContent" runat="server">
@@ -126,10 +127,7 @@
                     <div class="detail-item span-2"><small>Referente a</small><strong><asp:Label ID="vReferente" runat="server" /></strong></div>
                     <div class="detail-item span-2"><small>Observações</small><strong><asp:Label ID="vObservacoes" runat="server" /></strong></div>
                 </div>
-                <div class="signature-grid">
-                    <div class="signature-box">Assinatura do emitente</div>
-                    <div class="signature-box">Assinatura do proprietário</div>
-                </div>
+                <uc:Assinaturas ID="ucAssinaturas" runat="server" />
             </div>
             <div class="modal-footer">
                 <asp:Button ID="btnImprimirView" runat="server" Text="Imprimir" CssClass="btn" OnClientClick="window.print(); return false;" UseSubmitBehavior="false" />

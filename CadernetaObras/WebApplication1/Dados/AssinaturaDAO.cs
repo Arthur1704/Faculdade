@@ -10,7 +10,7 @@ using WebApplication1.Utilitarios;
 namespace WebApplication1.Dados
 {
     // Assinaturas digitais (Manual: Assinatura_Obra, Assinatura_Visita e Assinatura_Termo_Conclusao).
-    // tipo: "Obra", "Visita" ou "Termo". Papel: "RT" (responsável técnico) ou "PROPRIETARIO".
+    // tipo: "Obra", "Visita", "Termo" ou "Recibo". Papel: "RT" (responsável técnico) ou "PROPRIETARIO".
     public static class AssinaturaDAO
     {
         // Só aceita os três tipos conhecidos (os nomes de tabela e coluna nunca vêm do usuário)
@@ -21,6 +21,7 @@ namespace WebApplication1.Dados
                 case "Obra": tabela = "AssinaturasObra"; chave = "ObraId"; break;
                 case "Visita": tabela = "AssinaturasVisita"; chave = "RelatoVisitaId"; break;
                 case "Termo": tabela = "AssinaturasTermo"; chave = "TermoConclusaoId"; break;
+                case "Recibo": tabela = "AssinaturasRecibo"; chave = "ReciboId"; break;
                 default: throw new ArgumentException("Tipo de documento inválido: " + tipo);
             }
         }
@@ -120,6 +121,12 @@ namespace WebApplication1.Dados
             {
                 dt = Banco.Consultar(@"SELECT ObraId, ProprietarioId, DataConclusao, DocumentoReferencia, DeclaracaoConclusao, ObservacoesFinais
                                        FROM TermosConclusao WHERE TermoConclusaoId = @id", Banco.P("@id", documentoId));
+            }
+            else if (tipo == "Recibo")
+            {
+                // o status (ex.: Cancelado) não entra: mudar o status não invalida a assinatura
+                dt = Banco.Consultar(@"SELECT ObraId, ProprietarioId, DataEmissao, Valor, FormaPagamentoId, ReferenteA, Observacoes
+                                       FROM Recibos WHERE ReciboId = @id", Banco.P("@id", documentoId));
             }
             else
             {

@@ -83,5 +83,7 @@ namespace WebApplication1
         protected global::System.Web.UI.WebControls.Button btnImprimirView;
 
         protected global::System.Web.UI.WebControls.Button btnFecharView2;
+
+        protected global::WebApplication1.Assinaturas ucAssinaturas;
     }
 }

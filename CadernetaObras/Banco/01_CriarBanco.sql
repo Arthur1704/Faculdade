@@ -495,6 +495,24 @@ CREATE TABLE dbo.AssinaturasTermo (
 );
 GO
 
+CREATE TABLE dbo.AssinaturasRecibo (
+    AssinaturaReciboId INT IDENTITY(1,1) NOT NULL,
+    ReciboId          INT               NOT NULL,
+    Papel             VARCHAR(15)       NOT NULL,
+    NomeAssinante     NVARCHAR(150)     NOT NULL,
+    UsuarioId         INT               NOT NULL,
+    AssinaturaDigital VARCHAR(MAX)      NOT NULL,
+    HashDocumento     CHAR(64)          NOT NULL,
+    IpMaquina         VARCHAR(45)       NULL,
+    DataAssinatura    DATETIME2(0)      NOT NULL CONSTRAINT DF_AssinaturasRecibo_Data DEFAULT (SYSDATETIME()),
+    CONSTRAINT PK_AssinaturasRecibo PRIMARY KEY (AssinaturaReciboId),
+    CONSTRAINT FK_AssinaturasRecibo_Doc FOREIGN KEY (ReciboId) REFERENCES dbo.Recibos (ReciboId),
+    CONSTRAINT FK_AssinaturasRecibo_Usuarios FOREIGN KEY (UsuarioId) REFERENCES dbo.Usuarios (UsuarioId),
+    CONSTRAINT UQ_AssinaturasRecibo_Papel UNIQUE (ReciboId, Papel),
+    CONSTRAINT CK_AssinaturasRecibo_Papel CHECK (Papel IN ('RT','PROPRIETARIO'))
+);
+GO
+
 -- Manual: administrador realiza backup (histórico dos backups gerados pela tela Backup)
 CREATE TABLE dbo.LogBackup (
     BackupId     INT IDENTITY(1,1) NOT NULL,

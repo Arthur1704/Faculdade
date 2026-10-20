@@ -1,0 +1,240 @@
+2026-10-19 23:29:16
+System.Data.SqlClient.SqlException (0x80131904): Nome de objeto 'AssinaturasRecibo' inválido.
+   em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   em System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   em System.Data.SqlClient.SqlDataReader.get_MetaData()
+   em System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   em System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   em WebApplication1.Dados.Banco.Consultar(String sql, SqlParameter[] parametros) na C:\Users\arthu\Desktop\CadernetaObras\WebApplication1\Dados\Banco.cs:linha 40
+   em WebApplication1.Dados.AssinaturaDAO.Listar(String tipo, Int32 documentoId) na C:\Users\arthu\Desktop\CadernetaObras\WebApplication1\Dados\AssinaturaDAO.cs:linha 33
+   em WebApplication1.Assinaturas.Montar() na C:\Users\arthu\Desktop\CadernetaObras\WebApplication1\Assinaturas.ascx.cs:linha 69
+   em WebApplication1.Assinaturas.Carregar(String tipo, Int32 documentoId, String nomeResponsavelTecnico, String nomeProprietario) na C:\Users\arthu\Desktop\CadernetaObras\WebApplication1\Assinaturas.ascx.cs:linha 59
+   em WebApplication1.recibos.Visualizar(Int32 id) na C:\Users\arthu\Desktop\CadernetaObras\WebApplication1\recibos.aspx.cs:linha 108
+   em WebApplication1.recibos.gvDados_RowCommand(Object sender, GridViewCommandEventArgs e) na C:\Users\arthu\Desktop\CadernetaObras\WebApplication1\recibos.aspx.cs:linha 77
+ClientConnectionId:495e9d9e-f211-4587-aafe-0334d0e5692b
+Error Number:208,State:1,Class:16
+
+2026-10-19 23:29:24
+System.Data.SqlClient.SqlException (0x80131904): Nome de objeto 'AssinaturasRecibo' inválido.
+   em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   em System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   em System.Data.SqlClient.SqlDataReader.get_MetaData()
+   em System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   em System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   em WebApplication1.Dados.Banco.Consultar(String sql, SqlParameter[] parametros) na C:\Users\arthu\Desktop\CadernetaObras\WebApplication1\Dados\Banco.cs:linha 40
+   em WebApplication1.Dados.AssinaturaDAO.Listar(String tipo, Int32 documentoId) na C:\Users\arthu\Desktop\CadernetaObras\WebApplication1\Dados\AssinaturaDAO.cs:linha 33
+   em WebApplication1.Assinaturas.Montar() na C:\Users\arthu\Desktop\CadernetaObras\WebApplication1\Assinaturas.ascx.cs:linha 69
+   em WebApplication1.Assinaturas.Carregar(String tipo, Int32 documentoId, String nomeResponsavelTecnico, String nomeProprietario) na C:\Users\arthu\Desktop\CadernetaObras\WebApplication1\Assinaturas.ascx.cs:linha 59
+   em WebApplication1.recibos.Visualizar(Int32 id) na C:\Users\arthu\Desktop\CadernetaObras\WebApplication1\recibos.aspx.cs:linha 108
+   em WebApplication1.recibos.gvDados_RowCommand(Object sender, GridViewCommandEventArgs e) na C:\Users\arthu\Desktop\CadernetaObras\WebApplication1\recibos.aspx.cs:linha 77
+ClientConnectionId:495e9d9e-f211-4587-aafe-0334d0e5692b
+Error Number:208,State:1,Class:16
+
+2026-10-19 23:29:25
+System.Data.SqlClient.SqlException (0x80131904): Nome de objeto 'AssinaturasRecibo' inválido.
+   em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   em System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   em System.Data.SqlClient.SqlDataReader.get_MetaData()
+   em System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   em System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   em WebApplication1.Dados.Banco.Consultar(String sql, SqlParameter[] parametros) na C:\Users\arthu\Desktop\CadernetaObras\WebApplication1\Dados\Banco.cs:linha 40
+   em WebApplication1.Dados.AssinaturaDAO.Listar(String tipo, Int32 documentoId) na C:\Users\arthu\Desktop\CadernetaObras\WebApplication1\Dados\AssinaturaDAO.cs:linha 33
+   em WebApplication1.Assinaturas.Montar() na C:\Users\arthu\Desktop\CadernetaObras\WebApplication1\Assinaturas.ascx.cs:linha 69
+   em WebApplication1.Assinaturas.Carregar(String tipo, Int32 documentoId, String nomeResponsavelTecnico, String nomeProprietario) na C:\Users\arthu\Desktop\CadernetaObras\WebApplication1\Assinaturas.ascx.cs:linha 59
+   em WebApplication1.recibos.Visualizar(Int32 id) na C:\Users\arthu\Desktop\CadernetaObras\WebApplication1\recibos.aspx.cs:linha 108
+   em WebApplication1.recibos.gvDados_RowCommand(Object sender, GridViewCommandEventArgs e) na C:\Users\arthu\Desktop\CadernetaObras\WebApplication1\recibos.aspx.cs:linha 77
+ClientConnectionId:495e9d9e-f211-4587-aafe-0334d0e5692b
+Error Number:208,State:1,Class:16
+
+2026-10-19 23:29:29
+System.Data.SqlClient.SqlException (0x80131904): Nome de objeto 'AssinaturasRecibo' inválido.
+   em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   em System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   em System.Data.SqlClient.SqlDataReader.get_MetaData()
+   em System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   em System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   em WebApplication1.Dados.Banco.Consultar(String sql, SqlParameter[] parametros) na C:\Users\arthu\Desktop\CadernetaObras\WebApplication1\Dados\Banco.cs:linha 40
+   em WebApplication1.Dados.AssinaturaDAO.Listar(String tipo, Int32 documentoId) na C:\Users\arthu\Desktop\CadernetaObras\WebApplication1\Dados\AssinaturaDAO.cs:linha 33
+   em WebApplication1.Assinaturas.Montar() na C:\Users\arthu\Desktop\CadernetaObras\WebApplication1\Assinaturas.ascx.cs:linha 69
+   em WebApplication1.Assinaturas.Carregar(String tipo, Int32 documentoId, String nomeResponsavelTecnico, String nomeProprietario) na C:\Users\arthu\Desktop\CadernetaObras\WebApplication1\Assinaturas.ascx.cs:linha 59
+   em WebApplication1.recibos.Visualizar(Int32 id) na C:\Users\arthu\Desktop\CadernetaObras\WebApplication1\recibos.aspx.cs:linha 108
+   em WebApplication1.recibos.gvDados_RowCommand(Object sender, GridViewCommandEventArgs e) na C:\Users\arthu\Desktop\CadernetaObras\WebApplication1\recibos.aspx.cs:linha 77
+ClientConnectionId:495e9d9e-f211-4587-aafe-0334d0e5692b
+Error Number:208,State:1,Class:16
+
+2026-10-19 23:29:30
+System.Data.SqlClient.SqlException (0x80131904): Nome de objeto 'AssinaturasRecibo' inválido.
+   em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   em System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   em System.Data.SqlClient.SqlDataReader.get_MetaData()
+   em System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   em System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   em WebApplication1.Dados.Banco.Consultar(String sql, SqlParameter[] parametros) na C:\Users\arthu\Desktop\CadernetaObras\WebApplication1\Dados\Banco.cs:linha 40
+   em WebApplication1.Dados.AssinaturaDAO.Listar(String tipo, Int32 documentoId) na C:\Users\arthu\Desktop\CadernetaObras\WebApplication1\Dados\AssinaturaDAO.cs:linha 33
+   em WebApplication1.Assinaturas.Montar() na C:\Users\arthu\Desktop\CadernetaObras\WebApplication1\Assinaturas.ascx.cs:linha 69
+   em WebApplication1.Assinaturas.Carregar(String tipo, Int32 documentoId, String nomeResponsavelTecnico, String nomeProprietario) na C:\Users\arthu\Desktop\CadernetaObras\WebApplication1\Assinaturas.ascx.cs:linha 59
+   em WebApplication1.recibos.Visualizar(Int32 id) na C:\Users\arthu\Desktop\CadernetaObras\WebApplication1\recibos.aspx.cs:linha 108
+   em WebApplication1.recibos.gvDados_RowCommand(Object sender, GridViewCommandEventArgs e) na C:\Users\arthu\Desktop\CadernetaObras\WebApplication1\recibos.aspx.cs:linha 77
+ClientConnectionId:495e9d9e-f211-4587-aafe-0334d0e5692b
+Error Number:208,State:1,Class:16
+
+2026-10-19 23:29:45
+System.Data.SqlClient.SqlException (0x80131904): Nome de objeto 'AssinaturasRecibo' inválido.
+   em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   em System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   em System.Data.SqlClient.SqlDataReader.get_MetaData()
+   em System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   em System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   em WebApplication1.Dados.Banco.Consultar(String sql, SqlParameter[] parametros) na C:\Users\arthu\Desktop\CadernetaObras\WebApplication1\Dados\Banco.cs:linha 40
+   em WebApplication1.Dados.AssinaturaDAO.Listar(String tipo, Int32 documentoId) na C:\Users\arthu\Desktop\CadernetaObras\WebApplication1\Dados\AssinaturaDAO.cs:linha 33
+   em WebApplication1.Assinaturas.Montar() na C:\Users\arthu\Desktop\CadernetaObras\WebApplication1\Assinaturas.ascx.cs:linha 69
+   em WebApplication1.Assinaturas.Carregar(String tipo, Int32 documentoId, String nomeResponsavelTecnico, String nomeProprietario) na C:\Users\arthu\Desktop\CadernetaObras\WebApplication1\Assinaturas.ascx.cs:linha 59
+   em WebApplication1.recibos.Visualizar(Int32 id) na C:\Users\arthu\Desktop\CadernetaObras\WebApplication1\recibos.aspx.cs:linha 108
+   em WebApplication1.recibos.gvDados_RowCommand(Object sender, GridViewCommandEventArgs e) na C:\Users\arthu\Desktop\CadernetaObras\WebApplication1\recibos.aspx.cs:linha 77
+ClientConnectionId:495e9d9e-f211-4587-aafe-0334d0e5692b
+Error Number:208,State:1,Class:16
+
+2026-10-19 23:29:58
+System.Data.SqlClient.SqlException (0x80131904): Nome de objeto 'AssinaturasRecibo' inválido.
+   em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   em System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   em System.Data.SqlClient.SqlDataReader.get_MetaData()
+   em System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   em System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   em WebApplication1.Dados.Banco.Consultar(String sql, SqlParameter[] parametros) na C:\Users\arthu\Desktop\CadernetaObras\WebApplication1\Dados\Banco.cs:linha 40
+   em WebApplication1.Dados.AssinaturaDAO.Listar(String tipo, Int32 documentoId) na C:\Users\arthu\Desktop\CadernetaObras\WebApplication1\Dados\AssinaturaDAO.cs:linha 33
+   em WebApplication1.Assinaturas.Montar() na C:\Users\arthu\Desktop\CadernetaObras\WebApplication1\Assinaturas.ascx.cs:linha 69
+   em WebApplication1.Assinaturas.Carregar(String tipo, Int32 documentoId, String nomeResponsavelTecnico, String nomeProprietario) na C:\Users\arthu\Desktop\CadernetaObras\WebApplication1\Assinaturas.ascx.cs:linha 59
+   em WebApplication1.recibos.Visualizar(Int32 id) na C:\Users\arthu\Desktop\CadernetaObras\WebApplication1\recibos.aspx.cs:linha 108
+   em WebApplication1.recibos.gvDados_RowCommand(Object sender, GridViewCommandEventArgs e) na C:\Users\arthu\Desktop\CadernetaObras\WebApplication1\recibos.aspx.cs:linha 77
+ClientConnectionId:495e9d9e-f211-4587-aafe-0334d0e5692b
+Error Number:208,State:1,Class:16
+
+2026-10-19 23:29:58
+System.Data.SqlClient.SqlException (0x80131904): Nome de objeto 'AssinaturasRecibo' inválido.
+   em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   em System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   em System.Data.SqlClient.SqlDataReader.get_MetaData()
+   em System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   em System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   em WebApplication1.Dados.Banco.Consultar(String sql, SqlParameter[] parametros) na C:\Users\arthu\Desktop\CadernetaObras\WebApplication1\Dados\Banco.cs:linha 40
+   em WebApplication1.Dados.AssinaturaDAO.Listar(String tipo, Int32 documentoId) na C:\Users\arthu\Desktop\CadernetaObras\WebApplication1\Dados\AssinaturaDAO.cs:linha 33
+   em WebApplication1.Assinaturas.Montar() na C:\Users\arthu\Desktop\CadernetaObras\WebApplication1\Assinaturas.ascx.cs:linha 69
+   em WebApplication1.Assinaturas.Carregar(String tipo, Int32 documentoId, String nomeResponsavelTecnico, String nomeProprietario) na C:\Users\arthu\Desktop\CadernetaObras\WebApplication1\Assinaturas.ascx.cs:linha 59
+   em WebApplication1.recibos.Visualizar(Int32 id) na C:\Users\arthu\Desktop\CadernetaObras\WebApplication1\recibos.aspx.cs:linha 108
+   em WebApplication1.recibos.gvDados_RowCommand(Object sender, GridViewCommandEventArgs e) na C:\Users\arthu\Desktop\CadernetaObras\WebApplication1\recibos.aspx.cs:linha 77
+ClientConnectionId:495e9d9e-f211-4587-aafe-0334d0e5692b
+Error Number:208,State:1,Class:16
+
+2026-10-19 23:30:00
+System.Data.SqlClient.SqlException (0x80131904): Nome de objeto 'AssinaturasRecibo' inválido.
+   em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   em System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   em System.Data.SqlClient.SqlDataReader.get_MetaData()
+   em System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   em System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   em WebApplication1.Dados.Banco.Consultar(String sql, SqlParameter[] parametros) na C:\Users\arthu\Desktop\CadernetaObras\WebApplication1\Dados\Banco.cs:linha 40
+   em WebApplication1.Dados.AssinaturaDAO.Listar(String tipo, Int32 documentoId) na C:\Users\arthu\Desktop\CadernetaObras\WebApplication1\Dados\AssinaturaDAO.cs:linha 33
+   em WebApplication1.Assinaturas.Montar() na C:\Users\arthu\Desktop\CadernetaObras\WebApplication1\Assinaturas.ascx.cs:linha 69
+   em WebApplication1.Assinaturas.Carregar(String tipo, Int32 documentoId, String nomeResponsavelTecnico, String nomeProprietario) na C:\Users\arthu\Desktop\CadernetaObras\WebApplication1\Assinaturas.ascx.cs:linha 59
+   em WebApplication1.recibos.Visualizar(Int32 id) na C:\Users\arthu\Desktop\CadernetaObras\WebApplication1\recibos.aspx.cs:linha 108
+   em WebApplication1.recibos.gvDados_RowCommand(Object sender, GridViewCommandEventArgs e) na C:\Users\arthu\Desktop\CadernetaObras\WebApplication1\recibos.aspx.cs:linha 77
+ClientConnectionId:495e9d9e-f211-4587-aafe-0334d0e5692b
+Error Number:208,State:1,Class:16
+
+2026-10-19 23:32:32
+System.Data.SqlClient.SqlException (0x80131904): Nome de objeto 'AssinaturasRecibo' inválido.
+   em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   em System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   em System.Data.SqlClient.SqlDataReader.get_MetaData()
+   em System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   em System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   em WebApplication1.Dados.Banco.Consultar(String sql, SqlParameter[] parametros) na C:\Users\arthu\Desktop\CadernetaObras\WebApplication1\Dados\Banco.cs:linha 40
+   em WebApplication1.Dados.AssinaturaDAO.Listar(String tipo, Int32 documentoId) na C:\Users\arthu\Desktop\CadernetaObras\WebApplication1\Dados\AssinaturaDAO.cs:linha 33
+   em WebApplication1.Assinaturas.Montar() na C:\Users\arthu\Desktop\CadernetaObras\WebApplication1\Assinaturas.ascx.cs:linha 69
+   em WebApplication1.Assinaturas.Carregar(String tipo, Int32 documentoId, String nomeResponsavelTecnico, String nomeProprietario) na C:\Users\arthu\Desktop\CadernetaObras\WebApplication1\Assinaturas.ascx.cs:linha 59
+   em WebApplication1.recibos.Visualizar(Int32 id) na C:\Users\arthu\Desktop\CadernetaObras\WebApplication1\recibos.aspx.cs:linha 108
+   em WebApplication1.recibos.gvDados_RowCommand(Object sender, GridViewCommandEventArgs e) na C:\Users\arthu\Desktop\CadernetaObras\WebApplication1\recibos.aspx.cs:linha 77
+ClientConnectionId:495e9d9e-f211-4587-aafe-0334d0e5692b
+Error Number:208,State:1,Class:16
+

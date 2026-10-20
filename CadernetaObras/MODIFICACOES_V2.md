@@ -9,7 +9,7 @@
 | `RelatosVisita` | `NumeroNaObra` (nº sequencial da visita dentro da obra: 001, 002...), com índice único (obra + número). Relatos antigos são numerados pela migração |
 | `RelatoVisitaAnexos` | `Descricao` |
 | `TermosConclusao` | `PdfFinal` (caminho do último PDF gerado) |
-| Novas tabelas | `ObraDocumentos`, `AssinaturasObra`, `AssinaturasVisita`, `AssinaturasTermo`, `LogBackup`, `TentativasLogin` |
+| Novas tabelas | `ObraDocumentos`, `AssinaturasObra`, `AssinaturasVisita`, `AssinaturasTermo`, `AssinaturasRecibo`, `LogBackup`, `TentativasLogin` |
 | Dados fixos | Tipos de obra: Residencial, Comercial, Industrial, Outros. Atividades técnicas: + Direção Técnica e Fiscalização. Etapas 6 e 7 com os nomes completos do Manual |
 | Perfis | `Responsável Técnico` criado; usuários Engenheiro/Fiscal migrados para ele; Engenheiro/Fiscal removidos se ficarem sem uso. `Visualizador` é mantido se já existia |
 | Novo script | `04_Backup_Manual_e_Agendado.sql` |
@@ -22,7 +22,7 @@
 | 1 | Gerar PDF único (capa + termo) | **Novo** gerador de PDF próprio (sem biblioteca externa): capa, primeira página (dados técnicos e valor) e termo, com as assinaturas. Ação **PDF** na grid e botão **Gerar PDF** no termo. Cópia gravada em `App_Data/Pdfs` e caminho em `PdfFinal` |
 | 2 | Capa / responsável técnico / RT / empresa / valor | Tela **Obras**: responsável técnico (obrigatório), nº da RT, empresa/construtor, nº da caderneta, valor, tipo de edificação, local, data de início. Ação **Capa** abre a capa e a primeira página |
 | 3 | Termo preenchido com dados cadastrados | Ao escolher a obra o termo traz proprietário, profissional, registro, empresa, CPF/telefone e local. Proprietário passa a vir sempre da obra. Declaração padrão do Manual (conforme projeto aprovado e normas técnicas) + texto das sanções. Exige obra com responsável técnico. Termo "Concluído" marca a obra como Concluída |
-| 4 | Assinaturas digitais | Controle `Assinaturas.ascx` na capa, no relato e no termo: assinatura desenhada na tela (mouse/toque), com gravação de imagem, data, **IP** e hash SHA-256 do documento. Aviso quando o documento é alterado depois de assinado. Só o administrador remove assinatura. Documento assinado não pode ser excluído |
+| 4 | Assinaturas digitais | Controle `Assinaturas.ascx` na capa, no relato, no termo **e no recibo** (emitente = responsável técnico da obra; e proprietário): assinatura desenhada na tela (mouse/toque), com gravação de imagem, data, **IP** e hash SHA-256 do documento. Aviso quando o documento é alterado depois de assinado. Só o administrador remove assinatura. Documento assinado não pode ser excluído |
 | 5 | Backup | Tela **Backup** (só Administrador): gera `.bak`, lista e baixa os arquivos, histórico em `LogBackup`. Pasta em `PastaBackup` (Web.config) |
 | 6 | Perfis do Manual | Dois perfis: Administrador e Responsável Técnico (ver Banco) |
 | 7 | Campos obrigatórios do Manual | Obrigatórios agora: CPF/CNPJ do proprietário; CPF e registro (tipo + número) do profissional; e-mail do usuário; local e data de início da obra |
@@ -50,7 +50,7 @@
 
 ## 3. Arquivos novos
 `Assinaturas.ascx(.cs)`, `backup.aspx(.cs)`, `solicitar-cadastro.aspx(.cs)`, `esqueci-senha.aspx`,
-`Dados/AssinaturaDAO`, `BackupDAO`, `SolicitacaoCadastroDAO`, `Utilitarios/PdfSimples`, `DocumentosPdf`, `Arquivos`, `Registro`,
+tabela `AssinaturasRecibo`, `Dados/AssinaturaDAO`, `BackupDAO`, `SolicitacaoCadastroDAO`, `Utilitarios/PdfSimples`, `DocumentosPdf`, `Arquivos`, `Registro`,
 modelos `Assinatura`, `CapaObra`, `ObraDocumento`, `SolicitacaoCadastro`, scripts `03` e `04`.
 
 ## 4. O que continua como estava (e por quê)

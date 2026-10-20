@@ -9,7 +9,7 @@
        1) Obras: responsável técnico, RT, empresa, nº da caderneta, valor, 4 áreas
        2) RelatosVisita: numeração sequencial por obra (NumeroNaObra)
        3) RelatoVisitaAnexos: descrição; TermosConclusao: caminho do PDF
-       4) Novas tabelas: ObraDocumentos, AssinaturasObra/Visita/Termo, LogBackup, TentativasLogin
+       4) Novas tabelas: ObraDocumentos, AssinaturasObra/Visita/Termo/Recibo, LogBackup, TentativasLogin
        5) Dados de domínio: tipos de edificação, atividades técnicas, etapas, perfis
    ===================================================================== */
 
@@ -176,6 +176,27 @@ BEGIN
 END
 GO
 
+IF OBJECT_ID(N'dbo.AssinaturasRecibo', N'U') IS NULL
+BEGIN
+    CREATE TABLE dbo.AssinaturasRecibo (
+        AssinaturaReciboId INT IDENTITY(1,1) NOT NULL,
+        ReciboId          INT               NOT NULL,
+        Papel             VARCHAR(15)       NOT NULL,
+        NomeAssinante     NVARCHAR(150)     NOT NULL,
+        UsuarioId         INT               NOT NULL,
+        AssinaturaDigital VARCHAR(MAX)      NOT NULL,
+        HashDocumento     CHAR(64)          NOT NULL,
+        IpMaquina         VARCHAR(45)       NULL,
+        DataAssinatura    DATETIME2(0)      NOT NULL CONSTRAINT DF_AssinaturasRecibo_Data DEFAULT (SYSDATETIME()),
+        CONSTRAINT PK_AssinaturasRecibo PRIMARY KEY (AssinaturaReciboId),
+        CONSTRAINT FK_AssinaturasRecibo_Doc FOREIGN KEY (ReciboId) REFERENCES dbo.Recibos (ReciboId),
+        CONSTRAINT FK_AssinaturasRecibo_Usuarios FOREIGN KEY (UsuarioId) REFERENCES dbo.Usuarios (UsuarioId),
+        CONSTRAINT UQ_AssinaturasRecibo_Papel UNIQUE (ReciboId, Papel),
+        CONSTRAINT CK_AssinaturasRecibo_Papel CHECK (Papel IN ('RT','PROPRIETARIO'))
+    );
+END
+GO
+
 IF OBJECT_ID(N'dbo.LogBackup', N'U') IS NULL
 BEGIN
     CREATE TABLE dbo.LogBackup (
@@ -245,6 +266,32 @@ FROM   dbo.Perfis p
 WHERE  p.Nome IN (N'Engenheiro', N'Fiscal')
   AND  NOT EXISTS (SELECT 1 FROM dbo.Usuarios u WHERE u.PerfilId = p.PerfilId);
 GO
+
+USE CadernetaObras;
+GO
+
+IF OBJECT_ID(N'dbo.AssinaturasRecibo', N'U') IS NULL
+BEGIN
+    CREATE TABLE dbo.AssinaturasRecibo (
+        AssinaturaReciboId INT IDENTITY(1,1) NOT NULL,
+        ReciboId          INT               NOT NULL,
+        Papel             VARCHAR(15)       NOT NULL,
+        NomeAssinante     NVARCHAR(150)     NOT NULL,
+        UsuarioId         INT               NOT NULL,
+        AssinaturaDigital VARCHAR(MAX)      NOT NULL,
+        HashDocumento     CHAR(64)          NOT NULL,
+        IpMaquina         VARCHAR(45)       NULL,
+        DataAssinatura    DATETIME2(0)      NOT NULL CONSTRAINT DF_AssinaturasRecibo_Data DEFAULT (SYSDATETIME()),
+        CONSTRAINT PK_AssinaturasRecibo PRIMARY KEY (AssinaturaReciboId),
+        CONSTRAINT FK_AssinaturasRecibo_Doc FOREIGN KEY (ReciboId) REFERENCES dbo.Recibos (ReciboId),
+        CONSTRAINT FK_AssinaturasRecibo_Usuarios FOREIGN KEY (UsuarioId) REFERENCES dbo.Usuarios (UsuarioId),
+        CONSTRAINT UQ_AssinaturasRecibo_Papel UNIQUE (ReciboId, Papel),
+        CONSTRAINT CK_AssinaturasRecibo_Papel CHECK (Papel IN ('RT','PROPRIETARIO'))
+    );
+END
+GO
+
+SELECT OBJECT_ID(N'dbo.AssinaturasRecibo', N'U') AS TabelaExiste;  -- deve vir com um número
 
 /* ---------- Conferência ---------- */
 SELECT (SELECT COUNT(*) FROM dbo.Obras)            AS Obras,
